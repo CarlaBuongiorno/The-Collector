@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Collector</title>
+</head>
+<body>
+    {% for comic in comics %}
+    {{ comic.title }}<br>
+    {{ comic.publisher }}<br>
+    {{ comic.year }}<br>
+    {{ comic.issue_no }}<br>
+    {{ comic.grade }}<br>
+    {{ comic.for_sale }}<br>
+    {{ comic.price }}<br>
+    {{ comic.notes }}<br>
+    {{ comic.image_url }}<br>
+    {{ comic.show_contact_details }}<br>
+    {{ comic.email_address }}<br>
+    {% endfor %}
+</body>
+</html>
