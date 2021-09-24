@@ -176,11 +176,11 @@ MongoDB was used to store data for this site in a database. The data has been se
 | password | string |    |
 | avatar_no | int |    |
 | is_admin| boolean |    |
-| my_catalogue | array | comic_books._id |
+| my_catalogue | array | comics._id |
 
 ### Comic Fields Collection
 
-| comic_fields |    |
+| Comics |    |
 |---|---|
 | _id | ObjectId |
 | title | string |
@@ -190,9 +190,10 @@ MongoDB was used to store data for this site in a database. The data has been se
 | grade | string |
 | for_sale | string |
 | price | string |
-| image_url | string |
 | notes | string |
-| show_contact_details | boolean |
+| image_url | string |
+| show_contact_details | string |
+| email_address | string |
 
 ### Overall Database
 
@@ -202,9 +203,9 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ![Users Collection Example]()
 
-### Comic info Collection Screenshot
+### Comics Collection Screenshot
 
-![Comic info Collection Example]()
+![Comics Collection Example]()
 
 [Back to Top](#the-collector)
 
@@ -269,7 +270,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 #### Flask-PyMongo
 
-
+[Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) was used to connect this Python / Flask app to MongoDB.
 
 ### Frameworks, Libraries and Others
 
@@ -315,7 +316,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 #### dnspython
 
-
+[dnspython](https://pypi.org/project/dnspython/) was used to provide access to DNS.
 
 [Back to Top](#the-collector)
 
