@@ -252,7 +252,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 #### Font Awesome
 
-
+[Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
 
 #### Adobe Online
 
@@ -292,15 +292,15 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 #### Bootstrap
 
-
+[Bootstrap](https://getbootstrap.com/) was used to create a beautiful, responsive website.
 
 #### jQuery
 
-
+[jQuery](https://jquery.com/) was used to make the DOM traversal easier within the JavaScript.
 
 #### Jinja
 
-
+[Jinja](https://jinja.palletsprojects.com/en/3.0.x/) was used to auto-populate the site with the contents of the database.
 
 #### RandomKeygen
 
@@ -589,7 +589,8 @@ Further Testing
 
 ### Code
 
-* 
+* [Code Institute](https://codeinstitute.net/) was the main source of information used to create this project, specifically the Task Manager Mini Project Walkthrough.
+* [Boostrap](https://getbootstrap.com/): Throughout the site, to create a beautiful responsive site.
 
 ### Content
 
