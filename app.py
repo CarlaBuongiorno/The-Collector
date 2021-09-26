@@ -8,9 +8,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
+# Initialize app
 app = Flask(__name__)
 
+# Config app
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -27,6 +28,37 @@ def get_comics():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        # check if passwords match
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        if password != confirm_password:
+            flash("Your passwords don't match", 'error')
+            return redirect(url_for("register"))
+
+        register = {
+            "fullname": request.form.get("fullname").title(),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email"),
+            "avatar_no": request.form.get("avatar_no"),
+            "is_admin": False,
+            "my_catalogue": []
+        }
+        mongo.db.user.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("register.html")
 
 
