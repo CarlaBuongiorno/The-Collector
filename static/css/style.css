@@ -7,3 +7,11 @@
 form i.fields {
     font-size: 2.25rem;
 }
+
+.flashes h4 {
+    line-height: 2;
+}
+
+.light-green {
+    background-color: lightgreen;
+}

@@ -15,7 +15,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="fullname" class="form-control col-md-8" id="floatingInput"
-                                placeholder="Full Name" required>
+                                placeholder="Full Name" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="fullname">Full Name</label>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="username" class="form-control" id="floatingInput"
-                                placeholder="Username" required>
+                                placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="name">Username (no spaces)</label>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="password" name="password" class="form-control" id="floatingPassword"
-                                placeholder="Password" required>
+                                placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="password" name="confirm-password" class="form-control" id="confirm-password"
-                                placeholder="Confirm Password" required>
+                            placeholder="Confirm Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="confirm-password">Confirm Password</label>
                         </div>
                     </div>
