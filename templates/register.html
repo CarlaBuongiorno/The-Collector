@@ -15,7 +15,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="fullname" class="form-control col-md-8" id="floatingInput"
-                                placeholder="Full Name" minlength="5" maxlength="15" required>
+                                placeholder="Full Name" minlength="5" maxlength="25" required>
                             <label for="fullname">Full Name</label>
                         </div>
                     </div>
@@ -81,7 +81,18 @@
                         </button>
                     </div>
                 </div>
+            </div>
         </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <p class="text-center">
+            Already a Collector? 
+            <a href="{{ url_for('login') }}" class="primary">Log In</a>
+        </p>
     </div>
 </div>
 

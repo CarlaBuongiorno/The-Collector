@@ -541,11 +541,9 @@ Further Testing
 
 ### Solved Bugs
 
-1. It is still possible to register a duplicate username regardless of the code written to check if the username already exists in the database. The flash message that tells the user that the username already exists does not display, and instead the registration is successful.
+1. It was possible to register a duplicate username regardless of the code written to check if the username already exists in the database. The flash message that tells the user that the username already exists did not display, and instead the registration was successful.
     * Fixed the 'for' of the username label to 'username' instead of 'name'.
-    * 
-    * 
-    * 
+    * The collection I used to check 'existing_user' was 'users' with an 's' at the end, while the one I tried to insert was 'user' without the 's'. Correcting this solved the bug.
 2. 
     * 
 3. 
