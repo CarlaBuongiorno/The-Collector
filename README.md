@@ -541,8 +541,8 @@ Further Testing
 
 ### Solved Bugs
 
-1. 
-    * 
+1. It is still possible to register a duplicate username regardless of the code written to check if the username already exists in the database. The flash message that tells the user that the username already exists does not display, and instead the registration is successful.
+    * Fixed the 'for' of the username label to 'username' instead of 'name'.
     * 
     * 
     * 
