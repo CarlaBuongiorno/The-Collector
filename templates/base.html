@@ -31,27 +31,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('get_comics')}}">The Collectors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">My Catalogue</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Add Comic</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Log Out</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('login')}}">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
-                        </li>
+                        {% if session.user %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('get_comics')}}">The Collectors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">My Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Add Comic</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
