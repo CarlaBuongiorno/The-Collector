@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* Credit -> Code Institute - Task Manager Project */
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -14,4 +19,32 @@ form i.fields {
 
 .light-green {
     background-color: lightgreen;
+}
+
+/* My Catalogue */
+
+.comic-wall {
+    background-color: rgb(167, 19, 19);
+}
+
+.comic-containers {
+    height: 263px;
+    padding: 0;
+}
+
+.picture-frames {
+    border: 20px solid black;
+    height: 85%;
+    width: 90%;
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+}
+
+.pic {
+    background-image: url('https://tse2.mm.bing.net/th?id=OIP.4a1U8fDvvmeqOfHN7nb0LgHaKr&pid=Api');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right, left; 
+    background-size: contain;
 }
