@@ -1,71 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for comic in comics %}
-{{ comic.title }}<br>
-{{ comic.publisher }}<br>
-{{ comic.year }}<br>
-{{ comic.issue_no }}<br>
-{{ comic.grade }}<br>
-{{ comic.for_sale }}<br>
-{{ comic.price }}<br>
-{{ comic.notes }}<br>
-{{ comic.image_url }}<br>
-{{ comic.show_contact_details }}<br>
-{{ comic.email_address }}<br>
-{% endfor %}
-
 <!-- Container to hold list of comic books (Red background) -->
 <div class="container-fluid comic-wall">
+    {% for comic in comics %}
     <div class="row d-flex justify-content-evenly no-gutter">
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pic">
-        </div>
+        <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn col-6 col-md-4 col-lg-2 pic" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
     </div>
+    {% endfor %}
 </div>
-
-<!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    {% for comic in comics %}
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ comic.title }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4 comic-containers">
-                            <div class="picture-frames mx-auto">
-                                <div class="pic"></div>
-                            </div>
+                    <div class="row d-flex justify-content-evenly">
+                        <div class="col-sm-12 col-md-4 pic">
                         </div>
-                        <div class="col-sm-12 col-md-8">.col-sm-12</div>
+                        <div class="col-sm-12 col-md-8 my-comic-info">
+                            <p>Title: {{ comic.title }}</br>
+                                Publisher: {{ comic.publisher }}</br>
+                                Year: {{ comic.year }}</br>
+                                Issue Number: {{ comic.issue_no }}</br>
+                                Grade: {{ comic.grade }}</br>
+                                For Sale: {{ comic.for_sale }}</br>
+                                Price: {{ comic.price }}</br>
+                                Notes: {{ comic.notes }}</br>
+                                Show Contact Details: {{ comic.show_contact_details }}</br>
+                                Email: {{ comic.email_address }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,6 +47,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

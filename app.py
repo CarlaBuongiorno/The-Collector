@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_comics")
 def get_comics():
-    comics = mongo.db.comics.find()
+    comics = list(mongo.db.comics.find())
     return render_template("comics.html", comics=comics)
 
 
