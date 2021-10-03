@@ -23,28 +23,22 @@ form i.fields {
 
 /* My Catalogue */
 
+.no-gutter {
+    --bs-gutter-x: 0;
+}
+
 .comic-wall {
     background-color: rgb(167, 19, 19);
-}
-
-.comic-containers {
-    height: 263px;
-    padding: 0;
-}
-
-.picture-frames {
-    border: 20px solid black;
-    height: 85%;
-    width: 90%;
-    margin-top: 7.5%;
-    margin-bottom: 7.5%;
+    padding: 5px;
 }
 
 .pic {
     background-image: url('https://tse2.mm.bing.net/th?id=OIP.4a1U8fDvvmeqOfHN7nb0LgHaKr&pid=Api');
-    height: 100%;
-    width: 100%;
+    background-size: cover;
+    width: 170px;
+    height: 240px;
     background-repeat: no-repeat;
-    background-position: right, left; 
-    background-size: contain;
+    background-position: center;
+    border: 20px solid black;
+    margin: 5px 5px;
 }
