@@ -15,7 +15,7 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     {% for comic in comics %}
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{ comic.title }}</h5>
@@ -27,16 +27,21 @@
                         <div class="col-sm-12 col-md-4 pic">
                         </div>
                         <div class="col-sm-12 col-md-8 my-comic-info">
-                            <p>Title: {{ comic.title }}</br>
-                                Publisher: {{ comic.publisher }}</br>
-                                Year: {{ comic.year }}</br>
-                                Issue Number: {{ comic.issue_no }}</br>
-                                Grade: {{ comic.grade }}</br>
-                                For Sale: {{ comic.for_sale }}</br>
-                                Price: {{ comic.price }}</br>
-                                Notes: {{ comic.notes }}</br>
-                                Show Contact Details: {{ comic.show_contact_details }}</br>
-                                Email: {{ comic.email_address }}</p>
+                            <p><strong>Title:</strong> {{ comic.title }}</br>
+                                <strong>Publisher:</strong> {{ comic.publisher }}</br>
+                                <strong>Year:</strong> {{ comic.year }}</br>
+                                <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
+                                <strong>Grade:</strong> {{ comic.grade }}</br>
+                                {% if comic.for_sale == "on" %}
+                                <strong>Price:</strong> {{ comic.price }}</br>
+                                {% endif %}
+                                {% if comic.notes %}
+                                <strong>Notes:</strong> {{ comic.notes }}</br>
+                                {% endif %}
+                                {% if comic.show_contact_details == "on" %}
+                                <strong>Show email address:</strong> <i class="fas fa-check-circle"></i>
+                                {% endif %}
+                            </p>
                         </div>
                     </div>
                 </div>
