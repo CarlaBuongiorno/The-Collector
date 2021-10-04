@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="text-center ">'s Catalogue</h3>
+
 <!-- Container to hold list of comic books (Red background) -->
 <div class="container-fluid comic-wall">
     {% for comic in comics %}
@@ -33,13 +35,16 @@
                                 <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
                                 <strong>Grade:</strong> {{ comic.grade }}</br>
                                 {% if comic.for_sale == "on" %}
-                                <strong>Price:</strong> {{ comic.price }}</br>
+                                    <strong>Price:</strong> {{ comic.price }}</br>
                                 {% endif %}
                                 {% if comic.notes %}
-                                <strong>Notes:</strong> {{ comic.notes }}</br>
+                                    <strong>Notes:</strong> {{ comic.notes }}</br>
                                 {% endif %}
+                                    <strong>Show email address:</strong> 
                                 {% if comic.show_contact_details == "on" %}
-                                <strong>Show email address:</strong> <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                {% else %}
+                                    <i class="fas fa-times-circle"></i>
                                 {% endif %}
                             </p>
                         </div>

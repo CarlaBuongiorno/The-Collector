@@ -113,8 +113,25 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_comic")
+@app.route("/add_comic", methods=["GET", "POST"])
 def add_comic():
+    if request.method == "POST":
+        for_sale = "on" if request.form.get("for_sale") else "off"
+        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
+        comic = {
+            "title": request.form.get("title"),
+            "publisher_name": request.form.get("publisher_name"),
+            "year": request.form.get("year"),
+            "issue_no": request.form.get("issue_no"),
+            "grade": request.form.get("grade"),
+            "for_sale": request.form.get("for_sale"),
+            "image_url": request.form.get("image_url"),
+            "show_contact_details": request.form.get("show_contact_details"),
+            
+        }
+        mongo.db.comics.insert_one(comic)
+        flash("Comic Successfully Added")
+        return redirect(url_for("get_comics"))
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
     return render_template("add_comic.html", publishers=publishers)
 

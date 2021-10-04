@@ -1,124 +1,126 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="text-center">Add Comic</h3>
+<h3 class="text-center text-shadow">Add Comic</h3>
 
-    <div class="container">
-        <div class="row">
-            <form class="card col-12 col-md-8 offset-md-2" method="POST" action="">
-                <div class="card-body">
-                    <div class="row g-2">
-                        <!-- title -->
-                        <div class="col-md-1">
-                            <i class="fas fa-align-left col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="title" class="form-control col-md-8" id="floatingInput"
-                                    placeholder="Title" minlength="2" maxlength="25" required>
-                                <label for="title">Title</label>
-                            </div>
-                        </div>
-                        <!-- publisher -->
-                        <div class="col-md-1">
-                            <i class="fas fa-folder-open col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <select id="publisher_name" class="form-select" name="publisher_name" aria-label="Select Publisher" required>
-                                    <option value="" disabled selected>Choose Publisher</option>
-                                    {% for publisher in publishers %}
-                                        <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
-                                    {% endfor %}
-                                  </select>
-                                  <label for="publisher_name">Publisher</label>
-                            </div>
-                        </div>
-                        <!-- year -->
-                        <div class="col-md-1">
-                            <i class="fas fa-calendar-alt col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="year" class="form-control" id="floatingInput"
-                                    placeholder="Year" required>
-                                <label for="year">Year</label>
-                            </div>
-                        </div>
-                        <!-- issue number -->
-                        <div class="col-md-1">
-                            <i class="fas fa-hashtag col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="issue_no" name="issue_no" class="form-control" id="floatingInput"
-                                    placeholder="Issue Number" minlength="1" maxlength="4" required>
-                                <label for="issue_no">Issue Number</label>
-                            </div>
-                        </div>
-                        <!-- grade -->
-                        <div class="col-md-1">
-                            <i class="fas fa-award col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="grade" class="form-control" id="floatingInput"
-                                placeholder="Grade" minlength="1" maxlength="4" required>
-                                <label for="grade">Grade</label>
-                            </div>
-                        </div>
-                        <!-- for sale -->
-                        <div class="col-md-1">
-                            <i class="fas fa-credit-card col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="forSaleChecked" checked>
-                                <label class="form-check-label" for="forSaleChecked">For Sale</label>
-                              </div>
-                        </div>
-                        <!-- Price -->
-                        <div class="col-md-1">
-                            <i class="fas fa-euro-sign col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="price" class="form-control col-md-8" id="floatingInput"
-                                    placeholder="Price" minlength="2" maxlength="25" required>
-                                <label for="price">Price</label>
-                            </div>
-                        </div>
-                        <!-- image url -->
-                        <div class="col-md-1">
-                            <i class="fas fa-image col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="image" class="form-control col-md-8" id="floatingInput"
-                                    placeholder="Image" minlength="5" maxlength="50">
-                                <label for="image">Image URL</label>
-                            </div>
-                        </div>
-                        <!-- notes -->
-                        <div class="col-md-1">
-                            <i class="fas fa-edit col-md fields"></i>
-                        </div>
-                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                <label for="floatingTextarea">Comments</label>
-                              </div>
-                        </div>
-                        <!-- register -->
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary text-shadow" type="submit">
-                                Register <i class="fas fa-sign-in-alt"></i>
-                            </button>
+<div class="container">
+    <div class="row">
+        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('add_comic') }}">
+            <div class="card-body">
+                <div class="row g-2">
+                    <!-- title -->
+                    <div class="col-md-1">
+                        <i class="fas fa-align-left col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="title" class="form-control col-md-8" id="title"
+                                placeholder="Title" minlength="2" maxlength="25" required>
+                            <label for="title">Title</label>
                         </div>
                     </div>
+                    <!-- publisher selection -->
+                    <div class="col-md-1">
+                        <i class="fas fa-folder-open col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <select id="publisher_name" class="form-select" name="publisher_name"
+                                aria-label="Select Publisher" required>
+                                <option value="" disabled selected>Choose Publisher</option>
+                                {% for publisher in publishers %}
+                                    <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="publisher_name">Publisher</label>
+                        </div>
+                    </div>
+                    <!-- year -->
+                    <div class="col-md-1">
+                        <i class="fas fa-calendar-alt col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="year" class="form-control" id="year" placeholder="Year"
+                                required>
+                            <label for="year">Year</label>
+                        </div>
+                    </div>
+                    <!-- issue number -->
+                    <div class="col-md-1">
+                        <i class="fas fa-hashtag col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="issue_no" name="issue_no" class="form-control" id="floatingInput"
+                                placeholder="Issue Number" minlength="1" maxlength="4" required>
+                            <label for="issue_no">Issue Number</label>
+                        </div>
+                    </div>
+                    <!-- grade -->
+                    <div class="col-md-1">
+                        <i class="fas fa-award col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="grade" class="form-control" id="grade" placeholder="Grade"
+                                minlength="1" maxlength="4" required>
+                            <label for="grade">Grade</label>
+                        </div>
+                    </div>
+                    <!-- for sale -->
+                    <div class="col-md-1">
+                        <i class="fas fa-credit-card col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale" checked>
+                            <label class="form-check-label" for="for_sale">For Sale</label>
+                        </div>
+                    </div>
+                    <!-- Price -->
+                    <div class="col-md-1">
+                        <i class="fas fa-euro-sign col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="price" class="form-control col-md-8" id="price"
+                                placeholder="Price" minlength="2" maxlength="25" required>
+                            <label for="price">Price</label>
+                        </div>
+                    </div>
+                    <!-- image url -->
+                    <div class="col-md-1">
+                        <i class="fas fa-image col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
+                                placeholder="Image" minlength="5" maxlength="50">
+                            <label for="image_url">Image URL</label>
+                        </div>
+                    </div>
+                    <!-- notes -->
+                    <div class="col-md-1">
+                        <i class="fas fa-edit col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                id="comments" name="comments"></textarea>
+                            <label for="comments">Comments</label>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-lg text-shadow btn-primary">
+                            Add Comic <i class="far fa-plus-square"></i>
+                        </button>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
 
 {% endblock %}
