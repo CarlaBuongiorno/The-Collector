@@ -15,7 +15,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="title" class="form-control col-md-8" id="floatingInput"
-                                    placeholder="Title" minlength="5" maxlength="25" required>
+                                    placeholder="Title" minlength="2" maxlength="25" required>
                                 <label for="title">Title</label>
                             </div>
                         </div>
@@ -25,12 +25,13 @@
                         </div>
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
-                                <select class="form-select" aria-label="Select Publisher" required>
-                                    <option selected>Publisher</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select id="publisher_name" class="form-select" name="publisher_name" aria-label="Select Publisher" required>
+                                    <option value="" disabled selected>Choose Publisher</option>
+                                    {% for publisher in publishers %}
+                                        <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                    {% endfor %}
                                   </select>
+                                  <label for="publisher_name">Publisher</label>
                             </div>
                         </div>
                         <!-- year -->
@@ -103,11 +104,10 @@
                             <i class="fas fa-edit col-md fields"></i>
                         </div>
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="notes" class="form-control col-md-8" id="floatingInput"
-                                    placeholder="Notes" minlength="5" maxlength="50">
-                                <label for="image">Notes</label>
-                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Comments</label>
+                              </div>
                         </div>
                         <!-- register -->
                         <div class="d-grid gap-2">

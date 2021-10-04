@@ -115,7 +115,8 @@ def logout():
 
 @app.route("/add_comic")
 def add_comic():
-    return render_template("add_comic.html")
+    publishers = mongo.db.publishers.find().sort("publisher_name", 1)
+    return render_template("add_comic.html", publishers=publishers)
 
 
 if __name__ == "__main__":
