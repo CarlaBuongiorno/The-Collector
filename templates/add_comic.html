@@ -124,3 +124,19 @@
 </div>
 
 {% endblock %}
+
+{% block scripts %}
+<script>
+    let forSale = document.getElementById("for_sale");
+    let price = document.getElementById("price");
+
+    forSale.addEventListener("change", function() {
+        if (this.checked) {
+            price.setAttribute("required", true);
+        }
+        else {
+            price.setAttribute("required", false);
+        }
+    });
+</script>
+{% endblock %}
