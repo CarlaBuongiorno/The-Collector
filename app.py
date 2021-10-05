@@ -1,4 +1,5 @@
 import os
+from functools import wraps
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -19,8 +20,28 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# @login_required decorator
+# https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # no "user" in session
+        if "user" not in session:
+            flash("You must log in to view this page")
+            return redirect(url_for("login"))
+        # user is in session
+        return f(*args, **kwargs)
+    return decorated_function
+
+
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("base.html") # build home.html for this def
+
+
 @app.route("/get_comics")
+@login_required
 def get_comics():
     comics = list(mongo.db.comics.find())
     return render_template("comics.html", comics=comics)
@@ -94,18 +115,20 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     # grab the session user's username from the db
-    username = mongo.db.user.find_one(
-        {"username": session["user"]})["username"].title()
+    user = mongo.db.user.find_one(
+        {"username": session["user"]})
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
 
 
 @app.route("/logout")
+@login_required
 def logout():
     # remove user from session cookies
     flash("You have been logged out")
@@ -114,6 +137,7 @@ def logout():
 
 
 @app.route("/add_comic", methods=["GET", "POST"])
+@login_required
 def add_comic():
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
@@ -140,6 +164,7 @@ def add_comic():
 
 
 @app.route("/edit_comic<comic_id>", methods=["GET", "POST"])
+@login_required
 def edit_comic(comic_id):
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
 
@@ -150,4 +175,4 @@ def edit_comic(comic_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=os.environ.get("DEBUG"))
