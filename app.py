@@ -44,7 +44,10 @@ def home():
 @login_required
 def get_comics():
     comics = list(mongo.db.comics.find())
-    return render_template("comics.html", comics=comics)
+    user = mongo.db.user.find_one(
+        {"username": session["user"]})
+
+    return render_template("comics.html", comics=comics, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -148,7 +151,7 @@ def add_comic():
             "year": request.form.get("year"),
             "issue_no": request.form.get("issue_no"),
             "grade": request.form.get("grade"),
-            "for_sale": request.form.get("for_sale"),
+            "for_sale": for_sale,
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
@@ -163,9 +166,28 @@ def add_comic():
     return render_template("add_comic.html", publishers=publishers)
 
 
-@app.route("/edit_comic<comic_id>", methods=["GET", "POST"])
+@app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 @login_required
 def edit_comic(comic_id):
+    if request.method == "POST":
+        for_sale = "on" if request.form.get("for_sale") else "off"
+        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
+        submit = {
+            "title": request.form.get("title"),
+            "publisher_name": request.form.get("publisher_name"),
+            "year": request.form.get("year"),
+            "issue_no": request.form.get("issue_no"),
+            "grade": request.form.get("grade"),
+            "for_sale": for_sale,
+            "price": request.form.get("price"),
+            "notes": request.form.get("notes"),
+            "image_url": request.form.get("image_url"),
+            "show_contact_details": request.form.get("show_contact_details"),
+        }
+
+        mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
+        flash("Comic Successfully Updated")
+
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
 
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
