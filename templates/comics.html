@@ -9,14 +9,15 @@
     <div class="row d-flex justify-content-evenly no-gutter">
         <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
         <!-- Button trigger modal -->
-        <button type="button" class="btn col-6 col-md-4 col-lg-2 pic" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+        <button type="button" class="btn col-6 col-md-4 col-lg-2 pic" data-bs-toggle="modal" 
+            data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}"></button>
     </div>
     {% endfor %}
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    {% for comic in comics %}
+{% for comic in comics %}
+<div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic.title }}" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,7 +58,7 @@
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+{% endfor %}
 
 {% endblock %}
