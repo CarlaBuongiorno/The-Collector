@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="text-center ">'s Catalogue</h3>
+    <h3 class="text-center ">{{ username }}'s Catalogue</h3>
 
     <!-- Container to hold list of comic books (Red background) -->
     <div class="container-fluid comic-wall">
@@ -62,4 +62,17 @@
             </div>
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Modal
+    // credit -> https://getbootstrap.com/docs/4.0/components/modal/
+    let myModal = document.getElementById('myModal');
+    let myInput = document.getElementById('myInput');
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus();
+    });
+</script>
 {% endblock %}
