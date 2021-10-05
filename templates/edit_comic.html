@@ -92,9 +92,8 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="price" class="form-control col-md-8" id="price"
-                                value="{{ comic.price }}" placeholder="Price" minlength="2" maxlength="25" required>
-                            <label for="price">Price</label>
+                            <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
+                                minlength="2" maxlength="25" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
                         </div>
                     </div>
                     <!-- image url -->
@@ -137,4 +136,24 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Credit Tim Nelson for the solution to get toggler to determine if user can enter a price or not
+    let forSale = document.getElementById("for_sale");
+    let price = document.getElementById("price");
+    forSale.addEventListener("change", function() {
+        if (this.checked) {
+            // if comic is for sale, require a price
+            price.setAttribute("required", "");
+            price.removeAttribute("disabled");
+        }
+        else {
+            // if comic is not for sale, price is optional
+            price.removeAttribute("required");
+            price.setAttribute("disabled", "");
+        }
+    });
+</script>
 {% endblock %}
