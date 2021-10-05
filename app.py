@@ -127,13 +127,22 @@ def add_comic():
             "for_sale": request.form.get("for_sale"),
             "image_url": request.form.get("image_url"),
             "show_contact_details": request.form.get("show_contact_details"),
-            
         }
+
         mongo.db.comics.insert_one(comic)
         flash("Comic Successfully Added")
         return redirect(url_for("get_comics"))
+
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
     return render_template("add_comic.html", publishers=publishers)
+
+
+@app.route("/edit_comic<comic_id>", methods=["GET", "POST"])
+def edit_comic(comic_id):
+    comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+
+    publishers = mongo.db.publishers.find().sort("publisher_name", 1)
+    return render_template("edit_comic.html", comic=comic, publishers=publishers)
 
 
 if __name__ == "__main__":
