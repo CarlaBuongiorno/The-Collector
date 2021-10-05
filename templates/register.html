@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('register') }}">
+        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('register', username) }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- full name -->
@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="fullname" class="form-control col-md-8" id="floatingInput"
+                            <input type="text" name="fullname" class="form-control col-md-8" id="fullname"
                                 placeholder="Full Name" minlength="5" maxlength="25" required>
                             <label for="fullname">Full Name</label>
                         </div>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="username" class="form-control" id="floatingInput"
+                            <input type="text" name="username" class="form-control" id="username"
                                 placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="username">Username (no spaces)</label>
                         </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" id="floatingInput"
+                            <input type="email" name="email" class="form-control" id="email"
                                 placeholder="name@example.com" required>
                             <label for="email">Email address</label>
                         </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" id="floatingPassword"
+                            <input type="password" name="password" class="form-control" id="password"
                                 placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="password">Password</label>
                         </div>
@@ -70,8 +70,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="number" name="avatar_no-no" class="form-control" id="avatar_no"
-                                placeholder="Avatar Number" required>
-                            <label for="avatar_no-no">Choose Avatar</label>
+                                placeholder="Avatar Number" min="1" max="10" required>
+                            <label for="avatar_no">Choose Avatar</label>
                         </div>
                     </div>
                     <!-- register -->
