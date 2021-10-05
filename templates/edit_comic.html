@@ -15,7 +15,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="title" class="form-control col-md-8" id="title"
-                                placeholder="Title" minlength="2" maxlength="25" required>
+                                value="{{ comic.title }}" placeholder="Title" minlength="2" maxlength="25" required>
                             <label for="title">Title</label>
                         </div>
                     </div>
@@ -27,9 +27,13 @@
                         <div class="form-floating mb-3">
                             <select id="publisher_name" class="form-select" name="publisher_name"
                                 aria-label="Select Publisher" required>
-                                <option value="" disabled selected>Choose Publisher</option>
+                                <option value="" disabled>Choose Publisher</option>
                                 {% for publisher in publishers %}
-                                    <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                    {% if publisher.publisher_name == comic.publisher_name %}
+                                        <option value="{{ publisher.publisher_name }}" selected>{{ publisher.publisher_name }}</option>
+                                    {% else %}
+                                        <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                             <label for="publisher_name">Publisher</label>
@@ -42,7 +46,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="year" class="form-control" id="year" placeholder="Year"
-                                required>
+                                value="{{ comic.year }}" required>
                             <label for="year">Year</label>
                         </div>
                     </div>
@@ -52,7 +56,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="issue_no" name="issue_no" class="form-control" id="floatingInput"
+                            <input type="issue_no" name="issue_no" class="form-control" id="floatingInput" value="{{ comic.issue_no }}"
                                 placeholder="Issue Number" minlength="1" maxlength="4" required>
                             <label for="issue_no">Issue Number</label>
                         </div>
@@ -64,17 +68,21 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="grade" class="form-control" id="grade" placeholder="Grade"
-                                minlength="1" maxlength="4" required>
+                            value="{{ comic.grade }}" minlength="1" maxlength="4" required>
                             <label for="grade">Grade</label>
                         </div>
                     </div>
-                    <!-- for sale -->
+                    <!-- for sale toggle -->
                     <div class="col-md-1">
                         <i class="fas fa-credit-card col-md fields"></i>
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale" checked>
+                            {% if comic.for_sale == "on" %}
+                                <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale" checked>
+                            {% else %}
+                                <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale">
+                            {% endif %}
                             <label class="form-check-label" for="for_sale">For Sale</label>
                         </div>
                     </div>
@@ -85,7 +93,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="price" class="form-control col-md-8" id="price"
-                                placeholder="Price" minlength="2" maxlength="25" required>
+                                value="{{ comic.price }}" placeholder="Price" minlength="2" maxlength="25" required>
                             <label for="price">Price</label>
                         </div>
                     </div>
@@ -96,7 +104,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
-                                placeholder="Image" minlength="5" maxlength="50">
+                                value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="50">
                             <label for="image_url">Image URL</label>
                         </div>
                     </div>
@@ -107,12 +115,18 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here"
-                                id="comments" name="comments"></textarea>
+                                id="comments" name="comments">
+                                {{- comic.notes -}}
+                            </textarea>
                             <label for="comments">Comments</label>
                         </div>
                     </div>
                     <!-- submit button -->
                     <div class="col-12 text-center">
+                        <!-- cancel button -->
+                        <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger">
+                            Cancel <i class="far fa-times-circle"></i>
+                        </a>
                         <button type="submit" class="btn btn-lg text-shadow btn-primary">
                             Edit Comic <i class="far fa-edit"></i>
                         </button>

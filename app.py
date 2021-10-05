@@ -125,6 +125,8 @@ def add_comic():
             "issue_no": request.form.get("issue_no"),
             "grade": request.form.get("grade"),
             "for_sale": request.form.get("for_sale"),
+            "price": request.form.get("price"),
+            "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
             "show_contact_details": request.form.get("show_contact_details"),
         }
