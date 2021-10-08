@@ -74,7 +74,7 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
-            "avatar_no": request.form.get("avatar_no"),
+            "avatar_no": int(request.form.get("avatar_no")),
             "is_admin": False,
             "my_catalogue": []
         }
@@ -120,11 +120,27 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
-    # grab the session user's username from the db
-    user = mongo.db.user.find_one(
-        {"username": session["user"]})
+    if request.method == "POST":
+        # grab the session user's username from the db
+        user = mongo.db.user.find_one(
+            {"username": session["user"]})
+        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
+        mongo.db.user.update_one(
+            {"username": session["user"]},
+            {"$set": {"fullname": request.form.get("fullname"),
+                "email": request.form.get("email"),
+                "username": request.form.get("username"),
+                "avatar_no": int(request.form.get("avatar_no")),
+                "show_contact_details": show_contact_details}})
 
-    if session["user"]:
+        session["user"] = request.form.get("username").lower()
+        username = user["username"]
+
+        return redirect(url_for("profile", username=username))
+
+    if "user" in session:
+        user = mongo.db.user.find_one(
+            {"username": session["user"]})
         return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
