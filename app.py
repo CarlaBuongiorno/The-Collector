@@ -209,6 +209,14 @@ def edit_comic(comic_id):
     return render_template("edit_comic.html", comic=comic, publishers=publishers)
 
 
+@app.route("/delete_comic/<comic_id>")
+@login_required
+def delete_comic(comic_id):
+    mongo.db.comics.remove({"_id": ObjectId(comic_id)})
+    flash("Comic Successfully Deleted")
+    return redirect(url_for("get_comics"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
