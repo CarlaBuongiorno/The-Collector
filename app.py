@@ -69,12 +69,15 @@ def register():
             flash("Your passwords don't match", 'error')
             return redirect(url_for("register"))
 
+        show_contact_details = "on"
+
         register = {
             "fullname": request.form.get("fullname").title(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
             "avatar_no": int(request.form.get("avatar_no")),
+            "show_contact_details": show_contact_details,
             "is_admin": False,
             "my_catalogue": []
         }
@@ -160,7 +163,6 @@ def logout():
 def add_comic():
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
-        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
         comic = {
             "title": request.form.get("title"),
             "publisher_name": request.form.get("publisher_name"),
@@ -170,8 +172,7 @@ def add_comic():
             "for_sale": for_sale,
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
-            "image_url": request.form.get("image_url"),
-            "show_contact_details": request.form.get("show_contact_details"),
+            "image_url": request.form.get("image_url")
         }
 
         mongo.db.comics.insert_one(comic)
@@ -187,7 +188,6 @@ def add_comic():
 def edit_comic(comic_id):
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
-        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
         submit = {
             "title": request.form.get("title"),
             "publisher_name": request.form.get("publisher_name"),
@@ -197,8 +197,7 @@ def edit_comic(comic_id):
             "for_sale": for_sale,
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
-            "image_url": request.form.get("image_url"),
-            "show_contact_details": request.form.get("show_contact_details"),
+            "image_url": request.form.get("image_url")
         }
 
         mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
