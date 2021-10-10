@@ -37,7 +37,7 @@ def login_required(f):
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("base.html") # build home.html for this def
+    return render_template("home.html")
 
 
 @app.route("/get_comics")
