@@ -597,6 +597,10 @@ Further Testing
 #### Pixabay
 * [InspiredImages](https://pixabay.com/photos/marvel-comics-cartoon-entertainment-1641554/?download)
 
+#### Vecteezy
+* [Star Vectors by Vecteezy](https://www.vecteezy.com/vector-art/2128471-pop-art-comic-book-background-with-bubble-speech)
+* [Cartoon Vectors by Vecteezy](https://www.vecteezy.com/vector-art/240863-abstract-comic-background-design-vector)
+
 ### Acknowledgements
 
 * 
