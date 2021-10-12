@@ -29,8 +29,14 @@
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="row d-flex justify-content-evenly">
+                                {% if comic.image_url %}
+                                <div class="col-sm-12 col-md-4">
+                                    <img id="comic-modal-image" src="{{ comic.image_url }}"/>
+                                </div>
+                                {% else %}
                                 <div class="col-sm-12 col-md-4 pic">
                                 </div>
+                                {% endif %}
                                 <div class="col-sm-12 col-md-8 my-comic-info">
                                     <p><strong>Title:</strong> {{ comic.title }}</br>
                                         <strong>Publisher:</strong> {{ comic.publisher }}</br>
