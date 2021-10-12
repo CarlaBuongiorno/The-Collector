@@ -136,6 +136,7 @@ def profile(username):
                 "avatar_no": int(request.form.get("avatar_no")),
                 "show_contact_details": show_contact_details}})
 
+        flash("Your Profile Has Been Updated")
         session["user"] = request.form.get("username").lower()
         username = user["username"]
 
@@ -158,9 +159,20 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route('/delete_account/<username>')
+@login_required
+def delete_account(username):
+    # User can delete their account
+    mongo.db.user.remove({"username": username})
+    flash("Your Account Has Been Deleted")
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
 @app.route("/add_comic", methods=["GET", "POST"])
 @login_required
 def add_comic():
+    # User can add a comic
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
         comic = {
@@ -186,6 +198,7 @@ def add_comic():
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 @login_required
 def edit_comic(comic_id):
+    # User can edit a comic
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
         submit = {
@@ -212,6 +225,7 @@ def edit_comic(comic_id):
 @app.route("/delete_comic/<comic_id>")
 @login_required
 def delete_comic(comic_id):
+    # User can delete a comic
     mongo.db.comics.remove({"_id": ObjectId(comic_id)})
     flash("Comic Successfully Deleted")
     return redirect(url_for("get_comics"))
