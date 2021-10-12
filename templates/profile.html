@@ -5,7 +5,8 @@
 
 <div class="container">
     <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('profile', username=session.user) }}">
+        <form class="card col-12 col-md-8 offset-md-2" method="POST"
+            action="{{ url_for('profile', username=session.user) }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- full name -->
@@ -15,7 +16,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="fullname" class="form-control col-md-8" id="fullname"
-                                value="{{ user.fullname }}" placeholder="Full Name" minlength="5" maxlength="25" required>
+                                value="{{ user.fullname }}" placeholder="Full Name" minlength="5" maxlength="25"
+                                required>
                             <label for="fullname">Full Name</label>
                         </div>
                     </div>
@@ -26,7 +28,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="username" class="form-control" id="username"
-                                value="{{ user.username }}" placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                value="{{ user.username }}" placeholder="Username" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -36,8 +39,8 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" id="email"
-                                value="{{ user.email }}" placeholder="name@example.com" required>
+                            <input type="email" name="email" class="form-control" id="email" value="{{ user.email }}"
+                                placeholder="name@example.com" required>
                             <label for="email">Email address</label>
                         </div>
                     </div>
@@ -45,12 +48,15 @@
                     <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                         <div class="form-check form-switch">
                             {% if user.show_contact_details == "on" %}
-                            <input class="form-check-input" type="checkbox" id="show_contact_details" name="show_contact_details" checked>
+                            <input class="form-check-input" type="checkbox" id="show_contact_details"
+                                name="show_contact_details" checked>
                             {% else %}
-                            <input class="form-check-input" type="checkbox" id="show_contact_details" name="show_contact_details">
+                            <input class="form-check-input" type="checkbox" id="show_contact_details"
+                                name="show_contact_details">
                             {% endif %}
                             <label class="form-check-label" for="show_contact_details">
-                                <small>Show contact details to other Collectors so that they may contact me about my comics.</small>
+                                <small>Show contact details to other Collectors so that they may contact me about my
+                                    comics.</small>
                             </label>
                         </div>
                     </div>
@@ -65,10 +71,29 @@
                             <label for="avatar_no">Choose Avatar</label>
                         </div>
                     </div>
-                    <!-- register -->
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary text-shadow" type="submit">
-                            <i class="far fa-save"></i> Update
+                </div>
+                <!-- buttons -->
+                <!-- Add comic -->
+                <div class="row d-flex justify-content-end mb-2">
+                    <div class="d-grid col-lg-4">
+                        <button type="submit" class="btn text-shadow btn-success">
+                            Add Comic <i class="far fa-plus-square"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- update -->
+                <div class="row d-flex justify-content-end mb-2">
+                    <div class="d-grid col-lg-4">
+                        <button class="btn btn-warning text-shadow text-white" type="submit">
+                            Update Profile <i class="far fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- delete account -->
+                <div class="row d-flex justify-content-end mb-2">
+                    <div class="d-grid col-lg-4">
+                        <button type="submit" class="btn text-shadow btn-danger">
+                            Delete Account <i class="far fa-times-circle"></i>
                         </button>
                     </div>
                 </div>
