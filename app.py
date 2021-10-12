@@ -43,11 +43,17 @@ def home():
 @app.route("/get_comics")
 @login_required
 def get_comics():
-    comics = list(mongo.db.comics.find())
-    user = mongo.db.user.find_one(
-        {"username": session["user"]})
+    # comics = list(mongo.db.comics.find())
+    comics = []
+    # Credit to Sean from Code Institute Tutor Support for his help with this piece of code
+    user = mongo.db.user.find_one({"username": session["user"]})
+    my_catalogue = list(mongo.db.user.find({"username": session["user"]}))[0]
 
-    return render_template("comics.html", comics=comics, user=user)
+    for comic in my_catalogue["my_catalogue"]:
+        comic = mongo.db.comics.find_one({"_id": ObjectId(comic)})
+        comics.append(comic)
+
+    return render_template("comics.html", comics=comics, user=user, my_catalogue=my_catalogue)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -190,7 +196,7 @@ def add_comic():
         catalogue = mongo.db.comics.insert_one(comic)
         _id = catalogue.inserted_id
         mongo.db.user.update_one({"username": session["user"]},
-        {"$push": {"my_catalogue": _id}})
+            {"$push": {"my_catalogue": _id}})
         flash("Comic Successfully Added")
 
         return redirect(url_for("get_comics"))
