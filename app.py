@@ -187,8 +187,12 @@ def add_comic():
             "image_url": request.form.get("image_url")
         }
 
-        mongo.db.comics.insert_one(comic)
+        catalogue = mongo.db.comics.insert_one(comic)
+        _id = catalogue.inserted_id
+        mongo.db.user.update_one({"username": session["user"]},
+        {"$push": {"my_catalogue": _id}})
         flash("Comic Successfully Added")
+
         return redirect(url_for("get_comics"))
 
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
