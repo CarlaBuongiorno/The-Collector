@@ -76,9 +76,8 @@
                 <!-- Add comic -->
                 <div class="row d-flex justify-content-end mb-2">
                     <div class="d-grid col-lg-4">
-                        <button type="submit" class="btn text-shadow btn-success">
-                            Add Comic <i class="far fa-plus-square"></i>
-                        </button>
+                        <a href="{{ url_for('add_comic') }}" class="btn text-shadow btn-success">
+                            Add Comic <i class="far fa-plus-square"></i></a>
                     </div>
                 </div>
                 <!-- update -->
@@ -94,7 +93,6 @@
                     <div class="d-grid col-lg-4">
                         <a href="{{ url_for('delete_account', username=session.user) }}" type="submit" 
                             class="btn text-shadow btn-danger">Delete Account <i class="far fa-times-circle"></i></a>
-                        
                     </div>
                 </div>
             </div>
