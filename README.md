@@ -594,6 +594,8 @@ Further Testing
 ### Content
 
 ### Media
+* [Los Angeles Times](https://www.latimes.com/books/jacketcopy/la-et-jc-first-superman-comic-book-record-price-3-point-2-million-20140825-story.html)
+
 #### Pixabay
 * [InspiredImages](https://pixabay.com/photos/marvel-comics-cartoon-entertainment-1641554/?download)
 
