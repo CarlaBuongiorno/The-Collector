@@ -47,13 +47,13 @@ def get_comics():
     comics = []
     # Credit to Sean from Code Institute Tutor Support for his help with this piece of code
     user = mongo.db.user.find_one({"username": session["user"]})
-    my_catalogue = list(mongo.db.user.find({"username": session["user"]}))[0]
+    comic_id_collection = user["my_catalogue"]
 
-    for comic in my_catalogue["my_catalogue"]:
-        comic = mongo.db.comics.find_one({"_id": ObjectId(comic)})
+    for comic_id in comic_id_collection:
+        comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
         comics.append(comic)
 
-    return render_template("comics.html", comics=comics, user=user, my_catalogue=my_catalogue)
+    return render_template("comics.html", comics=comics, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
