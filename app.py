@@ -53,7 +53,7 @@ def get_comics():
         comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
         comics.append(comic)
 
-    return render_template("comics.html", comics=comics, user=user)
+    return render_template("my_catalogue.html", comics=comics, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
