@@ -77,6 +77,12 @@ In addition to the First Time Visitor Goals, a Returning Visitor should be able 
 * Log in.
 * Be confident that their password is be stored securely.
 * Navigate intuitively, with no need to use the browser's back button.
+* Update and delete their profile/account.
+* Add comics to their catalogue.
+* View their catalogue.
+* Edit and delete comics.
+* Browse and search other collector's comics.
+* Log out.
 
 #### Admin Goals
 
@@ -84,8 +90,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 * Be confident that a user can't force their way into the restricted pages.
 * Edit or delete any user.
-* Add a comic book field.
-* Edit or delete any field.
+* Delete user's comics.
 * Give or remove admin rights.
 
 [Back to Top](#the-collector)
@@ -118,16 +123,21 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 [Here are the wireframes for desktop, mobile and tablet for this project](static/docs/wireframes.pdf).
 
+After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
+
+[See wireframes for the replacement section here](static/docs/wireframes_new_section.pdf).
+
 ### User Journey
 
 ![Flowchart]()
 
 ### Features
 
-* Add a comic book.
-* Create and Delete a profile.
-* Create, Edit and Delete a comic book from the user's own catalogue.
-* Create, Edit and Delete a comic book from 'The Collectors' for admin users only.
+* Register.
+* Log In/ Log Out.
+* Add, Edit and Delete a comic book from the user's own catalogue.
+* Update and Delete a profile/account.
+* Delete a comic from 'The Collection' for admin users only.
 * Edit admin rights and edit or delete a user for admin users only.
 * Confirm to delete modal.
 * Auto-updating copyright year.
@@ -137,6 +147,8 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 * Email verification before a user can add comic books.
 * Enter user's password to delete user account.
 * A toggle to allow the user to select whether they want to set their Catalogue as public or private.
+* A system where The Collectors could sell comics to each other through the site so that the site owner could take a commission.
+* Pagination
 
 [Back to Top](#the-collector)
 
@@ -154,10 +166,9 @@ The navigation bar changes depending on user status and screen size:
 | Log In | &#9989; | &#10060; | &#10060; |
 | Register | &#9989; | &#10060; | &#10060; |
 | Add Comics | &#10060; | &#9989; | &#9989; |
-| The Collectors Page | &#10060; | &#9989; | &#9989; |
+| My Catalogue | &#10060; | &#9989; | &#9989; |
+| The Collection | &#10060; | &#9989; | &#9989; |
 | Profile | &#10060; | &#9989; | &#9989; |
-| Manage User's Comic Books | &#10060; | &#10060; | &#9989; |
-| Manage Comic Book Fields | &#10060; | &#10060; | &#9989; |
 | Manage Users | &#10060; | &#10060; | &#9989; |
 | Log Out | &#10060; | &#9989; | &#9989; |
 
@@ -173,6 +184,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 | full_name | string |    |
 | username | string |    |
 | email | string |    |
+| show_contact_details | string |
 | password | string |    |
 | avatar_no | int |    |
 | is_admin| boolean |    |
@@ -184,7 +196,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 |---|---|
 | _id | ObjectId |
 | title | string |
-| publisher | string |
+| publisher_name | string | publishers._id |
 | year | string |
 | issue_no | string |
 | grade | string |
@@ -192,8 +204,14 @@ MongoDB was used to store data for this site in a database. The data has been se
 | price | string |
 | notes | string |
 | image_url | string |
-| show_contact_details | string |
 | email_address | string |
+
+### Publishers Collection
+
+| Publishers |    |
+|---|---|
+| _id | ObjectId |
+| publisher_name | string |
 
 ### Overall Database
 
@@ -206,6 +224,10 @@ MongoDB was used to store data for this site in a database. The data has been se
 ### Comics Collection Screenshot
 
 ![Comics Collection Example]()
+
+### Publishers Collection Screenshot
+
+![Publishers Collection Example]()
 
 [Back to Top](#the-collector)
 
@@ -435,23 +457,19 @@ This site was deployed to Heroku by following these steps:
 
 #### First Time Visitor
 
-##### Easily navigate the site
+##### Easily navigate the site.
 
 * 
 
-##### Intuitively and easily understand what to do
+##### Intuitively and easily understand what to do.
 
 * 
 
-##### Register for an account
+##### Register for an account.
 
 * 
 
-##### Profile
-
-* 
-
-##### Get visual feedback when an action on the site is completed
+##### Get visual feedback when an action on the site is completed.
 
 * 
 
@@ -461,41 +479,53 @@ This site was deployed to Heroku by following these steps:
 
 * 
 
-##### Update their Profile
+##### Be confident that their password is be stored securely.
 
 * 
 
-##### See the Collections of other Collectors
+##### Navigate intuitively, with no need to use the browser's back button.
 
 * 
 
-##### Be confident that their password is be stored securely
+##### Update and delete their profile/account.
 
 * 
 
-##### Navigate intuitively, with no need to use the browser's back button
+##### Add comics to their catalogue.
+
+* 
+
+##### View their catalogue.
+
+* 
+
+##### Edit and delete comics.
+
+* 
+
+##### Browse and search other collector's comics.
+
+* 
+
+##### Log out.
 
 * 
 
 #### Admin
 
-##### Be confident that a user can't force their way into the restricted pages
+##### Be confident that a user can't force their way into the restricted pages.
 
 * 
 
-##### Edit or delete any user
+##### Edit or delete any user.
 
 * 
 
-##### Add a new comic book field
+##### Delete user's comics.
 
 * 
 
-##### Edit or delete any comic books
-
-* 
-
-##### Give or remove admin rights
+##### Give or remove admin rights.
 
 * 
 
