@@ -43,7 +43,7 @@ def home():
 @app.route("/get_comics")
 @login_required
 def get_comics():
-    # comics = list(mongo.db.comics.find())
+
     comics = []
     # Credit to Sean from Code Institute Tutor Support for his help with this piece of code
     user = mongo.db.user.find_one({"username": session["user"]})
@@ -56,12 +56,22 @@ def get_comics():
     return render_template("my_catalogue.html", comics=comics, user=user)
 
 
+@app.route("/get_collection")
+@login_required
+def get_collection():
+    comics = list(mongo.db.comics.find())
+
+    return render_template("the_collection.html", comics=comics)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.user.find_one(
             {"username": request.form.get("username").lower()})
+        session["email"] = request.POST.get("email")
+
 
         if existing_user:
             flash("Username already exists")
@@ -190,14 +200,16 @@ def add_comic():
             "for_sale": for_sale,
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
-            "image_url": request.form.get("image_url")
+            "image_url": request.form.get("image_url"),
+            "the_collector": session["user"],
+            "contact": user["email"]
         }
 
         catalogue = mongo.db.comics.insert_one(comic)
         _id = catalogue.inserted_id
         mongo.db.user.update_one({"username": session["user"]},
             {"$push": {"my_catalogue": _id}})
-        flash("Comic Successfully Added")
+        flash("Comic Added")
 
         return redirect(url_for("get_comics"))
 

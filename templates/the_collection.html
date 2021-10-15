@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="text-center ">The Collection</h3>
+
+    <!-- Container to hold list of comic books (Red background) -->
+    <div class="container-fluid comic-wall">
+        <div class="row d-flex justify-content-evenly no-gutter">
+            {% for comic in comics %}
+                <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn col-6 col-md-4 col-lg-2 pic" data-bs-toggle="modal" 
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}"></button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Modal -->
+    {% for comic in comics %}
+    <!-- Credit Tim Nelson -> modal iterating through comics & displaying corresponding info
+         - https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html -->
+        <div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic.title }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ comic.title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row d-flex justify-content-evenly">
+                                {% if comic.image_url %}
+                                <div class="col-sm-12 col-md-4">
+                                    <img id="comic-modal-image" src="{{ comic.image_url }}"/>
+                                </div>
+                                {% else %}
+                                <div class="col-sm-12 col-md-4 pic">
+                                </div>
+                                {% endif %}
+                                <div class="col-sm-12 col-md-8 my-comic-info">
+                                    <p><strong>Title:</strong> {{ comic.title }}</br>
+                                        <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
+                                        <strong>Year:</strong> {{ comic.year }}</br>
+                                        <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
+                                        <strong>Grade:</strong> {{ comic.grade }}</br>
+                                            {% if comic.for_sale == "on" %}
+                                                <strong>Price:</strong> {{ comic.price }}</br>
+                                            {% endif %}
+                                            {% if comic.notes %}
+                                                <strong>Notes:</strong> {{ comic.notes }}</br>
+                                            {% endif %}
+                                        <strong>The Collector:</strong> {{ comic.the_collector }}</br>
+                                        <strong>Contact:</strong> {{ comic.contact }}</br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Modal
+    // credit -> https://getbootstrap.com/docs/4.0/components/modal/
+    let myModal = document.getElementById('myModal');
+    let myInput = document.getElementById('myInput');
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus();
+    });
+</script>
+
+
+{% endblock %}
