@@ -9,8 +9,16 @@
             {% for comic in comics %}
                 <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn col-6 col-md-4 col-lg-2 pic" data-bs-toggle="modal" 
-                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}"></button>
+                {% if comic.image_url %}
+                    <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal" 
+                        data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                        <img class="pic" src="{{ comic.image_url }}"/>
+                    </button>
+                {% else %}
+                    <button type="button" class="btn col-6 col-md-4 col-lg-2 pic default-pic" data-bs-toggle="modal" 
+                        data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                    </button>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -31,15 +39,15 @@
                             <div class="row d-flex justify-content-evenly">
                                 {% if comic.image_url %}
                                 <div class="col-sm-12 col-md-4">
-                                    <img id="comic-modal-image" src="{{ comic.image_url }}"/>
+                                    <img class="pic" src="{{ comic.image_url }}"/>
                                 </div>
                                 {% else %}
-                                <div class="col-sm-12 col-md-4 pic">
+                                <div class="col-sm-12 col-md-4 pic defaut-pic">
                                 </div>
                                 {% endif %}
                                 <div class="col-sm-12 col-md-8 my-comic-info">
                                     <p><strong>Title:</strong> {{ comic.title }}</br>
-                                        <strong>Publisher:</strong> {{ comic.publisher }}</br>
+                                        <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
                                         <strong>Year:</strong> {{ comic.year }}</br>
                                         <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
                                         <strong>Grade:</strong> {{ comic.grade }}</br>

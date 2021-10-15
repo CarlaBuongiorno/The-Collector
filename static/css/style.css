@@ -164,7 +164,6 @@ form i.fields {
 }
 
 .pic {
-    background-image: url('../images/action-comics.webp');
     background-size: cover;
     width: 170px;
     height: 240px;
@@ -172,6 +171,10 @@ form i.fields {
     background-position: center;
     border: 20px solid black;
     margin: 5px;
+}
+
+.defaut-pic {
+    background-image: url('../images/action-comics.webp');
 }
 
 /* My comic info modal */
