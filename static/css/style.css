@@ -158,9 +158,13 @@ form i.fields {
     --bs-gutter-x: 0;
 }
 
-.comic-wall {
-    background-color: rgb(167, 19, 19);
+.my-catalogue-wall {
+    background-color: rgb(60, 60, 223);
     padding: 5px;
+}
+
+.the-collection-wall {
+    background-color: rgb(167, 19, 19);
 }
 
 .pic {
