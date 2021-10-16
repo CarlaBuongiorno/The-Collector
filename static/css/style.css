@@ -74,13 +74,19 @@ h1.title.text-shadow {
     margin-top: 100px;
 }
 
+.burst-container {
+    display: inline-table;
+    margin-bottom: 10px;
+}
+
 .bursts {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    display: inline-block;
+    display: table-cell;
     height: 230px;
     width: 230px;
+    vertical-align: middle;
 }
 
 .blue-burst {
