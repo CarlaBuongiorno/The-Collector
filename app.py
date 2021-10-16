@@ -70,8 +70,6 @@ def register():
         # check if username already exists in db
         existing_user = mongo.db.user.find_one(
             {"username": request.form.get("username").lower()})
-        session["email"] = request.POST.get("email")
-
 
         if existing_user:
             flash("Username already exists")
@@ -201,8 +199,7 @@ def add_comic():
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
-            "the_collector": session["user"],
-            "contact": user["email"]
+            "the_collector": session["user"]
         }
 
         catalogue = mongo.db.comics.insert_one(comic)
@@ -248,7 +245,14 @@ def edit_comic(comic_id):
 @login_required
 def delete_comic(comic_id):
     # User can delete a comic
-    mongo.db.comics.remove({"_id": ObjectId(comic_id)})
+    user = mongo.db.user.find_one(
+            {"username": session["user"]})
+    user_id = user["_id"]
+    mongo.db.user.update_one(
+        {"_id": user_id},
+        {"$pull": {"my_catalogue": ObjectId(comic_id)}}
+    )
+    mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
     flash("Comic Successfully Deleted")
     return redirect(url_for("get_comics"))
 

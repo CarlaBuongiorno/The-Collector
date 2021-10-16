@@ -577,8 +577,9 @@ Further Testing
 2. The Bootstrap toggle switch for the 'For Sale' field, remains 'checked' upon inspection, despite being toggled 'off'.
     * This could be Bootstrap applying javascript behind the scenes.
     * More investigation is necessary...
-3. 
-    * 
+3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the 'my_catalogue' field in an array.
+    * Originally, I was only deleting the comic from the 'comics' collection.
+    * To do fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the id of the comic, and then remove it from the user's 'my_catalogue'.
 4. 
     * 
 
