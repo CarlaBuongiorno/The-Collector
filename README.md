@@ -176,17 +176,17 @@ The navigation bar changes depending on user status and screen size:
 
 MongoDB was used to store data for this site in a database. The data has been set out in two collections, which are described below:
 
-### Users Collection
+### User Collection
 
-| Users |  Type  |  Relationship  |
+| User |  Type  |  Relationship  |
 |---|---|---|
 | _id | ObjectId |    |
 | full_name | string |    |
 | username | string |    |
-| email | string |    |
-| show_contact_details | string |
 | password | string |    |
+| email | string |    |
 | avatar_no | int |    |
+| show_contact_details | string |
 | is_admin| boolean |    |
 | my_catalogue | array | comics._id |
 
@@ -204,7 +204,8 @@ MongoDB was used to store data for this site in a database. The data has been se
 | price | string |
 | notes | string |
 | image_url | string |
-| email_address | string |
+| show_contact_details | string |
+| contact | string |
 
 ### Publishers Collection
 
