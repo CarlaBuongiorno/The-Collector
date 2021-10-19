@@ -222,7 +222,7 @@ def add_comic():
         catalogue = mongo.db.comics.insert_one(comic)
         _id = catalogue.inserted_id
         mongo.db.user.update_one({"username": session["user"]},
-            {"$push": {"my_catalogue": _id}})
+                                 {"$push": {"my_catalogue": _id}})
         flash("Comic Added")
 
         return redirect(url_for("get_comics"))

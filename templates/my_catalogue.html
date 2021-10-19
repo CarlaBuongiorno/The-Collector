@@ -5,9 +5,9 @@
         <h3 class="col-lg-4 offset-lg-4 text-center">{{ user.username.title() }}'s Catalogue</h3>
         <!-- Add comic button -->
         <div class="d-grid col-lg-2 text-center">
-            <button type="submit" class="btn text-shadow btn-success">
+            <a href="{{ url_for('add_comic' ) }}" class="btn text-shadow btn-success">
                 Add Comic <i class="far fa-plus-square"></i>
-            </button>
+            </a>
         </div>
         <div class="col-lg-2"></div>
     </div>
