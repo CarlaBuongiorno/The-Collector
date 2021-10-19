@@ -103,7 +103,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
-                                value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="50">
+                                value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="150">
                             <label for="image_url">Image URL</label>
                         </div>
                     </div>
@@ -114,10 +114,10 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here"
-                                id="comments" name="comments">
+                                id="notes" name="notes">
                                 {{- comic.notes -}}
                             </textarea>
-                            <label for="comments">Comments</label>
+                            <label for="notes">Notes</label>
                         </div>
                     </div>
                     <!-- submit button -->
