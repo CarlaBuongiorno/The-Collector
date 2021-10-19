@@ -7,7 +7,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
-    import env
+    import env  # noqa
 
 # Initialize app
 app = Flask(__name__)
@@ -43,6 +43,10 @@ def home():
 @app.route("/get_comics")
 @login_required
 def get_comics():
+    """
+        asdfasdf
+    """
+    # Get user's comics to display in 'My Catalogue'
 
     comics = []
     # Credit to Sean from Code Institute Tutor Support for his help with this piece of code
@@ -59,9 +63,10 @@ def get_comics():
 @app.route("/get_collection")
 @login_required
 def get_collection():
+# Get all comics by all users to display in 'The Collection'
     comics = list(mongo.db.comics.find())
-
-    return render_template("the_collection.html", comics=comics)
+    user = mongo.db.user.find_one({"username": session["user"].lower()})
+    return render_template("the_collection.html", comics=comics, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -140,15 +145,20 @@ def profile(username):
     if request.method == "POST":
         # grab the session user's username from the db
         user = mongo.db.user.find_one(
-            {"username": session["user"]})
-        show_contact_details = "on" if request.form.get("show_contact_details") else "off"
+            {"username": session["user"].lower()})
+        show_contact_details = "on" if request.form.get(
+            "show_contact_details") else "off"
         mongo.db.user.update_one(
-            {"username": session["user"]},
+            {"username": user["username"]},
             {"$set": {"fullname": request.form.get("fullname"),
-                "email": request.form.get("email"),
-                "username": request.form.get("username"),
-                "avatar_no": int(request.form.get("avatar_no")),
-                "show_contact_details": show_contact_details}})
+                      "email": request.form.get("email"),
+                      "username": request.form.get("username"),
+                      "avatar_no": int(request.form.get("avatar_no")),
+                      "show_contact_details": show_contact_details}})
+        # Find all comics and update show comic details on or off
+        mongo.db.comics.update_many(
+            {"the_collector": user["username"]},
+            {"$set": {"show_contact_details": show_contact_details}})
 
         flash("Your Profile Has Been Updated")
         session["user"] = request.form.get("username").lower()
@@ -186,6 +196,11 @@ def delete_account(username):
 @app.route("/add_comic", methods=["GET", "POST"])
 @login_required
 def add_comic():
+    """
+        asdf
+    """
+    user = mongo.db.user.find_one({"username": session["user"].lower()})
+
     # User can add a comic
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
@@ -199,7 +214,9 @@ def add_comic():
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
-            "the_collector": session["user"]
+            "the_collector": user["username"],
+            "show_contact_details": user["show_contact_details"],
+            "contact": user["email"]
         }
 
         catalogue = mongo.db.comics.insert_one(comic)
@@ -238,7 +255,8 @@ def edit_comic(comic_id):
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
 
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
-    return render_template("edit_comic.html", comic=comic, publishers=publishers)
+    return render_template("edit_comic.html",
+                           comic=comic, publishers=publishers)
 
 
 @app.route("/delete_comic/<comic_id>")
@@ -254,6 +272,10 @@ def delete_comic(comic_id):
     )
     mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
     flash("Comic Successfully Deleted")
+
+    if user["is_admin"] is True:
+        return redirect(url_for("get_collection"))
+
     return redirect(url_for("get_comics"))
 
 

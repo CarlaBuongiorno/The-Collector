@@ -178,7 +178,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ### Users Collection
 
-| Users |    |    |
+| Users |  Type  |  Relationship  |
 |---|---|---|
 | _id | ObjectId |    |
 | full_name | string |    |
@@ -192,11 +192,11 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ### Comic Fields Collection
 
-| Comics |    |
+| Comics |  Type  |
 |---|---|
 | _id | ObjectId |
 | title | string |
-| publisher_name | string | publishers._id |
+| publisher_name | string |
 | year | string |
 | issue_no | string |
 | grade | string |
@@ -208,7 +208,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ### Publishers Collection
 
-| Publishers |    |
+| Publishers |  Type  |
 |---|---|
 | _id | ObjectId |
 | publisher_name | string |

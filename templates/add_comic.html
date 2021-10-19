@@ -14,8 +14,8 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="title" class="form-control col-md-8" id="title"
-                                placeholder="Title" minlength="2" maxlength="25" required>
+                            <input type="text" name="title" class="form-control col-md-8" id="title" placeholder="Title"
+                                minlength="2" maxlength="25" required>
                             <label for="title">Title</label>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                                 aria-label="Select Publisher" required>
                                 <option value="" disabled selected>Choose Publisher</option>
                                 {% for publisher in publishers %}
-                                    <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
                                 {% endfor %}
                             </select>
                             <label for="publisher_name">Publisher</label>
@@ -41,8 +41,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="year" class="form-control" id="year" placeholder="Year"
-                                required>
+                            <input type="text" name="year" class="form-control" id="year" placeholder="Year" required>
                             <label for="year">Year</label>
                         </div>
                     </div>
@@ -84,8 +83,8 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="price" class="form-control col-md-8" id="price"
-                                placeholder="Price" minlength="2" maxlength="25" required>
+                            <input type="text" name="price" class="form-control col-md-8" id="price" placeholder="Price"
+                                minlength="2" maxlength="25" required>
                             <label for="price">Price</label>
                         </div>
                     </div>
@@ -106,19 +105,19 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here"
-                                id="notes" name="notes"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="notes"
+                                name="notes"></textarea>
                             <label for="notes">Notes</label>
                         </div>
                     </div>
                     <!-- Add comic button -->
                     <div class="row d-flex justify-content-center mt-4 mb-3">
-                    <div class="d-grid col-lg-4 text-center">
-                        <button type="submit" class="btn text-shadow btn-success">
-                            Add Comic <i class="far fa-plus-square"></i>
-                        </button>
+                        <div class="d-grid col-lg-4 text-center">
+                            <button type="submit" class="btn text-shadow btn-success">
+                                Add Comic <i class="far fa-plus-square"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </form>
@@ -132,13 +131,12 @@
     // Credit Tim Nelson for the solution to get toggler to determine if user can enter a price or not
     let forSale = document.getElementById("for_sale");
     let price = document.getElementById("price");
-    forSale.addEventListener("change", function() {
+    forSale.addEventListener("change", function () {
         if (this.checked) {
             // if comic is for sale, require a price
             price.setAttribute("required", "");
             price.removeAttribute("disabled");
-        }
-        else {
+        } else {
             // if comic is not for sale, price is optional
             price.removeAttribute("required");
             price.setAttribute("disabled", "");
