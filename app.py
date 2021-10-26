@@ -1,4 +1,5 @@
 import os
+import re
 from functools import wraps
 from flask import (
     Flask, flash, render_template,
@@ -44,7 +45,7 @@ def home():
 @login_required
 def get_comics():
     """
-        asdfasdf
+        My Catalogue
     """
     # Get user's comics to display in 'My Catalogue'
 
@@ -86,6 +87,16 @@ def register():
 
         if password != confirm_password:
             flash("Your passwords don't match", 'error')
+            return redirect(url_for("register"))
+
+        # check if password conforms to pattern
+        is_digit = re.compile(r"[0-9]")
+        is_lower = re.compile(r"[a-z]")
+        is_upper = re.compile(r"[A-Z]")
+
+        if is_digit.search(password) is None or \
+            is_lower.search(password) is None or \
+                is_upper.search(password) is None:
             return redirect(url_for("register"))
 
         show_contact_details = "on"

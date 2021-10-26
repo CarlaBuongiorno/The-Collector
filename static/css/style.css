@@ -158,6 +158,10 @@ form i.fields {
     background-color: lightgreen;
 }
 
+#error-msg {
+    color: red;
+}
+
 /* My Catalogue */
 
 .no-gutter {

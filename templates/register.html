@@ -5,7 +5,8 @@
 
 <div class="container">
     <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('register') }}">
+        <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
+            action="{{ url_for('register') }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- full name -->
@@ -25,8 +26,8 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="username" class="form-control" id="username"
-                                placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="username">Username (no spaces)</label>
                         </div>
                     </div>
@@ -48,8 +49,11 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="password" name="password" class="form-control" id="password"
-                                placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="password">Password</label>
+                                placeholder="Password" minlength="8" maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$"
+                                required>
+                            <label for="password">Password</label><p id="error-msg" class="d-none mb-0"><small>Please enter a valid password.</small></p>
+                            <p><small>Eight or more characters with a mix of numbers and letters, including a capital letter.</small></p>
+                            
                         </div>
                     </div>
                     <!-- confirm password -->
@@ -59,7 +63,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="password" name="confirm-password" class="form-control" id="confirm-password"
-                            placeholder="Confirm Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                placeholder="Confirm Password" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" required>
                             <label for="confirm-password">Confirm Password</label>
                         </div>
                     </div>
@@ -90,10 +95,34 @@
 <div class="row">
     <div class="col-12">
         <p class="text-center">
-            Already a Collector? 
+            Already a Collector?
             <a href="{{ url_for('login') }}" class="primary">Log In</a>
         </p>
     </div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        let isDigit = /[0-9]/;
+        let isLower = /[a-z]/;
+        let isUpper = /[A-Z]/;
+
+        password = document.getElementById("password").value;
+        errorMsg = document.getElementById("error-msg");
+
+        if (isDigit.test(password) && isLower.test(password) && isUpper.test(password)) {
+            registrationForm.submit();
+        }
+        else {
+            errorMsg.classList.remove("d-none");
+        }
+    }
+
+    let registrationForm = document.getElementById('registration-form');
+    registrationForm.addEventListener('submit', handleSubmit);
+</script>
 {% endblock %}
