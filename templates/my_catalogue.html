@@ -24,8 +24,9 @@
                         <img class="pic" src="{{ comic.image_url }}"/>
                     </button>
                 {% else %}
-                    <button type="button" class="btn col-6 col-md-4 col-lg-2 pic default-pic" data-bs-toggle="modal" 
+                    <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal" 
                         data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                        <img class="pic" src="/static/images/action-comics.webp"/>
                     </button>
                 {% endif %}
             {% endfor %}
@@ -52,7 +53,7 @@
                                     <img class="pic" src="{{ comic.image_url }}"/>
                                 </div>
                                 {% else %}
-                                <div class="col-sm-12 col-md-4 pic defaut-pic">
+                                <div class="col-sm-12 col-md-4 pic">
                                 </div>
                                 {% endif %}
                                 <div class="col-sm-12 col-md-8 my-comic-info">
