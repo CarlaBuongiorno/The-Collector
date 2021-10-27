@@ -38,6 +38,9 @@ def login_required(f):
 @app.route("/")
 @app.route("/home")
 def home():
+    """
+        Render template for homepage
+    """
     return render_template("home.html")
 
 
@@ -45,12 +48,11 @@ def home():
 @login_required
 def get_comics():
     """
-        My Catalogue
+        Get all user's comics from database and
+        display them on 'My Catalogue' page.
     """
-    # Get user's comics to display in 'My Catalogue'
-
     comics = []
-    # Credit to Sean from Code Institute Tutor Support for his help with this piece of code
+    # Credit to Sean from Code Institute Tutor Support for his help with this code snippet
     user = mongo.db.user.find_one({"username": session["user"]})
     comic_id_collection = user["my_catalogue"]
 
@@ -64,7 +66,10 @@ def get_comics():
 @app.route("/get_collection")
 @login_required
 def get_collection():
-# Get all comics by all users to display in 'The Collection'
+    """
+        Get all comics in the database to
+        display on 'The Collection' page.
+    """
     comics = list(mongo.db.comics.find())
     user = mongo.db.user.find_one({"username": session["user"].lower()})
     return render_template("the_collection.html", comics=comics, user=user)
@@ -72,6 +77,12 @@ def get_collection():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+        Get the user's username from the form and check if it already exists in the
+        database. If it does, flash a message to the user and redirect to registration
+        page. Check if passwords match and in the correct format. Save user in the database,
+        put user into a session cookie and redirect to profile page.
+    """
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.user.find_one(
@@ -123,6 +134,10 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+        Find username in db, check that user's password matches what's in
+        the db, render login page if no match, render profile page if match.
+    """
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.user.find_one(
@@ -153,6 +168,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
+    """
+        Get username from db, get user's input for all fields and update in db.
+        If user toggles on or off switch for showing their contact details to
+        other collectors, save in db. Find user's comics and display/don't
+        display email address to other users. Render profile page.
+    """
     if request.method == "POST":
         # grab the session user's username from the db
         user = mongo.db.user.find_one(
@@ -188,7 +209,9 @@ def profile(username):
 @app.route("/logout")
 @login_required
 def logout():
-    # remove user from session cookies
+    """
+    Remove user from session cookies. Render login page.
+    """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -197,7 +220,9 @@ def logout():
 @app.route('/delete_account/<username>')
 @login_required
 def delete_account(username):
-    # User can delete their account
+    """
+    User can delete their account. Remove user from db.
+    """
     mongo.db.user.remove({"username": username})
     flash("Your Account Has Been Deleted")
     session.pop("user")
@@ -208,7 +233,10 @@ def delete_account(username):
 @login_required
 def add_comic():
     """
-        asdf
+        Get session user, get input from user in add comic page, store it in
+        db. If user chooses 'for sale' to be on, get price input. Save the
+        comic Object Id in user collection as array. Render user's Catalogue
+        page.
     """
     user = mongo.db.user.find_one({"username": session["user"].lower()})
 
@@ -245,7 +273,10 @@ def add_comic():
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 @login_required
 def edit_comic(comic_id):
-    # User can edit a comic
+    """
+    Render edit comic template. User can edit a comic. Get user's input and
+    update in db. Redirect to My Catalogue page upon successful update.
+    """
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
         submit = {
@@ -262,6 +293,7 @@ def edit_comic(comic_id):
 
         mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
         flash("Comic Successfully Updated")
+        return redirect(url_for("get_comics"))
 
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
 
@@ -273,7 +305,13 @@ def edit_comic(comic_id):
 @app.route("/delete_comic/<comic_id>")
 @login_required
 def delete_comic(comic_id):
-    # User can delete a comic
+    """
+    User can delete a comic. Find session user and user id, get
+    the comic id from user's catalogue array. Delete comic from
+    db, as well as comic id in user's array. Render My Catalogue page.
+    If user is admin, user can delete other user's comics from the
+    Collection.
+    """
     user = mongo.db.user.find_one(
             {"username": session["user"]})
     user_id = user["_id"]
