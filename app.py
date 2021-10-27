@@ -267,7 +267,7 @@ def add_comic():
         return redirect(url_for("get_comics"))
 
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
-    return render_template("add_comic.html", publishers=publishers)
+    return render_template("add_comic.html", publishers=publishers, user=user)
 
 
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])

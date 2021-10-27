@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="text-center primary">{{ user.username.title() }}'s Profile</h3>
-
 <div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png" alt="Avatar for {{ user.username }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3 class="text-center">{{ user.username.title() }}'s Profile</h3>
+        </div>
+    </div>
+
     <div class="row">
         <form class="card col-12 col-md-8 offset-md-2" method="POST"
             action="{{ url_for('profile', username=session.user) }}">

@@ -162,6 +162,11 @@ form i.fields {
     color: red;
 }
 
+.avatar-profile {
+    height: 80px;
+    margin: 30px;
+}
+
 /* My Catalogue */
 
 .no-gutter {
