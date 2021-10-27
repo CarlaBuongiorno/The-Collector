@@ -1,130 +1,129 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row d-flex mt-4 mb-3 justify-content-center">
-    <h3 class="col-lg-4 offset-lg-4 text-center">{{ user.username.title() }}'s Catalogue</h3>
-    <!-- Add comic button -->
-    <div class="d-grid col-lg-2 text-center">
-        <a href="{{ url_for('add_comic' ) }}" class="btn text-shadow btn-success">
-            Add Comic <i class="far fa-plus-square"></i>
-        </a>
+    <div class="row d-flex mt-4 mb-3 justify-content-center">
+        <h3 class="col-lg-4 offset-lg-4 text-center">{{ user.username.title() }}'s Catalogue</h3>
+        <!-- Add comic button -->
+        <div class="d-grid col-lg-2 text-center">
+            <a href="{{ url_for('add_comic' ) }}" class="btn text-shadow btn-success">
+                Add Comic <i class="far fa-plus-square"></i>
+            </a>
+        </div>
+        <div class="col-lg-2"></div>
     </div>
-    <div class="col-lg-2"></div>
-</div>
 
-<!-- Container to hold list of comic books (Blue background) -->
-<div class="container-fluid my-catalogue-wall">
-    <div class="row d-flex justify-content-evenly no-gutter">
-        {% for comic in comics %}
-        <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
-        <!-- Button trigger modal -->
-        {% if comic.image_url %}
-        <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-            data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-            <img class="pic" src="{{ comic.image_url }}" />
-        </button>
-        {% else %}
-        <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-            data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-            <img class="pic" src="/static/images/action-comics.webp" />
-        </button>
-        {% endif %}
-        {% endfor %}
+    <!-- Container to hold list of comic books (Blue background) -->
+    <div class="container-fluid my-catalogue-wall">
+        <div class="row d-flex justify-content-evenly no-gutter">
+            {% for comic in comics %}
+            <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
+            <!-- Button trigger modal -->
+            {% if comic.image_url %}
+                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                    <img class="pic" src="{{ comic.image_url }}" />
+                </button>
+            {% else %}
+                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                    <img class="pic" src="/static/images/action-comics.webp" />
+                </button>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
-</div>
 
 
-<!-- Modal -->
-{% for comic in comics %}
-<!-- Credit Tim Nelson -> modal iterating through comics & displaying corresponding info
-         - https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html -->
-<div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic.title }}" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{ comic.title }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row d-flex justify-content-evenly">
-                        {% if comic.image_url %}
-                        <div class="col-sm-12 col-md-4">
-                            <img class="pic" src="{{ comic.image_url }}" />
-                        </div>
-                        {% else %}
-                        <div class="col-sm-12 col-md-4 pic">
-                        </div>
-                        {% endif %}
-                        <div class="col-sm-12 col-md-8 my-comic-info">
-                            <p><strong>Title:</strong> {{ comic.title }}</br>
-                                <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
-                                <strong>Year:</strong> {{ comic.year }}</br>
-                                <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
-                                <strong>Grade:</strong> {{ comic.grade }}</br>
-                                {% if comic.for_sale == "on" %}
-                                <strong>Price:</strong> {{ comic.price }}</br>
-                                {% endif %}
-                                {% if comic.notes %}
-                                <strong>Notes:</strong> {{ comic.notes }}</br>
-                                {% endif %}
-                                <strong>Show email address:</strong>
-                                {% if comic.show_contact_details == "on" %}
-                                <i class="fas fa-check-circle"></i>
+    <!-- Modal -->
+    {% for comic in comics %}
+        <!-- Credit Tim Nelson -> modal iterating through comics & displaying corresponding info
+            - https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html -->
+        <div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic.title }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ comic.title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row d-flex justify-content-evenly">
+                                {% if comic.image_url %}
+                                    <div class="col-sm-12 col-md-4">
+                                        <img class="pic" src="{{ comic.image_url }}" />
+                                    </div>
                                 {% else %}
-                                <i class="fas fa-times-circle"></i>
+                                    <div class="col-sm-12 col-md-4 pic"></div>
                                 {% endif %}
-                            </p>
+                                <div class="col-sm-12 col-md-8 my-comic-info">
+                                    <p><strong>Title:</strong> {{ comic.title }}</br>
+                                        <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
+                                        <strong>Year:</strong> {{ comic.year }}</br>
+                                        <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
+                                        <strong>Grade:</strong> {{ comic.grade }}</br>
+                                        {% if comic.for_sale == "on" %}
+                                            <strong>Price:</strong> {{ comic.price }}</br>
+                                        {% endif %}
+                                        {% if comic.notes %}
+                                            <strong>Notes:</strong> {{ comic.notes }}</br>
+                                        {% endif %}
+                                            <strong>Show email address:</strong>
+                                        {% if comic.show_contact_details == "on" %}
+                                            <i class="fas fa-check-circle"></i>
+                                        {% else %}
+                                            <i class="fas fa-times-circle"></i>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn text-shadow btn-danger" data-bs-toggle="modal" data-bs-target="#deleteComicModal">
+                            Delete <i class="far fa-times-circle"></i>
+                        </button>
+                        <a href="{{ url_for('edit_comic', comic_id=comic._id ) }}" class="btn text-shadow btn-success">
+                            Edit <i class="far fa-edit"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn text-shadow btn-danger" data-bs-toggle="modal" data-bs-target="#deleteComicModal">
-                    Delete <i class="far fa-times-circle"></i>
-                  </button>
-                <a href="{{ url_for('edit_comic', comic_id=comic._id ) }}" class="btn text-shadow btn-success">
-                    Edit <i class="far fa-edit"></i>
-                </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="deleteComicModal" tabindex="-1" aria-labelledby="deleteComicModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteComicModalLabel">Delete Comic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this comic?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn text-shadow btn-success" data-bs-dismiss="modal">
+                            Cancel <i class="far fa-times-circle"></i>
+                        </button>
+                        <a href="{{ url_for('delete_comic', comic_id=comic._id ) }}" type="button" class="btn text-shadow btn-danger">
+                            Delete Comic <i class="far fa-times-circle"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="deleteComicModal" tabindex="-1" aria-labelledby="deleteComicModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteComicModalLabel">Delet Comic</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete this comic?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn text-shadow btn-success" data-bs-dismiss="modal">
-                    Cancel <i class="far fa-times-circle"></i>
-                </button>
-                <a href="{{ url_for('delete_comic', comic_id=comic._id ) }}" type="button" class="btn text-shadow btn-danger">
-                    Delete Comic <i class="far fa-times-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
+    {% endfor %}
 {% endblock %}
 
 {% block scripts %}
-<script>
-    // Modal
-    // credit -> https://getbootstrap.com/docs/4.0/components/modal/
-    let myModal = document.getElementById('myModal');
-    let myInput = document.getElementById('myInput');
+    <script>
+        // Modal
+        // credit -> https://getbootstrap.com/docs/4.0/components/modal/
+        let myModal = document.getElementById('myModal');
+        let myInput = document.getElementById('myInput');
 
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus();
-    });
-</script>
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus();
+        });
+    </script>
 {% endblock %}
