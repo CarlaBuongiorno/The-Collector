@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="text-center text-shadow">Edit Comic</h3>
-
 <div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png" alt="Avatar for {{ user.username }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center comic-font heading">Edit Comic</h2>
+        </div>
+    </div>
     <div class="row">
         <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('edit_comic', comic_id=comic._id) }}">
             <div class="card-body">
@@ -123,10 +130,10 @@
                     <!-- submit button -->
                     <div class="col-12 text-center">
                         <!-- cancel button -->
-                        <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger">
+                        <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger comic-font">
                             Cancel <i class="far fa-times-circle"></i>
                         </a>
-                        <button type="submit" class="btn btn-lg text-shadow btn-primary">
+                        <button type="submit" class="btn btn-lg text-shadow btn-success comic-font">
                             Edit Comic <i class="far fa-edit"></i>
                         </button>
                     </div>

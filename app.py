@@ -262,7 +262,8 @@ def add_comic():
         _id = catalogue.inserted_id
         mongo.db.user.update_one({"username": session["user"]},
                                  {"$push": {"my_catalogue": _id}})
-        flash("Comic Added")
+        flash("You added {}".format(
+                    request.form.get("title")))
 
         return redirect(url_for("get_comics"))
 
@@ -296,10 +297,11 @@ def edit_comic(comic_id):
         return redirect(url_for("get_comics"))
 
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+    user = mongo.db.user.find_one({"username": session["user"].lower()})
 
     publishers = mongo.db.publishers.find().sort("publisher_name", 1)
     return render_template("edit_comic.html",
-                           comic=comic, publishers=publishers)
+                           comic=comic, publishers=publishers, user=user)
 
 
 @app.route("/delete_comic/<comic_id>")

@@ -5,9 +5,24 @@
     padding: 0;
 }
 
+.comic-font {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+}
+
 /* Credit -> Code Institute - Task Manager Project */
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.heading {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar-profile {
+    height: 80px;
+    margin-top: 30px;
 }
 
 /* Navbar */
@@ -32,6 +47,7 @@
 }
 
 /* Home Page */
+
 #hero-image {
     /* Image by InspiredImages from Pixabay */
     background-image: url('../images/comic-wallpaper.jpg');
@@ -154,17 +170,8 @@ form i.fields {
     line-height: 2;
 }
 
-.light-green {
-    background-color: lightgreen;
-}
-
 #error-msg {
     color: red;
-}
-
-.avatar-profile {
-    height: 80px;
-    margin: 30px;
 }
 
 /* My Catalogue */
@@ -180,6 +187,11 @@ form i.fields {
 
 .the-collection-wall {
     background-color: rgb(167, 19, 19);
+}
+
+.add-comic-button {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .pic {
