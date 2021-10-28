@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="text-center ">The Collection</h3>
-
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png"
+                    alt="Avatar for {{ user.username }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center ">The Collection</h3>
+            </div>
+        </div>
+    </div>
     <!-- Container to hold list of comic books (Red background) -->
     <div class="container-fluid the-collection-wall">
         <div class="row d-flex justify-content-evenly no-gutter">
