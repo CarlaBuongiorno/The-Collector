@@ -75,6 +75,18 @@ def get_collection():
     return render_template("the_collection.html", comics=comics, user=user)
 
 
+@app.route("/search", methods=["GET", "POST"])
+@login_required
+def search():
+    """
+
+    """
+    query = request.form.get("query")
+    comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
+    user = mongo.db.user.find_one({"username": session["user"].lower()})
+    return render_template("the_collection.html", comics=comics, user=user)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """

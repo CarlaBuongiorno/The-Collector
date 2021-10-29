@@ -202,7 +202,11 @@ form i.fields {
 }
 
 #error-msg {
-    color: red;
+    color: rgb(167, 19, 19);
+}
+
+.no-results {
+    color: rgb(167, 19, 19);
 }
 
 /* My Catalogue */

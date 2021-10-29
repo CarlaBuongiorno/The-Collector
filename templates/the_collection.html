@@ -2,8 +2,22 @@
 {% block content %}
 
     <div class="container">
-        <div class="row">
-            <div class="col text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-3">
+                <form action="{{ url_for('search') }}" method="POST" class="">
+                    <div class="row">
+                        <i class="fas fa-search"></i> 
+                        <input type="text" class="form-control" name="query" id="query" placeholder="Search Comics">
+                    </div>
+                    <div class="col">
+                        <a href="{{ url_for('get_collection') }}" class="btn btn-danger text-shadow comic-font">Reset</a>
+                        <button type="submit" class="btn btn-success text-shadow comic-font">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 offset-lg-1 text-center">
                 <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png"
                     alt="Avatar for {{ user.username }}">
             </div>
@@ -15,6 +29,7 @@
         </div>
     </div>
     <!-- Container to hold list of comic books (Red background) -->
+    {% if comics|length > 0 %}
     <div class="container-fluid the-collection-wall">
         <div class="row d-flex justify-content-evenly no-gutter">
             {% for comic in comics %}
@@ -34,6 +49,9 @@
             {% endfor %}
         </div>
     </div>
+    {% else %}
+    <h2 class="text-center comic-font heading no-results text-shadow">No Results Found</h2>
+    {% endif %}
 
     <!-- Modal -->
     {% for comic in comics %}
