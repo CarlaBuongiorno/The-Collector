@@ -21,7 +21,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
             <div class="container-fluid">
-                <a class="navbar-brand text-uppercase" href="{{ url_for('home')}}">The Collector</a>
+                <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -78,6 +78,16 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="container-fluid">
+        <div class="row btn-primary social">
+
+        </div>
+        <div class="row copyright">
+            <div class="col comic-font text-white text-shadow align-self-center">&copy; 2021 The Collector</div>
+        </div>
+    </footer>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>

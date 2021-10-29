@@ -46,6 +46,20 @@
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
 }
 
+/* Footer */
+
+footer .social {
+    height: 70px;
+    box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+    margin-top: 30px;
+}
+
+footer .copyright {
+    height: 40px;
+    background-color: rgb(167, 19, 19);
+    box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+}
+
 /* Home Page */
 
 #hero-image {
@@ -144,7 +158,7 @@ h1.title.text-shadow {
     }
 
     #about {
-        margin-top: 80px;
+        margin-top: 40px;
     }
 
     .bursts {
