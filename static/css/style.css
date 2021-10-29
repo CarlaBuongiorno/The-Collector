@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+body {
+    margin-bottom: 130px;
+}
+
 .comic-font {
     font-family: 'Bangers', cursive;
     letter-spacing: 2px;
@@ -29,6 +33,7 @@
 .navbar {
     background-color: rgb(167, 19, 19);
     border: 3px solid rgb(15, 15, 15);
+    margin-bottom: 20px;
 }
 
 .navbar-brand {
@@ -48,6 +53,11 @@
 
 /* Footer */
 
+footer {
+   position: fixed;
+   bottom: 0;
+}
+
 footer .social {
     height: 70px;
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
@@ -58,6 +68,13 @@ footer .copyright {
     height: 40px;
     background-color: rgb(167, 19, 19);
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+}
+ 
+.social-icons li {
+    display: inline;
+    font-size: 1.5rem;
+    margin: 20px;
+    align-content: flex-end;
 }
 
 /* Home Page */
