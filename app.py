@@ -322,9 +322,10 @@ def delete_comic(comic_id):
         {"_id": user_id},
         {"$pull": {"my_catalogue": ObjectId(comic_id)}})
 
-    if user["is_admin"] is True:
-        comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
-        the_collector = comic_to_delete["the_collector"]
+    comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+    the_collector = comic_to_delete["the_collector"]
+
+    if user["is_admin"] and user["username"] != the_collector:
 
         mongo.db.comics.delete_one(
             {"_id": ObjectId(comic_id)})
