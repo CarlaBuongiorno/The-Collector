@@ -583,6 +583,10 @@ Further Testing
     * To do fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the id of the comic, and then remove it from the user's 'my_catalogue'.
 4. The 'Notes' textarea field in Edit Comic would render empty instead of what the user previously filled.
     * This was due to the 'id', 'name', and 'for' attributes not being consistent with each other. 
+5. Admin could delete another user's comic, but the user's 'my_catalogue' array of comic ids would not be updated.
+    * This first issue was that the function was first deleting the comic, then in the 'if user is admin', trying to find the 'the_collector' from a comic id that no longer existed.
+    * Moving the delete functionality to after the IF block brought me a step closer to the fixing this bug.
+    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their '_id' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
 
 ### Known Bugs
 
