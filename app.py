@@ -79,7 +79,9 @@ def get_collection():
 @login_required
 def search():
     """
-
+        User can search for comics on The Collection page using keywords
+        for 'title', 'publisher_name', 'issue_no', 'for_sale',
+        'the_collector', and 'notes'.
     """
     query = request.form.get("query")
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
