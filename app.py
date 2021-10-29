@@ -317,15 +317,27 @@ def delete_comic(comic_id):
     user = mongo.db.user.find_one(
             {"username": session["user"]})
     user_id = user["_id"]
+
     mongo.db.user.update_one(
         {"_id": user_id},
-        {"$pull": {"my_catalogue": ObjectId(comic_id)}}
-    )
-    mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
-    flash("Comic Successfully Deleted")
+        {"$pull": {"my_catalogue": ObjectId(comic_id)}})
 
     if user["is_admin"] is True:
+        comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+        the_collector = comic_to_delete["the_collector"]
+
+        mongo.db.comics.delete_one(
+            {"_id": ObjectId(comic_id)})
+
+        mongo.db.user.update_one(
+            {"username": the_collector},
+            {"$pull": {"my_catalogue": ObjectId(comic_id)}})
+
+        flash("Comic Successfully Deleted")
         return redirect(url_for("get_collection"))
+
+    mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
+    flash("Comic Successfully Deleted")
 
     return redirect(url_for("get_comics"))
 
