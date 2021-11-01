@@ -1,8 +1,8 @@
 # The Collector
 
-[Here is a link to the final project]()
+[Here is a link to the final project](https://the-collector-project.herokuapp.com/)
 
-This website was built to fulfill the requirements of the Code Institute Milestone 3 Project. It is a full-stack site that allows users to catalogue and manage their comic book collections. There is an option for users to mark their comic books for sale. Other comic book collectors, whom are also members of the site, benefit from having access to this shared data due to the fact that they may get in touch with each other in order to buy or sell their books.
+This website was built to fulfill the requirements of the Code Institute Milestone 3 Project. It has the goal of maintaining a database attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. This is a full-stack site that allows users to catalogue and manage their comic book collections. There is an option for users to mark their comic books for sale. Other comic book collectors, whom are also members of the site, benefit from having access to this shared data due to the fact that they may search for comics and get in touch with each other in order to buy or sell their books.
 
 The site owner's goals are met by being a user herself, having a place to catalogue all her comic books, possibly sell her own comic books, and being able to find other books from other collectors to add to her collection. A future goal for the site owner is to remove the ability for users to contact each other directly, but rather creating a system where users can buy and sell their comic books _within_ the site, and in return receiving a small commission for every book that is sold.
 
@@ -64,7 +64,7 @@ The site owner's goals are met by being a user herself, having a place to catalo
 
 #### First Time Visitor Goals
 
-As a first time visitor to this site, a user should be able to :
+As a first time visitor to this site, a user should be able to:
 
 * Easily navigate the site.
 * Intuitively and easily understand what to do.
@@ -124,7 +124,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 [Here are the wireframes for desktop, mobile and tablet for this project](static/docs/wireframes.pdf).
 
-After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
+After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
 
 [See wireframes for the replacement section here](static/docs/wireframes_new_section.pdf).
 
@@ -134,14 +134,40 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ### Features
 
-* Register.
-* Log In/ Log Out.
-* Add, Edit and Delete a comic book from the user's own catalogue.
-* Update and Delete a profile/account.
-* Delete a comic from 'The Collection' for admin users only.
+* Register
+![register](static/docs/readme-images/register.png)
+---
+* Log In
+![login](static/docs/readme-images/login.png)
+
+* Log Out
+
+* Add a comic book to user's catalogue
+![Add a comic book](static/docs/readme-images/add-comic2.png)
+![Add a comic book](static/docs/readme-images/add-comic.png)
+
+* Edit a comic book from the user's own catalogue
+* Edit a comic from 'The Collection' for admin users only
+![Edit a comic book](static/docs/readme-images/edit-comic.png)
+
+* Delete a comic book from the user's own catalogue.
+* Delete a comic from 'The Collection' for admin users only
+![Delete a comic book](static/docs/readme-images/delete-comic.png)
+
+* Confirm comic deletion modal
+![Confirm comic deletion](static/docs/readme-images/confirm-delete-comic.png)
+
+* Update and Delete a profile/account
+![Update and Delete a profile/account](static/docs/readme-images/profile.png)
+
+* Confirm account deletion modal
+![Confirm account deletion](static/docs/readme-images/confirm-delete-account.png)
+
 * Edit admin rights and edit or delete a user for admin users only.
-* Confirm to delete modal.
+![]()
+
 * Auto-updating copyright year.
+![]()
 
 ### Future Features
 
