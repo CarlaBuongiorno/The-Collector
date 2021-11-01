@@ -1,6 +1,6 @@
 # The Collector
 
-[Here is a link to the final project](https://the-collector-project.herokuapp.com/)
+[View the live site here](https://the-collector-project.herokuapp.com/)
 
 This website was built to fulfill the requirements of the Code Institute Milestone 3 Project. It has the goal of maintaining a database attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. This is a full-stack site that allows users to catalogue and manage their comic book collections. There is an option for users to mark their comic books for sale. Other comic book collectors, whom are also members of the site, benefit from having access to this shared data due to the fact that they may search for comics and get in touch with each other in order to buy or sell their books.
 
@@ -10,55 +10,44 @@ The site owner's goals are met by being a user herself, having a place to catalo
 
 ## Contents
 
-* [User Experience (UX)](#user-experience-(ux))
-  * [User Stories](#user-stories)
+1. [User Experience (UX)](#user-experience-(ux))
+    * [User Stories](#user-stories)
 
-* [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
-  * [Flowchart](#flowchart)
-  * [Features](#features)
-  * [Future Features](#future-features)
+2. [Design](#design)
+    * [Colour Scheme](#colour-scheme)
+    * [Typography](#typography)
+    * [Imagery](#imagery)
+    * [Wireframes](#wireframes)
+    * [Flowchart](#flowchart)
+    * [Features](#features)
+    * [Future Features](#future-features)
 
-* [Information Architecture](#information-architecture)
-  * [Database Design](#database-design)
-  * [Users Collection](#users-collection)
-  * [Comic Info Collection](#comic-info-collection)
+3. [Information Architecture](#information-architecture)
+    * [Database Design](#database-design)
+    * [Users Collection](#users-collection)
+    * [Comic Info Collection](#comic-info-collection)
 
-* [Technologies Used](#technologies-used)
-  * [Languages Used](#languages-used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
+4. [Technologies Used](#technologies-used)
+    * [Languages Used](#languages-used)
+    * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
 
-* [Deployment](#deployment)
-  * [Initial Deployment](#initial-deployment)
-  * [How to Fork it](#how-to-fork-it)
-  * [How to Clone it](#how-to-clone-it)
-  * [Making a Local Clone](#making-a-local-clone)
+5. [Deployment](#deployment)
+    * [Initial Deployment](#initial-deployment)
+    * [How to Fork it](#how-to-fork-it)
+    * [How to Clone it](#how-to-clone-it)
+    * [Making a Local Clone](#making-a-local-clone)
 
-* [Testing](#testing)
-  * [W3C Validator](#w3c-validator)
-  * [Testing User Stories](#testing-user-stories)
-  * [Full Testing](#full-testing)
-  * [Further Testing](#further-testing)
-  * [Solved Bugs](#solved-bugs)
-  * [Known Bugs](#known-bugs)
-  * [Lighthouse](#lighthouse)
-    * [Performance](#performance)
-    * [Accessibility](#accessibility)
-    * [Best Practices](#best-practices)
-    * [SEO](#seo)
+6. [Testing & Project Barrier Solutions](#testing)
 
-* [Credits](#credits)
-  * [Code](#code)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgements](#acknowledgements)
+7. [Credits](#credits)
+    * [Code](#code)
+    * [Content](#content)
+    * [Media](#media)
+    * [Acknowledgements](#acknowledgements)
 
 ---
 
-## User Experience (UX)
+## 1. User Experience (UX)
 
 ### User Stories
 
@@ -98,7 +87,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ---
 
-## Design
+## 2. Design
 
 ### Overall
 
@@ -136,7 +125,9 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 * Register
 ![register](static/docs/readme-images/register.png)
+
 ---
+
 * Log In
 ![login](static/docs/readme-images/login.png)
 
@@ -181,7 +172,7 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ---
 
-## Information Architecture
+## 3. Information Architecture
 
 ### Navigation bar
 
@@ -231,6 +222,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 | price | string |
 | notes | string |
 | image_url | string |
+| the_collector | string |
 | show_contact_details | string |
 | contact | string |
 
@@ -261,7 +253,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ---
 
-## Technologies Used
+## 4. Technologies Used
 
 ### Languages Used
 
@@ -272,107 +264,75 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ### Workspace
 
-#### GitPod
-
-[GitPod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
+* [GitPod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
 
 ### Version Control
 
-#### Git
+* [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
 
-[Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
-
-#### GitHub
-
-[GitHub](https://github.com/) is used to store the code for this project after being pushed from Git.
+* [GitHub](https://github.com/) is used to store the code for this project after being pushed from Git.
 
 ### Wireframing
 
-#### Balsamiq
-
-[Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
+* [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
 
 ### Responsive Design
 
-#### Am I Responsive Design
-
-
+* [Am I Responsive Design]()
 
 ### Site Design
 
-#### Font Awesome
+* [Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
 
-[Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
-
-#### Adobe Online
-
-
-
-#### Favicon.io
-
-
+* [Favicon.io]()
 
 ### Database Design Technologies
 
-#### MongoDB
+* [MongoDB](https://www.mongodb.com/) was used to store the contents of the database, and allow full CRUD functionality.
 
-[MongoDB](https://www.mongodb.com/) was used to store the contents of the database, and allow full CRUD functionality.
-
-#### Flask-PyMongo
-
-[Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) was used to connect this Python / Flask app to MongoDB.
+* [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) was used to connect this Python / Flask app to MongoDB.
 
 ### Frameworks, Libraries and Others
 
-#### Heroku
+* [Heroku](https://www.heroku.com) was used to deploy the live site.
 
-[Heroku](https://www.heroku.com) was used to deploy the live site.
+* [Google DevTools]()
 
-#### Google DevTools
+* [Lighthouse]
 
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/) was used to help create the templating for this site.
 
+* [Bootstrap](https://getbootstrap.com/) was used to create a beautiful, responsive website.
 
-#### Lighthouse
+* [jQuery](https://jquery.com/) was used to make the DOM traversal easier within the JavaScript.
 
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) was used to auto-populate the site with the contents of the database.
 
+* [RandomKeygen](https://randomkeygen.com/) was used to generate a strong `SECRET_KEY`.
 
-#### Flask
+* [Flask-paginate]()
 
-[Flask](https://flask.palletsprojects.com/en/2.0.x/) was used to help create the templating for this site.
+* [pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
 
-#### Bootstrap
+* [dnspython](https://pypi.org/project/dnspython/) was used to provide access to DNS.
 
-[Bootstrap](https://getbootstrap.com/) was used to create a beautiful, responsive website.
+### Testing
 
-#### jQuery
+* [W3C Markup Validator]() was used to test that the HTML is valid.
 
-[jQuery](https://jquery.com/) was used to make the DOM traversal easier within the JavaScript.
+* [W3C CSS Validator]() was used to test that the CSS is valid.
 
-#### Jinja
+* [Markdownlint GitPod Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
 
-[Jinja](https://jinja.palletsprojects.com/en/3.0.x/) was used to auto-populate the site with the contents of the database.
+* [JSHint GitPod Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
 
-#### RandomKeygen
-
-[RandomKeygen](https://randomkeygen.com/) was used to generate a strong `SECRET_KEY`.
-
-#### Flask-paginate
-
-
-
-#### pip
-
-[pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
-
-#### dnspython
-
-[dnspython](https://pypi.org/project/dnspython/) was used to provide access to DNS.
+* [PyLint Extension](https://pypi.org/project/pylint/)
 
 [Back to Top](#the-collector)
 
 ---
 
-## Deployment
+## 5. Deployment
 
 ### Requirements for Deployment
 
@@ -460,194 +420,13 @@ This site was deployed to Heroku by following these steps:
 
 ---
 
-## Testing
+## 6. Testing & Project Barrier Solutions 
 
-### W3C Validator
-
-1. W3C Markup Validator
-    * [HTML Results]()
-
-2. W3C CSS Validator
-    * [CSS Results]()
-
-3. markdownlint GitPod Extension
-    * [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
-
-4. JSHint GitPod Extension
-    * [JSHint Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
-
-5. PyLint Extension
-    * [PyLint Extension](https://pypi.org/project/pylint/)
-
-[Back to Top](#the-collector)
-
-### Testing User Stories
-
-#### First Time Visitor
-
-##### Easily navigate the site.
-
-* 
-
-##### Intuitively and easily understand what to do.
-
-* 
-
-##### Register for an account.
-
-* 
-
-##### Get visual feedback when an action on the site is completed.
-
-* 
-
-#### Returning Visitor
-
-##### Log in
-
-* 
-
-##### Be confident that their password is be stored securely.
-
-* 
-
-##### Navigate intuitively, with no need to use the browser's back button.
-
-* 
-
-##### Update and delete their profile/account.
-
-* 
-
-##### Add comics to their catalogue.
-
-* 
-
-##### View their catalogue.
-
-* 
-
-##### Edit and delete comics.
-
-* 
-
-##### Browse and search other collector's comics.
-
-* 
-
-##### Log out.
-
-* 
-
-#### Admin
-
-##### Be confident that a user can't force their way into the restricted pages.
-
-* 
-
-##### Edit or delete any user.
-
-* 
-
-##### Delete user's comics.
-
-* 
-
-##### Give or remove admin rights.
-
-* 
-
-[Back to Top](#the-collector)
-
-### Full Testing
-
-#### Desktop / Laptop
-
-1. Google Chrome
-    * 
-
-2. Microsoft Edge
-    * 
-
-3. Mozilla Firefox
-    * 
-
-4. Safari
-    * 
-
-#### Tablet
-
-1. Safari
-    * 
-
-#### Mobile
-
-1. Google Chrome
-    * 
-
-2. Safari
-    * 
-
-3. Samsung Internet
-    * 
-
-Further Testing
-
-* 
-
-[Back to Top](#the-collector)
-
-### Solved Bugs
-
-1. It was possible to register a duplicate username regardless of the code written to check if the username already exists in the database. The flash message that tells the user that the username already exists did not display, and instead the registration was successful.
-    * Fixed the 'for' of the username label to 'username' instead of 'name'.
-    * The collection I used to check 'existing_user' was 'users' with an 's' at the end, while the one I tried to insert was 'user' without the 's'. Correcting this solved the bug.
-2. The Bootstrap toggle switch for the 'For Sale' field, remains 'checked' upon inspection, despite being toggled 'off'.
-    * This could be Bootstrap applying javascript behind the scenes.
-    * More investigation is necessary...
-3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the 'my_catalogue' field in an array.
-    * Originally, I was only deleting the comic from the 'comics' collection.
-    * To do fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the id of the comic, and then remove it from the user's 'my_catalogue'.
-4. The 'Notes' textarea field in Edit Comic would render empty instead of what the user previously filled.
-    * This was due to the 'id', 'name', and 'for' attributes not being consistent with each other. 
-5. Admin could delete another user's comic, but the user's 'my_catalogue' array of comic ids would not be updated.
-    * This first issue was that the function was first deleting the comic, then in the 'if user is admin', trying to find the 'the_collector' from a comic id that no longer existed.
-    * Moving the delete functionality to after the IF block brought me a step closer to the fixing this bug.
-    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their '_id' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
-
-### Known Bugs
-
-* 
-
-### Lighthouse Testing
-
-
-
-#### Desktop Lighthouse
-
-#### Mobile Lighthouse
-
-#### Performance
-
-* 
-
-#### Accessibility
-
-* 
-
-#### Best Practices
-
-* 
-
-#### SEO
-
-* 
-
-[Back to Top](#the-collector)
+All testing and project barriers and solutions has been documented here - [testing.md](https://github.com/CarlaBuongiorno/The-Collector/blob/master/testing.md)
 
 ---
 
-## Credits
+## 7. Credits
 
 ### Code
 
