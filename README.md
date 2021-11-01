@@ -2,8 +2,9 @@
 
 [Here is a link to the final project]()
 
-This project... 
-(Description)
+This website was built to fulfill the requirements of the Code Institute Milestone 3 Project. It is a full-stack site that allows users to catalogue and manage their comic book collections. There is an option for users to mark their comic books for sale. Other comic book collectors, whom are also members of the site, benefit from having access to this shared data due to the fact that they may get in touch with each other in order to buy or sell their books.
+
+The site owner's goals are met by being a user herself, having a place to catalogue all her comic books, possibly sell her own comic books, and being able to find other books from other collectors to add to her collection. A future goal for the site owner is to remove the ability for users to contact each other directly, but rather creating a system where users can buy and sell their comic books _within_ the site, and in return receiving a small commission for every book that is sold.
 
 ![Final project image home page]()
 
@@ -72,7 +73,7 @@ As a first time visitor to this site, a user should be able to :
 
 #### Returning Visitor Goals
 
-In addition to the First Time Visitor Goals, a Returning Visitor should be able to :
+In addition to the First Time Visitor Goals, a Returning Visitor should be able to:
 
 * Log in.
 * Be confident that their password is be stored securely.
