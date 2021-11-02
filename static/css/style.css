@@ -221,6 +221,12 @@ form i.fields {
     color: rgb(167, 19, 19);
 }
 
+/* Avatars Attribution */
+
+.icons {
+    font-size: 10px;
+}
+
 /* My Catalogue */
 
 .no-gutter {
