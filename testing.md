@@ -1,4 +1,4 @@
-# Testing & Project Barrier Solutions 
+# **Testing And Project Barrier Solutions**
 
 [Return to README.md](https://github.com/CarlaBuongiorno/The-Collector/blob/master/README.md)
 
@@ -6,21 +6,26 @@
 
 ![Final project image home page]()
 
-## Contents
+## **Contents**
 
-1. [Testing User Stories](#testing-user-stories)
-2. [Code Validation](#w3c-validator)
-3. [Manual Testing](#full-testing)
-    * [Lighthouse](#lighthouse)
-    * [Performance](#performance)
-    * [Accessibility](#accessibility)
-4. [Project Barriers and Solutions](#project-barriers-and-solutions)
-    * [Solved Bugs](#solved-bugs)
-    * [Known Bugs](#known-bugs)
+[Testing User Stories](#testing-user-stories)
+
+[Code Validation](#code-validation)
+
+[Responsiveness And Compatibility](#responsiveness-and-compatibility)
+
+[Testing Performance](#testing-performance)
+* [Lighthouse](#lighthouse)
+* [Performance](#performance)
+* [Accessibility](#accessibility)
+
+[Project Barriers and Solutions](#project-barriers-and-solutions)
+* [Solved Bugs](#solved-bugs)
+* [Known Bugs](#known-bugs)
 
 ---
 
-## 1. **Testing User Stories**
+## **Testing User Stories**
 
 ### First Time Visitor
 
@@ -97,80 +102,51 @@
 
 * 
 
-[Back to Top](#testing)
+[Back to Top](#testing-and-project-barrier-solutions)
 
 ---
 
-## **2. Code Validation**
+## **Code Validation**
 
-1. W3C Markup Validator
-    * [HTML Results]()
+W3C Markup Validator
+* [HTML Results]()
 
-2. W3C CSS Validator
-    * [CSS Results]()
+W3C CSS Validator
+* [CSS Results]()
 
-3. markdownlint GitPod Extension
-    * [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
+Markdownlint GitPod Extension
+* [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
 
-4. JSHint GitPod Extension
-    * [JSHint Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
+JSHint GitPod Extension
+* [JSHint Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
 
-5. PyLint Extension
-    * [PyLint Extension](https://pypi.org/project/pylint/)
+PyLint Extension
+* [PyLint Extension](https://pypi.org/project/pylint/)
 
-[Back to Top](#testing)
-
----
-
-## 3. **Responsive Testing**
-
-### Desktop / Laptop
-
-1. Google Chrome
-    * 
-
-2. Microsoft Edge
-    * 
-
-3. Mozilla Firefox
-    * 
-
-4. Safari
-    * 
-
-### Tablet
-
-1. Safari
-    * 
-
-### Mobile
-
-1. Google Chrome
-    * 
-
-2. Safari
-    * 
-
-3. Samsung Internet
-    * 
+[Back to Top](#testing-and-project-barrier-solutions)
 
 ---
 
-### Lighthouse Testing
+## **Responsiveness And Compatibility**
 
-### Desktop Lighthouse
 
-### Mobile Lighthouse
+[Back to Top](#testing-and-project-barrier-solutions)
+
+---
+
+## **Testing Performance**
+
+### Lighthouse
 
 ### Performance
 
 ### Accessibility
 
-[Back to Top](#testing)
+[Back to Top](#testing-and-project-barrier-solutions)
 
 ---
 
-## 4. **Project Barriers and Solutions**
+## **Project Barriers and Solutions**
 
 ### Solved Bugs
 
@@ -192,4 +168,4 @@
 
 ### Known Bugs
 
-[Back to Top](#testing)
+[Back to Top](#testing-and-project-barrier-solutions)
