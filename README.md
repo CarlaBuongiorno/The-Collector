@@ -6,7 +6,7 @@ This website was built to fulfill the requirements of the Code Institute Milesto
 
 The site owner's goals are met by being a user herself, having a place to catalogue all her comic books, possibly sell her own comic books, and being able to find other books from other collectors to add to her collection. A future goal for the site owner is to remove the ability for users to contact each other directly, but rather creating a system where users can buy and sell their comic books _within_ the site, and in return receiving a small commission for every book that is sold.
 
-![Final project image home page]()
+![Final project image home page](static/docs/readme-images/amiresponsive.png)
 
 ## **Contents**
 

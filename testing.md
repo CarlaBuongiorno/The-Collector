@@ -4,7 +4,7 @@
 
 [View the live site here](https://the-collector-project.herokuapp.com/)
 
-![Final project image home page]()
+![Final project image home page](static/docs/readme-images/amiresponsive.png)
 
 ## **Contents**
 
