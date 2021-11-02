@@ -99,19 +99,14 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 ### Typography
 
 * The website uses a font from [Google Fonts](https://fonts.google.com/specimen/Bangers?query=bangers) called _Bangers_ for the logo, headings, and buttons. This font is often used in superhero Comic Books and was chosen for its familiarity. It has a fall back of _Cursive_. 
-
 * _San-Serif_ was used everywhere else for its readibility.
 
 ### Imagery
 
 * The icons in the site were taken from [font-awesome](https://fontawesome.com/) and used for their obvious meaning within the forms.
-
 * The first image (on the home page) of the site was chosen as a background for the Title. It is a 'wall' of comic books. It gives the user an idea of what the site is about - comic book collections.
-
 * The bursts that are seen on the home page are typical of what you might find inside comic books. 
-
 * The avatars chosen are of popular superheros. By adding avatars, I wanted to give the user the feeling that their profile is personalized and fun.
-
 * The default image when adding a comic book was chosen as everyone knows superman and it was the first superman comic book - A true collector's piece.
 
 ### Wireframes
@@ -254,7 +249,6 @@ MongoDB was used to store data for this site in a database. The data has been se
 ### Version Control
 
 * [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
-
 * [GitHub](https://github.com/) is used to store the code for this project after being pushed from Git.
 
 ### Wireframing
@@ -268,53 +262,35 @@ MongoDB was used to store data for this site in a database. The data has been se
 ### Site Design
 
 * [Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
-
 * [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) was used to generate the colour palette in the readme.
-
 * [Google Fonts](https://fonts.google.com/) was used to import the _Bangers_ font used within the site.
-
 * [Favicon.io]()
 
 ### Database Design Technologies
 
 * [MongoDB](https://www.mongodb.com/) was used to store the contents of the database, and allow full CRUD functionality.
-
 * [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) was used to connect this Python / Flask app to MongoDB.
 
 ### Frameworks, Libraries and Others
 
 * [Heroku](https://www.heroku.com) was used to deploy the live site.
-
 * [Google DevTools]()
-
 * [Lighthouse]
-
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/) was used to help create the templating for this site.
-
 * [Bootstrap](https://getbootstrap.com/) was used to create a beautiful, responsive website.
-
 * [jQuery](https://jquery.com/) was used to make the DOM traversal easier within the JavaScript.
-
 * [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) was used to auto-populate the site with the contents of the database.
-
 * [RandomKeygen](https://randomkeygen.com/) was used to generate a strong `SECRET_KEY`.
-
 * [Flask-paginate]()
-
 * [pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
-
 * [dnspython](https://pypi.org/project/dnspython/) was used to provide access to DNS.
 
 ### Testing
 
 * [W3C Markup Validator]() was used to test that the HTML is valid.
-
 * [W3C CSS Validator]() was used to test that the CSS is valid.
-
 * [Markdownlint GitPod Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
-
 * [JSHint GitPod Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
-
 * [PyLint Extension](https://pypi.org/project/pylint/)
 
 [Back to Top](#the-collector)
@@ -415,44 +391,33 @@ All testing and project barriers and solutions has been documented here - [testi
 
 ---
 
-## 7. Credits
+## **7. Credits**
 
 ### Code
 
 * [Code Institute](https://codeinstitute.net/) was the main source of information used to create this project, specifically the Task Manager Mini Project Walkthrough.
-* [Boostrap](https://getbootstrap.com/): Throughout the site, to create a beautiful responsive site.
+* [Bootstrap](https://getbootstrap.com/): Throughout the site, to create a beautiful responsive site.
+* [DEV](https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f) for keeping the footer at the bottom on all pages.
 
 ### Content
 
+* 
+
 ### Media
-* [Los Angeles Times](https://www.latimes.com/books/jacketcopy/la-et-jc-first-superman-comic-book-record-price-3-point-2-million-20140825-story.html)
-
-#### Pixabay
-* [InspiredImages](https://pixabay.com/photos/marvel-comics-cartoon-entertainment-1641554/?download)
-
-#### Vecteezy
-* [Star Vectors by Vecteezy](https://www.vecteezy.com/vector-art/2128471-pop-art-comic-book-background-with-bubble-speech)
-
-* [Cartoon Vectors by Vecteezy](https://www.vecteezy.com/vector-art/240863-abstract-comic-background-design-vector)
-
-#### Flaticon
-* [Spiderman](https://www.flaticon.com/premium-icon/spiderman_1090806?term=spiderman&page=1&position=2&page=1&position=2&related_id=1090806&origin=search)
-
-* [Deadpool](https://www.flaticon.com/premium-icon/superhero_1090740?related_id=1090740)
-
-* [Batman](https://www.flaticon.com/free-icon/superhero_892754?related_id=892754)
-
-* [Black Panther](https://www.flaticon.com/premium-icon/superhero_1090731?related_id=1090731)
-
-* [Iron Man](https://www.flaticon.com/free-icon/superhero_892721?related_id=892721)
-
-* [Cyclopes](https://www.flaticon.com/free-icon/superhero_1352466?term=super%20hero&related_id=1352466)
-
-* [Superhero](https://www.flaticon.com/free-icon/superhero_4080887?term=super%20hero&page=11&position=61&page=11&position=61&related_id=4080887&origin=search)
-
-* [Superhero](https://www.flaticon.com/free-icon/superhero_1352468?term=super%20hero&page=17&position=22&page=17&position=22&related_id=1352468&origin=search)
-
-* [Woman Superhero](https://www.flaticon.com/free-icon/superhero_2155000?term=woman%20super%20hero&related_id=2155000)
+* The default image when adding comics was taken from [Los Angeles Times](https://www.latimes.com/books/jacketcopy/la-et-jc-first-superman-comic-book-record-price-3-point-2-million-20140825-story.html).
+* The home page wall of comic books background image was taken from [InspiredImages](https://pixabay.com/photos/marvel-comics-cartoon-entertainment-1641554/?download) on Pixabay.
+* The blue comic burst was taken from [Star Vectors by Vecteezy](https://www.vecteezy.com/vector-art/2128471-pop-art-comic-book-background-with-bubble-speech).
+* The yellow comic burst was taken from [Cartoon Vectors by Vecteezy](https://www.vecteezy.com/vector-art/240863-abstract-comic-background-design-vector).
+* The avatars were taken from [flaticon.com](https://www.flaticon.com/)
+    * [Spiderman](https://www.flaticon.com/premium-icon/spiderman_1090806?term=spiderman&page=1&position=2&page=1&position=2&related_id=1090806&origin=search)
+    * [Deadpool](https://www.flaticon.com/premium-icon/superhero_1090740?related_id=1090740)
+    * [Batman](https://www.flaticon.com/free-icon/superhero_892754?related_id=892754)
+    * [Black Panther](https://www.flaticon.com/premium-icon/superhero_1090731?related_id=1090731)
+    * [Iron Man](https://www.flaticon.com/free-icon/superhero_892721?related_id=892721)
+    * [Cyclopes](https://www.flaticon.com/free-icon/superhero_1352466?term=super%20hero&related_id=1352466)
+    * [Superhero](https://www.flaticon.com/free-icon/superhero_4080887?term=super%20hero&page=11&position=61&page=11&position=61&related_id=4080887&origin=search)
+    * [Superhero](https://www.flaticon.com/free-icon/superhero_1352468?term=super%20hero&page=17&position=22&page=17&position=22&related_id=1352468&origin=search)
+    * [Woman Superhero](https://www.flaticon.com/free-icon/superhero_2155000?term=woman%20super%20hero&related_id=2155000)
 
 ### Acknowledgements
 
