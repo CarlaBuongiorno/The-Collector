@@ -47,7 +47,7 @@ The site owner's goals are met by being a user herself, having a place to catalo
 
 ---
 
-## 1. User Experience (UX)
+## **1. User Experience (UX)**
 
 ### User Stories
 
@@ -87,7 +87,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ---
 
-## 2. Design
+## **2. Design**
 
 ### Colour Scheme
 
@@ -121,10 +121,6 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
 
 [See wireframes for the replacement section here](static/docs/wireframes_new_section.pdf).
-
-### User Journey
-
-![Flowchart]()
 
 ### Features
 
@@ -177,7 +173,7 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ---
 
-## 3. Information Architecture
+## **3. Information Architecture**
 
 ### Navigation bar
 
@@ -242,7 +238,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ---
 
-## 4. Technologies Used
+## **4. Technologies Used**
 
 ### Languages Used
 
@@ -325,7 +321,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ---
 
-## 5. Deployment
+## **5. Deployment**
 
 ### Requirements for Deployment
 
@@ -413,7 +409,7 @@ This site was deployed to Heroku by following these steps:
 
 ---
 
-## 6. Testing & Project Barrier Solutions 
+## **6. Testing & Project Barrier Solutions**
 
 All testing and project barriers and solutions has been documented here - [testing.md](https://github.com/CarlaBuongiorno/The-Collector/blob/master/testing.md)
 
