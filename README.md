@@ -98,7 +98,9 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ### Typography
 
-* 
+* The website uses a font from [Google Fonts](https://fonts.google.com/specimen/Bangers?query=bangers) called _Bangers_ for the logo, headings, and buttons. This font is often used in superhero Comic Books and was chosen for its familiarity. It has a fall back of _Cursive_. 
+
+* _San-Serif_ was used everywhere else for its readibility.
 
 ### Imagery
 
@@ -264,6 +266,10 @@ MongoDB was used to store data for this site in a database. The data has been se
 ### Site Design
 
 * [Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
+
+* [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) was used to generate the colour palette in the readme.
+
+* [Google Fonts](https://fonts.google.com/) was used to import the _Bangers_ font used within the site.
 
 * [Favicon.io]()
 
