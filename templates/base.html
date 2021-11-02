@@ -16,106 +16,107 @@
 </head>
 
 <body>
+    <div id="wrapper">
 
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav text-center">
-                        {% if session.user %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav text-center">
+                            {% if session.user %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row flashes">
+                <h4 class="text-center btn-success comic-font text-shadow">{{ message }}</h4>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </section>
+
+        <main class="container-fluid">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="container-fluid">
+            <div class="row btn-primary social align-items-center">
+                <div class="col col-lg-4">
+                    <a class="navbar-brand text-white text-shadow" href="{{ url_for('home')}}">The Collector</a>
+                </div>
+                <div class="col col-lg-4">
+                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('login')}}">Log In</a>
+                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('register')}}">Register</a>
+                </div>
+                <div class="col col-lg-4 align-self-end text-center">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/" target="_blank">
+                                <i class="fab fa-facebook-square text-white text-shadow" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
+                        <li><a href="https://www.instagram.com/" target="_blank">
+                                <i class="fab fa-instagram text-white text-shadow" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
+                        <li><a href="https://www.twitter.com/" target="_blank">
+                                <i class="fab fa-twitter text-white text-shadow" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white"
-                                href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        <li><a href="https://www.youtube.com/" target="_blank">
+                                <i class="fab fa-youtube text-white text-shadow" aria-hidden="true"></i>
+                                <span class="sr-only">YouTube</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
-                        </li>
-                        {% endif %}
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row flashes">
-            <h4 class="text-center btn-success comic-font text-shadow">{{ message }}</h4>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </section>
-
-    <main class="container-fluid">
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer class="container-fluid">
-        <div class="row btn-primary social align-items-center">
-            <div class="col col-lg-4">
-                <a class="navbar-brand text-white text-shadow" href="{{ url_for('home')}}">The Collector</a>
+            <div class="row copyright">
+                <div class="col comic-font text-white text-shadow align-self-center">&copy; Copyright 2021 The Collector</div>
             </div>
-            <div class="col col-lg-4">
-                <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('login')}}">Log In</a>
-                <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('register')}}">Register</a>
-            </div>
-            <div class="col col-lg-4 align-self-end text-center">
-                <ul class="social-icons">
-                    <li><a href="https://www.facebook.com/" target="_blank">
-                            <i class="fab fa-facebook-square text-white text-shadow" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li><a href="https://www.instagram.com/" target="_blank">
-                            <i class="fab fa-instagram text-white text-shadow" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li><a href="https://www.twitter.com/" target="_blank">
-                            <i class="fab fa-twitter text-white text-shadow" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                    </li>
-                    <li><a href="https://www.youtube.com/" target="_blank">
-                            <i class="fab fa-youtube text-white text-shadow" aria-hidden="true"></i>
-                            <span class="sr-only">YouTube</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row copyright">
-            <div class="col comic-font text-white text-shadow align-self-center">&copy; Copyright 2021 The Collector</div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
