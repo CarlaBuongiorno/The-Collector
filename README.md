@@ -89,15 +89,12 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ## 2. Design
 
-### Overall
-
-* 
-
 ### Colour Scheme
 
-![Colours used in this site]()
+* The website uses a colour theme most often used in superhero comic books for familiarity.
 
-* 
+[Colour Palette - Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02)
+![Colours used in this site](static/docs/readme-images/colors.png)
 
 ### Typography
 
@@ -232,22 +229,6 @@ MongoDB was used to store data for this site in a database. The data has been se
 |---|---|
 | _id | ObjectId |
 | publisher_name | string |
-
-### Overall Database
-
-![Overall Database]()
-
-### Users Collection Screenshot
-
-![Users Collection Example]()
-
-### Comics Collection Screenshot
-
-![Comics Collection Example]()
-
-### Publishers Collection Screenshot
-
-![Publishers Collection Example]()
 
 [Back to Top](#the-collector)
 

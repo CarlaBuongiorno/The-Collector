@@ -20,7 +20,7 @@
 
 ---
 
-## 1. Testing User Stories
+## 1. **Testing User Stories**
 
 ### First Time Visitor
 
@@ -101,7 +101,7 @@
 
 ---
 
-## 2. Code Validation
+## **2. Code Validation**
 
 1. W3C Markup Validator
     * [HTML Results]()
@@ -122,7 +122,7 @@
 
 ---
 
-## 3. Responsive Testing
+## 3. **Responsive Testing**
 
 ### Desktop / Laptop
 
@@ -170,7 +170,7 @@
 
 ---
 
-## 4. Project Barriers and Solutions
+## 4. **Project Barriers and Solutions**
 
 ### Solved Bugs
 
