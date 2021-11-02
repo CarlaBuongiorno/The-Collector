@@ -104,9 +104,15 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ### Imagery
 
-* The icons used...
-* The images used...
-* The avatars were chosen....
+* The icons in the site were taken from [font-awesome](https://fontawesome.com/) and used for their obvious meaning within the forms.
+
+* The first image (on the home page) of the site was chosen as a background for the Title. It is a 'wall' of comic books. It gives the user an idea of what the site is about - comic book collections.
+
+* The bursts that are seen on the home page are typical of what you might find inside comic books. 
+
+* The avatars chosen are of popular superheros. By adding avatars, I wanted to give the user the feeling that their profile is personalized and fun.
+
+* The default image when adding a comic book was chosen as everyone knows superman and it was the first superman comic book - A true collector's piece.
 
 ### Wireframes
 
@@ -430,7 +436,27 @@ All testing and project barriers and solutions has been documented here - [testi
 
 #### Vecteezy
 * [Star Vectors by Vecteezy](https://www.vecteezy.com/vector-art/2128471-pop-art-comic-book-background-with-bubble-speech)
+
 * [Cartoon Vectors by Vecteezy](https://www.vecteezy.com/vector-art/240863-abstract-comic-background-design-vector)
+
+#### Flaticon
+* [Spiderman](https://www.flaticon.com/premium-icon/spiderman_1090806?term=spiderman&page=1&position=2&page=1&position=2&related_id=1090806&origin=search)
+
+* [Deadpool](https://www.flaticon.com/premium-icon/superhero_1090740?related_id=1090740)
+
+* [Batman](https://www.flaticon.com/free-icon/superhero_892754?related_id=892754)
+
+* [Black Panther](https://www.flaticon.com/premium-icon/superhero_1090731?related_id=1090731)
+
+* [Iron Man](https://www.flaticon.com/free-icon/superhero_892721?related_id=892721)
+
+* [Cyclopes](https://www.flaticon.com/free-icon/superhero_1352466?term=super%20hero&related_id=1352466)
+
+* [Superhero](https://www.flaticon.com/free-icon/superhero_4080887?term=super%20hero&page=11&position=61&page=11&position=61&related_id=4080887&origin=search)
+
+* [Superhero](https://www.flaticon.com/free-icon/superhero_1352468?term=super%20hero&page=17&position=22&page=17&position=22&related_id=1352468&origin=search)
+
+* [Woman Superhero](https://www.flaticon.com/free-icon/superhero_2155000?term=woman%20super%20hero&related_id=2155000)
 
 ### Acknowledgements
 
