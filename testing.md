@@ -52,7 +52,6 @@
 * The register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
 
-
 #### **Get visual feedback when an action on the site is completed.**
 
 * There are validation messages for all the forms if you don't enter the correct format of information.
@@ -71,55 +70,65 @@
 
 #### **Log in**
 
-* 
+* The Log In button is visible for all users who aren't logged in.
+* The Log In button is positioned on the navbar and the footer.
+* The form is clear and easy to follow.
 
-##### Be confident that their password is be stored securely.
+#### **Be confident that their password is be stored securely.**
 
-* 
+* Werkzeug's password hashing methods have been used to store all user's passwords in a secure and safe way.
 
-##### Navigate intuitively, with no need to use the browser's back button.
+#### **Navigate intuitively, with no need to use the browser's back button.**
 
-* 
+* The navigation bar is constantly visible across the top of the site.
+* This is either the full navigation bar, or the condensed burger icon menu bar on smaller screen sizes.
 
-##### Update and delete their profile/account.
+#### **Update and delete their profile/account.**
 
-* 
+* Upon registration or logging in, a user is immediately taken to their 'Profile' page.
+* Here the user has the option of either updating their profile, or deleting their account all together.
 
-##### Add comics to their catalogue.
+#### **Add comics to their catalogue.**
 
-* 
+* The user can add comic books through a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
+* The Add Comic form is clear and easy to follow. 
+* There are validation messages if you don't enter the correct format of information or skip required fields.
 
-##### View their catalogue.
+#### **View their catalogue.**
 
-* 
+* Once a comic has been successfully added, it appears on the user's 'Catalogue' page.
+* Clicking on a comic in the user's catalogue brings up a modal displaying all the information the user entered about that comic.
 
-##### Edit and delete comics.
+#### **Edit and delete comics.**
 
-* 
+* The comic books' modals have the option to edit and delete the specific comic.
+* Clicking on the delete button will bring up a second modal checking if the user is certain they wish to delete that comic.
+* Clicking on the Edit button will take the user to the form they used to add the comic with all the information prefilled. There they can then adjust the information about the comic and save it by clicking the 'Edit Comic' button.
 
-##### Browse and search other collector's comics.
-
-* 
-
-##### Log out.
-
-* 
-
-#### Admin
-
-##### Be confident that a user can't force their way into the restricted pages.
-
-* 
-
-##### Edit or delete any user.
+#### **Browse and search other collector's comics.**
 
 * 
 
-##### Delete user's comics.
+#### **Log out.**
+
+* The Log Out button is visible for all users who are logged in.
+<!-- * The Log Out button is positioned on the navbar and the footer. -->
+
+### **Admin**
+
+#### **Be confident that a user can't force their way into the restricted pages.**
 
 * 
 
-##### Give or remove admin rights.
+#### **Edit or delete any user.**
+
+* 
+
+#### **Delete user's comics.**
+
+* 
+
+#### **Give or remove admin rights.**
 
 * 
 
