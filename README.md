@@ -269,7 +269,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 * [Font Awesome](https://fontawesome.com/) was used on all pages to add the icons.
 * [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) was used to generate the colour palette in the readme.
 * [Google Fonts](https://fonts.google.com/) was used to import the _Bangers_ font used within the site.
-* [Favicon.io]()
+* [Favicon.io](https://favicon.io/favicon-generator/)
 
 ### Database Design Technologies
 
