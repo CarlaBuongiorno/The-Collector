@@ -45,16 +45,16 @@
 
 * All buttons are clearly labelled.
 * All links and buttons have descriptive text.
-* Each page and each step taken by a user, leeds a user through the site to the appropriate pages.
+* Each page and each step taken by a user, leads a user through the site to the appropriate pages.
 
 ---
 
 #### **Register for an account.**
 
 * The Register button is visible for all users who aren't logged in.
-* A user is able to register an acount by clicking the 'Register' link in the Menu, or by clicking the Register button at the bottom of the landing page.
-* A form will be presented to the user to complete and a message is displayed to welcome the new user if everything was successful.
-* The register form is clear and easy to follow.
+* A user is able to register an acount by clicking the 'Register' link in the Menu or, by clicking the 'Register' button at the bottom of the landing page.
+* A form will be presented to the user to complete, and a message is displayed to welcome the new user if everything was successful.
+* The Register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
     * ![login-register](static/docs/readme-images/login-register.png)
     * ![register](static/docs/readme-images/register.png)
@@ -63,7 +63,7 @@
 
 #### **Get visual feedback when an action on the site is completed.**
 
-* There are validation messages for all the forms if you don't enter the correct format of information.
+* There are validation messages for all the forms if a user doesn't enter the correct format of information.
 * Flash messages are presented to the user: 
     * when the user chooses a username already existing in the database.
         * ![username already exists](static/docs/readme-images/username-already-exists.png)
@@ -115,21 +115,21 @@
 #### **Navigate intuitively, with no need to use the browser's back button.**
 
 * The navigation bar is constantly visible across the top of the site.
-* This is either the full navigation bar, or the condensed burger icon menu bar on smaller screen sizes.
+* This is either the full navigation bar or, the condensed burger icon menu bar on smaller screen sizes.
 
 ---
 
 #### **Update and delete their profile/account.**
 
-* Upon registration or logging in, a user is immediately taken to their 'Profile' page.
-* Here the user has the option of either updating their profile, or deleting their account all together.
+* Upon registration, or logging in, a user is immediately taken to their 'Profile' page.
+* Here, the user has the option of either updating their profile or, deleting their account all together.
 
 ---
 
 #### **Add comics to their catalogue.**
 
-* The user can add comic books through a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
-* The Add Comic form is clear and easy to follow. 
+* The user can add comic books through, a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
+* The 'Add Comic' form is clear and easy to follow. 
 * There are validation messages if you don't enter the correct format of information or skip required fields.
 
 ---
@@ -144,8 +144,8 @@
 #### **Edit and delete comics.**
 
 * The comic books' modals have the option to edit and delete the specific comic.
-* Clicking on the delete button will bring up a second modal checking if the user is certain they wish to delete that comic.
-* Clicking on the Edit button will take the user to the form they used to add the comic with all the information prefilled. There they can then adjust the information about the comic and save it by clicking the 'Edit Comic' button.
+* Clicking on the 'Delete' button will bring up a second modal checking if the user is certain they wish to delete that comic.
+* Clicking on the 'Edit' button will take the user to the form they used to add the comic with all the information prefilled. There they can adjust the information about the comic and save it by clicking the 'Edit Comic' button.
 
 ---
 
@@ -160,7 +160,7 @@
 
 #### **Log out.**
 
-* The Log Out button is visible for all users who are logged in.
+* The 'Log Out' button is visible for all users who are logged in.
 <!-- * The Log Out button is positioned on the navbar and the footer. -->
 
 ---
@@ -243,14 +243,14 @@ PyLint Extension
     * This could be Bootstrap applying javascript behind the scenes.
     * Upon more investigation, this was remedied by adding and event listener to listen for a change in the toggle switch and if the field is 'checked', then set or remove the required attribute to the 'price' field.
 3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the 'my_catalogue' field in an array.
-    * Originally, I was only deleting the comic from the 'comics' collection.
-    * To do fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the id of the comic, and then remove it from the user's 'my_catalogue'.
-4. The 'Notes' textarea field in Edit Comic would render empty instead of what the user previously filled.
+    * Originally, the comic was only being deleted from the 'comics' collection.
+    * To fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the ID of the comic, and then remove it from the user's 'my_catalogue'.
+4. The 'Notes' field within the 'Edit Comic' form, would render empty instead of what the user previously had filled.
     * This was due to the 'id', 'name', and 'for' attributes not being consistent with each other. 
-5. Admin could delete another user's comic, but the user's 'my_catalogue' array of comic ids would not be updated.
-    * This first issue was that the function was first deleting the comic, then in the 'if user is admin', trying to find the 'the_collector' from a comic id that no longer existed.
-    * Moving the delete functionality to after the IF block brought me a step closer to the fixing this bug.
-    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their '_id' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
+5. Admin could delete another user's comic, but the user's 'my_catalogue' array of comic IDs would not be updated.
+    * The first issue was that the function was first deleting the comic, then in the 'if user is admin', trying to find the 'the_collector' from a comic id that no longer existed.
+    * Moving the delete functionality to after the 'IF' block brought me a step closer to fixing this bug.
+    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their 'ID' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
 
 ### Known Bugs
 
