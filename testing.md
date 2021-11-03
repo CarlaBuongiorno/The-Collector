@@ -27,28 +27,49 @@
 
 ## **Testing User Stories**
 
-### First Time Visitor
+### **First Time Visitor**
 
-##### Easily navigate the site.
+#### **Easily navigate the site.**
 
 * Clicking on a menu item in the navigation bar displays the relevant page without errors.
 * Clicking on a link in the footer displays the relevant page without errors.
+* The navigation bar is easily visible on every page of the site.
+* This displays differently depending on what access the user has.
+* The navigation bar is easy to understand and always there for ease of navigation on the site.
+* The logo at the top left of the page takes the user back to the home page at any given point.
 
-##### Intuitively and easily understand what to do.
+#### **Intuitively and easily understand what to do.**
 
-* 
+* All buttons are clearly labelled.
+* All links and buttons have descriptive text.
+* Each page and each step taken by a user, leeds a user through the site to the appropriate pages.
 
-##### Register for an account.
+#### **Register for an account.**
 
-* 
+* The Register button is visible for all users who aren't logged in.
+* A user is able to register an acount by clicking the 'Register' link in the Menu, or by clicking the Register button at the bottom of the landing page.
+* A form will be presented to the user to complete and a message is displayed to welcome the new user if everything was successful.
+* The register form is clear and easy to follow.
+* There are validation messages if you don't enter the correct format of information.
 
-##### Get visual feedback when an action on the site is completed.
 
-* 
+#### **Get visual feedback when an action on the site is completed.**
 
-#### Returning Visitor
+* There are validation messages for all the forms if you don't enter the correct format of information.
+* Flash messages are presented to the user: 
+    * when the user chooses a username already existing in the database.
+    * upon successful registration.
+    * upon logging in.
+    * upon logging out.
+    * upon updating their profile.
+    * upon deleting their account.
+    * upon successfully adding a comic to their catalogue.
+    * upon editing a comic.
+    * upon deleting a comic.
 
-##### Log in
+### **Returning Visitor**
+
+#### **Log in**
 
 * 
 
