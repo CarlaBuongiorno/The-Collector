@@ -107,7 +107,10 @@
 
 #### **Browse and search other collector's comics.**
 
-* 
+* On the 'Collection' page, users are able to browse through all the comics that have been added by other collectors. 
+* Clicking on a comic brings up a modal displaying relevant information about that comic, including the username of that Collector.
+* On the 'Collection' page, users also have the option to search through the collection. 
+* Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
 
 #### **Log out.**
 
@@ -118,7 +121,7 @@
 
 #### **Be confident that a user can't force their way into the restricted pages.**
 
-* 
+* Admin users are set with an is_admin: 'True' in the database.
 
 #### **Edit or delete any user.**
 
@@ -126,7 +129,7 @@
 
 #### **Delete user's comics.**
 
-* 
+* If the user has the is_admin toggle set to true, then they will have access to edit or delete any comic book from the Collection.
 
 #### **Give or remove admin rights.**
 
