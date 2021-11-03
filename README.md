@@ -127,7 +127,7 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 ### Features
 
 * Register
-![register](static/docs/readme-images/register.png)
+    * ![register](static/docs/readme-images/register.png)
 
 ---
 

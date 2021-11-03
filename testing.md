@@ -28,7 +28,6 @@
 ## **Testing User Stories**
 
 ### **First Time Visitor**
-
 #### **Easily navigate the site.**
 
 * Clicking on a menu item in the navigation bar displays the relevant page without errors.
@@ -37,12 +36,18 @@
 * This displays differently depending on what access the user has.
 * The navigation bar is easy to understand and always there for ease of navigation on the site.
 * The logo at the top left of the page takes the user back to the home page at any given point.
+    * ![navbar large screen](static/docs/readme-images/navbar-logged-in-lg-screen.png)
+    * ![navbar small screen](static/docs/readme-images/navbar-logged-in-sm-screen.png)
+
+---
 
 #### **Intuitively and easily understand what to do.**
 
 * All buttons are clearly labelled.
 * All links and buttons have descriptive text.
 * Each page and each step taken by a user, leeds a user through the site to the appropriate pages.
+
+---
 
 #### **Register for an account.**
 
@@ -51,42 +56,75 @@
 * A form will be presented to the user to complete and a message is displayed to welcome the new user if everything was successful.
 * The register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
+    * ![login-register](static/docs/readme-images/login-register.png)
+    * ![register](static/docs/readme-images/register.png)
+
+---
 
 #### **Get visual feedback when an action on the site is completed.**
 
 * There are validation messages for all the forms if you don't enter the correct format of information.
 * Flash messages are presented to the user: 
     * when the user chooses a username already existing in the database.
+        * ![username already exists](static/docs/readme-images/username-already-exists.png)
+
+    * when the user enters an incorrect username or password.
+        * ![incorrect username or password](static/docs/readme-images/incorrect-username-password.png)
+
     * upon successful registration.
+        * ![registration](static/docs/readme-images/registration.png)
+
     * upon logging in.
+        * ![welcome](static/docs/readme-images/welcome.png)
+
     * upon logging out.
+        * ![logged out](static/docs/readme-images/logged-out.png)
+
     * upon updating their profile.
+        * ![profile updated](static/docs/readme-images/profile-updated.png)
+
     * upon deleting their account.
+        <!-- * Bug....... -->
+
     * upon successfully adding a comic to their catalogue.
+        * ![comic added](static/docs/readme-images/comic-added.png)
+
     * upon editing a comic.
+        * ![comic updated](static/docs/readme-images/comic-updated.png)
+
     * upon deleting a comic.
+        <!-- * Bug....... -->
+
+---
 
 ### **Returning Visitor**
-
 #### **Log in**
 
 * The Log In button is visible for all users who aren't logged in.
 * The Log In button is positioned on the navbar and the footer.
 * The form is clear and easy to follow.
 
+---
+
 #### **Be confident that their password is be stored securely.**
 
 * Werkzeug's password hashing methods have been used to store all user's passwords in a secure and safe way.
+
+---
 
 #### **Navigate intuitively, with no need to use the browser's back button.**
 
 * The navigation bar is constantly visible across the top of the site.
 * This is either the full navigation bar, or the condensed burger icon menu bar on smaller screen sizes.
 
+---
+
 #### **Update and delete their profile/account.**
 
 * Upon registration or logging in, a user is immediately taken to their 'Profile' page.
 * Here the user has the option of either updating their profile, or deleting their account all together.
+
+---
 
 #### **Add comics to their catalogue.**
 
@@ -94,16 +132,22 @@
 * The Add Comic form is clear and easy to follow. 
 * There are validation messages if you don't enter the correct format of information or skip required fields.
 
+---
+
 #### **View their catalogue.**
 
 * Once a comic has been successfully added, it appears on the user's 'Catalogue' page.
 * Clicking on a comic in the user's catalogue brings up a modal displaying all the information the user entered about that comic.
+
+---
 
 #### **Edit and delete comics.**
 
 * The comic books' modals have the option to edit and delete the specific comic.
 * Clicking on the delete button will bring up a second modal checking if the user is certain they wish to delete that comic.
 * Clicking on the Edit button will take the user to the form they used to add the comic with all the information prefilled. There they can then adjust the information about the comic and save it by clicking the 'Edit Comic' button.
+
+---
 
 #### **Browse and search other collector's comics.**
 
@@ -112,24 +156,33 @@
 * On the 'Collection' page, users also have the option to search through the collection. 
 * Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
 
+---
+
 #### **Log out.**
 
 * The Log Out button is visible for all users who are logged in.
 <!-- * The Log Out button is positioned on the navbar and the footer. -->
 
-### **Admin**
+---
 
+### **Admin**
 #### **Be confident that a user can't force their way into the restricted pages.**
 
 * Admin users are set with an is_admin: 'True' in the database.
+
+---
 
 #### **Edit or delete any user.**
 
 * 
 
+---
+
 #### **Delete user's comics.**
 
 * If the user has the is_admin toggle set to true, then they will have access to edit or delete any comic book from the Collection.
+
+---
 
 #### **Give or remove admin rights.**
 
