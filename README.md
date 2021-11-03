@@ -129,8 +129,6 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 * Register
     * ![register](static/docs/readme-images/register.png)
 
----
-
 * Log In
 ![login](static/docs/readme-images/login.png)
 

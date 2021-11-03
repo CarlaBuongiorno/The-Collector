@@ -241,7 +241,7 @@ PyLint Extension
     * The collection I used to check 'existing_user' was 'users' with an 's' at the end, while the one I tried to insert was 'user' without the 's'. Correcting this solved the bug.
 2. The Bootstrap toggle switch for the 'For Sale' field, remains 'checked' upon inspection, despite being toggled 'off'.
     * This could be Bootstrap applying javascript behind the scenes.
-    * More investigation is necessary...
+    * Upon more investigation, this was remedied by adding and event listener to listen for a change in the toggle switch and if the field is 'checked', then set or remove the required attribute to the 'price' field.
 3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the 'my_catalogue' field in an array.
     * Originally, I was only deleting the comic from the 'comics' collection.
     * To do fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the id of the comic, and then remove it from the user's 'my_catalogue'.
