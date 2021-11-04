@@ -70,23 +70,31 @@ header, main, footer {
 }
 /* ---- End Credit ---- */
 
-footer .social {
-    height: 70px;
+.blue-footer {
+    height: 130px;
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
     margin-top: 30px;
 }
 
-footer .copyright {
+.red-footer {
     height: 40px;
     background-color: rgb(167, 19, 19);
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
 }
+
+.footer-links {
+    padding-right: 20px;
+}
+
+.social {
+    /* padding-left: 20px; */
+}
  
-.social-icons li {
-    display: inline;
-    font-size: 1.5rem;
-    margin: 20px;
-    align-content: flex-end;
+.social-icons {
+    font-size: 1.25rem;
+    padding-left: 6px;
+    padding-right: 20px;
+    padding-bottom: 5px;
 }
 
 /* Home Page */
@@ -177,6 +185,14 @@ h1.title.text-shadow {
     .bursts {
         height: 240px;
         width: 240px;
+    }
+
+    .blue-footer {
+        height: 70px;
+    }
+    
+    .red-footer {
+        height: 40px;
     }
 }
 

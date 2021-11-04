@@ -83,45 +83,51 @@
         </main>
 
         <footer class="container-fluid">
-            <div class="row btn-primary social align-items-center">
-                <div class="col col-lg-4">
-                    <a class="navbar-brand text-white text-shadow" href="{{ url_for('home')}}">The Collector</a>
+            <div class="row btn-primary blue-footer">
+                <div class="row gx-0">
+                    <div class="col text-center text-md-start p-2">
+                        <a class="navbar-brand text-white text-shadow" href="{{ url_for('home')}}">The Collector</a>
+                    </div>
                 </div>
-                <div class="col col-lg-4">
-                    {% if session.user %}
-                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="">Contact</a>
-                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('logout')}}">Log Out</a>
-                    {% else %}
-                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('login')}}">Log In</a>
-                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('register')}}">Register</a>
-                    {% endif %}
-                </div>
-                <div class="col col-lg-4 align-self-end text-center">
-                    <ul class="social-icons">
-                        <li><a href="https://www.facebook.com/" target="_blank">
-                                <i class="fab fa-facebook-square text-white text-shadow" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                        <li><a href="https://www.instagram.com/" target="_blank">
-                                <i class="fab fa-instagram text-white text-shadow" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                        </li>
-                        <li><a href="https://www.twitter.com/" target="_blank">
-                                <i class="fab fa-twitter text-white text-shadow" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
-                            </a>
-                        </li>
-                        <li><a href="https://www.youtube.com/" target="_blank">
-                                <i class="fab fa-youtube text-white text-shadow" aria-hidden="true"></i>
-                                <span class="sr-only">YouTube</span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="row gx-0">
+                    <div class="col-6 text-center text-shadow comic-font footer-links">
+                        {% if session.user %}
+                        <a class="d-grid text-white text-decoration-none" href="">Contact</a>
+                        <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout')}}">Log Out</a>
+                        {% else %}
+                        <a class="d-grid text-white text-decoration-none" href="{{ url_for('login')}}">Log In</a>
+                        <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('register')}}">Register</a>
+                        {% endif %}
+                    </div>
+                    <div class="col-6 text-shadow text-center social">
+                        <div class="row">
+                            <div class="col">
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="fab fa-facebook-square text-white social-icons" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                                <a href="https://www.twitter.com/" target="_blank">
+                                    <i class="fab fa-twitter text-white social-icons" aria-hidden="true"></i>
+                                    <span class="sr-only">Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col p-2">
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="fab fa-instagram text-white social-icons" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <i class="fab fa-youtube text-white social-icons" aria-hidden="true"></i>
+                                    <span class="sr-only">YouTube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row copyright">
+            <div class="row red-footer copyright">
                 <div class="col comic-font text-white text-shadow align-self-center">&copy; Copyright 2021 The Collector</div>
             </div>
         </footer>
