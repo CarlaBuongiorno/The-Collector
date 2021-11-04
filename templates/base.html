@@ -88,8 +88,13 @@
                     <a class="navbar-brand text-white text-shadow" href="{{ url_for('home')}}">The Collector</a>
                 </div>
                 <div class="col col-lg-4">
+                    {% if session.user %}
+                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="">Contact</a>
+                    <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('logout')}}">Log Out</a>
+                    {% else %}
                     <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('login')}}">Log In</a>
                     <a class="text-white text-shadow text-center comic-font d-grid text-decoration-none" href="{{ url_for('register')}}">Register</a>
+                    {% endif %}
                 </div>
                 <div class="col col-lg-4 align-self-end text-center">
                     <ul class="social-icons">
