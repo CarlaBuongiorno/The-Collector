@@ -217,8 +217,19 @@ form i.fields {
     color: rgb(167, 19, 19);
 }
 
+.password-requirements,
+.show-details {
+    font-size: 12px;
+}
+
 .no-results {
     color: rgb(167, 19, 19);
+}
+
+/* Avatars Captions */
+
+.carousel-caption {
+    bottom: 0;
 }
 
 /* Avatars Attribution */
