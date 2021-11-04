@@ -357,6 +357,24 @@ def delete_comic(comic_id):
     return redirect(url_for("get_comics"))
 
 
+# Code credit -> https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+@app.errorhandler(404)
+def not_found(e):
+    """
+        Render 404 page if errors occur
+    """
+    return render_template("404.html"), 404
+
+
+# Code credit -> https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
+@app.errorhandler(500)
+def internal_error(e):
+    """
+        Render 500 page if errors occur
+    """
+    return render_template("500.html"), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
