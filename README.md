@@ -405,6 +405,8 @@ All testing and project barriers and solutions has been documented here - [testi
 * [Code Institute](https://codeinstitute.net/) was the main source of information used to create this project, specifically the Task Manager Mini Project Walkthrough.
 * [Bootstrap](https://getbootstrap.com/): Throughout the site, to create a beautiful responsive site.
 * [DEV](https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f) for keeping the footer at the bottom on all pages.
+* [GeeksforGeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) for rendering a 404 error page.
+* [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) for rendering a 500 internal server error page.
 
 ### Content
 
