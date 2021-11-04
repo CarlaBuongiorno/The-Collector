@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="row red-footer text-center text-md-start">
-                <div class="col comic-font text-white text-shadow align-self-center ms-md-4">&copy; Copyright 2021 The Collector</div>
+                <div class="col comic-font text-white text-shadow align-self-center ms-md-4">&copy; Copyright <span id=copyright></span> The Collector</div>
             </div>
         </footer>
     </div>
@@ -134,6 +134,16 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
+
+    <script>
+        function copyright() {
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById("copyright").innerHTML = year;
+        }
+        copyright();
+    </script>
+
 </body>
 
 </html>
