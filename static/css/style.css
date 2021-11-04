@@ -206,6 +206,10 @@ h1.title.text-shadow {
         height: 330px;
         width: 330px;
     }
+
+    .blue-footer {
+        height: 80px;
+    }
 }
 
 /* large screen size */
