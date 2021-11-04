@@ -85,10 +85,6 @@ header, main, footer {
 .footer-links {
     padding-right: 20px;
 }
-
-.social {
-    /* padding-left: 20px; */
-}
  
 .social-icons {
     font-size: 1.25rem;
@@ -188,7 +184,7 @@ h1.title.text-shadow {
     }
 
     .blue-footer {
-        height: 70px;
+        height: 90px;
     }
     
     .red-footer {
