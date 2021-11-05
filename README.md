@@ -427,6 +427,7 @@ All testing and project barriers and solutions has been documented here - [testi
     * [Superhero](https://www.flaticon.com/free-icon/superhero_4080887?term=super%20hero&page=11&position=61&page=11&position=61&related_id=4080887&origin=search)
     * [Superhero](https://www.flaticon.com/free-icon/superhero_1352468?term=super%20hero&page=17&position=22&page=17&position=22&related_id=1352468&origin=search)
     * [Woman Superhero](https://www.flaticon.com/free-icon/superhero_2155000?term=woman%20super%20hero&related_id=2155000)
+* The 'OOPS - burst' was taken from [freepic.com](https://www.freepik.com/free-vector/comic-speech-bubble-with-oops-text_14916007.htm#page=1&query=comic%20oops&position=5&from_view=search).
 
 ### Acknowledgements
 
