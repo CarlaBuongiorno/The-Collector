@@ -140,22 +140,12 @@ h1.title.text-shadow {
 /* About */
 
 #about {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .burst-container {
     display: inline-table;
     margin-bottom: 10px;
-}
-
-.bursts {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: table-cell;
-    height: 340px;
-    width: 340px;
-    vertical-align: middle;
 }
 
 .blue-burst {
@@ -166,6 +156,16 @@ h1.title.text-shadow {
 .yellow-burst {
     /* Cartoon Vectors by Vecteezy */
     background-image: url('../images/yellow-burst.jpg');
+}
+
+.bursts {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: table-cell;
+    height: 340px;
+    width: 340px;
+    vertical-align: middle;
 }
 
 /* Forms */
@@ -281,7 +281,7 @@ form i.fields {
     }
 
     #about {
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     .bursts {
@@ -315,10 +315,6 @@ form i.fields {
 @media screen and (min-width: 1024px) {
     #title-box {
         width: 75%;
-    }
-
-    #about {
-        margin-top: 40px;
     }
 
     .bursts {
