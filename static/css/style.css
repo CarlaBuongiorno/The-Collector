@@ -20,9 +20,15 @@ html, body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 }
 
-.heading {
+.heading,
+.page-not-found-heading {
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.page-not-found-heading {
+    color: rgb(167, 19, 19);
+    font-size: 56px;
 }
 
 .avatar-profile {
@@ -269,9 +275,11 @@ form i.fields {
     background-color: rgb(167, 19, 19);
 }
 
+.my-catalogue-button,
 .add-comic-button {
     padding-left: 50px;
     padding-right: 50px;
+    box-shadow: rgb(58, 4, 4) 0px 0px 15px 1px inset;
 }
 
 .pic {
@@ -297,3 +305,20 @@ form i.fields {
     margin: 5px 20px;
     overflow-y: scroll;
 }
+
+.my-catalogue-button {
+    box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+    position: relative;
+    top: 100px;
+}
+
+.page-not-found {
+    background-image: url("../images/oops.jpg");
+    background-color: #FFCA02;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 400px;
+}
+

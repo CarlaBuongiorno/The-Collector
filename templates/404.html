@@ -2,6 +2,37 @@
 {% block title %}Page 404{% endblock %}
 {% block content %}
 
-    <h2 class="text-center comic-font heading">404: Page Not Found</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="page-not-found mx-auto d-block"></div>
+        </div>
+        <!--  -->
+        <div class="col text-center">
 
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center comic-font page-not-found-heading">404: Page Not Found</h2>
+                </div>
+            </div>
+            <a href="{{ url_for('get_comics' ) }}" class="btn btn-lg text-shadow 
+                btn-success comic-font my-catalogue-button">
+                Back to My Catalogue <i class="fas fa-arrow-circle-left"></i>
+            </a>
+
+        </div>
+        <!--  -->
+        <div class="col">
+            <div class="page-not-found mx-auto d-block"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <a href='https://www.freepik.com/vectors/cartoon'>Cartoon vector created by brgfx - www.freepik.com</a> -->
+<!-- https://www.freepik.com/free-vector/comic-speech-bubble-with-oops-text_14916007.htm#page=1&query=comic%20oops&position=5&from_view=search -->
+
+
+<!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a> -->
+<!-- https://www.freepik.com/free-vector/frame-background-comic-style_16380532.htm#page=1&query=comic%20oops&position=13&from_view=search -->
 {% endblock %}
