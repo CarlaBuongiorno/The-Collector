@@ -257,11 +257,15 @@ form i.fields {
     background-repeat: no-repeat;
     background-position: center;
     height: 300px;
-    width: 280px;
+    width: 270px;
 }
 
 .my-catalogue-button {
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+    margin: auto;
+    position: relative;
+    top: 20px;
+    width: auto;
 }
 
 /* medium screen size */
@@ -301,6 +305,10 @@ form i.fields {
         height: 400px;
         width: 400px;
     }
+
+    .my-catalogue-button {
+        top: 40px;
+    }
 }
 
 /* iPad Pro screen size */
@@ -331,7 +339,6 @@ form i.fields {
     }
 
     .my-catalogue-button {
-        position: relative;
         top: 100px;
     }
 }
