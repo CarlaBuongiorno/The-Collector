@@ -2,6 +2,34 @@
 {% block title %}Page 500{% endblock %}
 {% block content %}
 
-    <h2 class="text-center comic-font heading">500: Internal Error</h2>
+<div class="container-fluid">
+    <div class="row">
 
+        <div class="col">
+            <!-- Cartoon vector created by brgfx - www.freepik.com -->
+            <div class="page-not-found mx-auto d-block"></div>
+        </div>
+        
+        <div class="col text-center">
+            
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center comic-font page-not-found-heading">500: Internal Server Error</h2>
+                </div>
+            </div>
+
+            <a href="{{ url_for('get_comics' ) }}" class="btn btn-lg text-shadow 
+                btn-success comic-font my-catalogue-button">
+                Back to My Catalogue <i class="fas fa-arrow-circle-left"></i>
+            </a>
+
+        </div>
+        
+        <div class="col d-sm-none d-none d-xl-block">
+            <!-- Cartoon vector created by brgfx - www.freepik.com -->
+            <div class="page-not-found mx-auto d-block"></div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}

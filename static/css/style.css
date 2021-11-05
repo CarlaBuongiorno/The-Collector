@@ -28,7 +28,7 @@ html, body {
 
 .page-not-found-heading {
     color: rgb(167, 19, 19);
-    font-size: 56px;
+    font-size: 38px;
 }
 
 .avatar-profile {
@@ -168,64 +168,6 @@ h1.title.text-shadow {
     background-image: url('../images/yellow-burst.jpg');
 }
 
-/* medium screen size */
-@media screen and (min-width: 768px) {
-    h1.title.text-shadow {
-        font-size: 5rem;
-        letter-spacing: 9px;
-        text-shadow: 2px 10px 2px rgba(0, 0, 0, 1);
-    }
-
-    #title-box {
-        width: 85%;
-    }
-
-    #about {
-        margin-top: 60px;
-    }
-
-    .bursts {
-        height: 240px;
-        width: 240px;
-    }
-
-    .blue-footer {
-        height: 90px;
-    }
-    
-    .red-footer {
-        height: 40px;
-    }
-}
-
-/* iPad Pro screen size */
-@media screen and (min-width: 1024px) {
-    #title-box {
-        width: 75%;
-    }
-
-    #about {
-        margin-top: 40px;
-    }
-
-    .bursts {
-        height: 330px;
-        width: 330px;
-    }
-
-    .blue-footer {
-        height: 80px;
-    }
-}
-
-/* large screen size */
-@media screen and (min-width: 1128px) {
-    .bursts {
-        height: 370px;
-        width: 370px;
-    }
-}
-
 /* Forms */
 form i.fields {
     font-size: 2.25rem;
@@ -306,11 +248,7 @@ form i.fields {
     overflow-y: scroll;
 }
 
-.my-catalogue-button {
-    box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
-    position: relative;
-    top: 100px;
-}
+/* 404 & 500 error pages */
 
 .page-not-found {
     background-image: url("../images/oops.jpg");
@@ -318,7 +256,83 @@ form i.fields {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 280px;
+}
+
+.my-catalogue-button {
+    box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
+}
+
+/* medium screen size */
+@media screen and (min-width: 768px) {
+    h1.title.text-shadow {
+        font-size: 5rem;
+        letter-spacing: 9px;
+        text-shadow: 2px 10px 2px rgba(0, 0, 0, 1);
+    }
+
+    #title-box {
+        width: 85%;
+    }
+
+    #about {
+        margin-top: 60px;
+    }
+
+    .bursts {
+        height: 240px;
+        width: 240px;
+    }
+
+    .blue-footer {
+        height: 90px;
+    }
+    
+    .red-footer {
+        height: 40px;
+    }
+
+    .page-not-found-heading {
+        font-size: 56px;
+    }
+
+    .page-not-found {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+/* iPad Pro screen size */
+@media screen and (min-width: 1024px) {
+    #title-box {
+        width: 75%;
+    }
+
+    #about {
+        margin-top: 40px;
+    }
+
+    .bursts {
+        height: 330px;
+        width: 330px;
+    }
+
+    .blue-footer {
+        height: 80px;
+    }
+}
+
+/* large screen size */
+@media screen and (min-width: 1128px) {
+    .bursts {
+        height: 370px;
+        width: 370px;
+    }
+
+    .my-catalogue-button {
+        position: relative;
+        top: 100px;
+    }
 }
 
