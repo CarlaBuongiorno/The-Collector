@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <!-- Avatar -->
-        <div class="col text-center">
-            <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png"
-                alt="Avatar for {{ user.username }}">
+    <div class="container">
+        <div class="row">
+            <!-- Avatar -->
+            <div class="col text-center">
+                <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png"
+                    alt="Avatar for {{ user.username }}">
+            </div>
+        </div>
+        <!-- Title -->
+        <div class="row mb-3">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <h2 class="comic-font heading">{{ user.username.title() }}'s Catalogue</h2>
+            </div>
+                <!-- Add comic button -->
+            <div class="col-lg-4 text-center align-self-center">
+                <a href="{{ url_for('add_comic' ) }}" class="btn btn-lg text-shadow btn-success comic-font add-comic-button">
+                    Add Comic <i class="far fa-plus-square"></i>
+                </a>
+            </div>
         </div>
     </div>
-    <!-- Title -->
-    <div class="row mb-3">
-        <div class="col-lg-4 offset-lg-4 text-center">
-            <h2 class="comic-font heading">{{ user.username.title() }}'s Catalogue</h2>
-        </div>
-            <!-- Add comic button -->
-        <div class="col-lg-4 text-center align-self-center">
-            <a href="{{ url_for('add_comic' ) }}" class="btn btn-lg text-shadow btn-success comic-font add-comic-button">
-                Add Comic <i class="far fa-plus-square"></i>
-            </a>
-        </div>
-    </div>
-</div>
 
 
 
@@ -32,15 +32,15 @@
             <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
             <!-- Button trigger modal -->
             {% if comic.image_url %}
-            <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-                data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-                <img class="pic" src="{{ comic.image_url }}" />
-            </button>
+                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                    <img class="pic" src="{{ comic.image_url }}" />
+                </button>
             {% else %}
-            <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-                data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-                <img class="pic" src="/static/images/action-comics.webp" />
-            </button>
+                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
+                    <img class="pic" src="/static/images/action-comics.webp" />
+                </button>
             {% endif %}
             {% endfor %}
         </div>
@@ -62,32 +62,32 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-evenly">
-                            {% if comic.image_url %}
+                        {% if comic.image_url %}
                             <div class="col-sm-12 col-md-4">
                                 <img class="pic" src="{{ comic.image_url }}" />
                             </div>
-                            {% else %}
+                        {% else %}
                             <div class="col-sm-12 col-md-4 pic"></div>
-                            {% endif %}
-                            <div class="col-sm-12 col-md-8 my-comic-info">
-                                <p><strong>Title:</strong> {{ comic.title }}</br>
-                                    <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
-                                    <strong>Year:</strong> {{ comic.year }}</br>
-                                    <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
-                                    <strong>Grade:</strong> {{ comic.grade }}</br>
-                                    {% if comic.for_sale == "on" %}
+                        {% endif %}
+                        <div class="col-sm-12 col-md-8 my-comic-info">
+                            <p><strong>Title:</strong> {{ comic.title }}</br>
+                                <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
+                                <strong>Year:</strong> {{ comic.year }}</br>
+                                <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
+                                <strong>Grade:</strong> {{ comic.grade }}</br>
+                                {% if comic.for_sale == "on" %}
                                     <strong>Price:</strong> {{ comic.price }}</br>
-                                    {% endif %}
-                                    {% if comic.notes %}
+                                {% endif %}
+                                {% if comic.notes %}
                                     <strong>Notes:</strong> {{ comic.notes }}</br>
-                                    {% endif %}
+                                {% endif %}
                                     <strong>Show email address:</strong>
-                                    {% if comic.show_contact_details == "on" %}
+                                {% if comic.show_contact_details == "on" %}
                                     <i class="fas fa-check-circle"></i>
-                                    {% else %}
+                                {% else %}
                                     <i class="fas fa-times-circle"></i>
-                                    {% endif %}
-                                </p>
+                                {% endif %}
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -129,10 +129,10 @@
             </div>
         </div>
     </div>
-    {% endfor %}
-    {% endblock %}
+{% endfor %}
+{% endblock %}
 
-    {% block scripts %}
+{% block scripts %}
     <script>
         // Modal
         // credit -> https://getbootstrap.com/docs/4.0/components/modal/
@@ -143,4 +143,4 @@
             myInput.focus();
         });
     </script>
-    {% endblock %}
+{% endblock %}
