@@ -214,8 +214,8 @@
                 <button type="button" class="btn text-shadow btn-success" data-bs-dismiss="modal">
                     Cancel <i class="far fa-times-circle"></i>
                 </button>
-                <a href="{{ url_for('delete_account', username=session.user) }}" type="submit"
-                    class="btn text-shadow btn-danger" data-bs-dismiss="modal">
+                <a href="{{ url_for('delete_account', username=session.user) }}" type="button"
+                    class="btn text-shadow btn-danger">
                     Delete Account <i class="far fa-check-circle"></i>
                 </a>
             </div>
