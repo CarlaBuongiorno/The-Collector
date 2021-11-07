@@ -52,7 +52,8 @@ def get_comics():
         display them on 'My Catalogue' page.
     """
     comics = []
-    # Credit to Sean from Code Institute Tutor Support for his help with this code snippet
+    # Credit to Sean from Code Institute Tutor Support for his help
+    # with this code snippet
     user = mongo.db.user.find_one({"username": session["user"]})
     comic_id_collection = user["my_catalogue"]
 
@@ -92,10 +93,11 @@ def search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
-        Get the user's username from the form and check if it already exists in the
-        database. If it does, flash a message to the user and redirect to registration
-        page. Check if passwords match and in the correct format. Save user in the database,
-        put user into a session cookie and redirect to profile page.
+        Get user's username from the form, check if it already exists in
+        the database. If it does, flash a message to the user and redirect to
+        registration page. Check if passwords match and in the correct format.
+        Save user in the database, put user into a session cookie and redirect
+        to profile page.
     """
     if request.method == "POST":
         # check if username already exists in db
@@ -126,7 +128,7 @@ def register():
 
         show_contact_details = "on"
 
-        register = {
+        register_user = {
             "fullname": request.form.get("fullname").title(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -136,7 +138,7 @@ def register():
             "is_admin": False,
             "my_catalogue": []
         }
-        mongo.db.user.insert_one(register)
+        mongo.db.user.insert_one(register_user)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -160,7 +162,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -337,19 +339,17 @@ def delete_comic(comic_id):
         {"$pull": {"my_catalogue": ObjectId(comic_id)}})
 
     comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
-    the_collector = comic_to_delete["the_collector"]
+    the_collector = comic_to_delete.get("the_collector")
+    if the_collector:
+        if user["is_admin"] and user["username"] != the_collector:
+            mongo.db.comics.delete_one(
+                {"_id": ObjectId(comic_id)})
+            mongo.db.user.update_one(
+                {"username": the_collector},
+                {"$pull": {"my_catalogue": ObjectId(comic_id)}})
 
-    if user["is_admin"] and user["username"] != the_collector:
-
-        mongo.db.comics.delete_one(
-            {"_id": ObjectId(comic_id)})
-
-        mongo.db.user.update_one(
-            {"username": the_collector},
-            {"$pull": {"my_catalogue": ObjectId(comic_id)}})
-
-        flash("Comic Successfully Deleted")
-        return redirect(url_for("get_collection"))
+            flash("Comic Successfully Deleted")
+            return redirect(url_for("get_collection"))
 
     mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
     flash("Comic Successfully Deleted")
@@ -357,7 +357,8 @@ def delete_comic(comic_id):
     return redirect(url_for("get_comics"))
 
 
-# Code credit -> https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+# Code credit ->
+# https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
 @app.errorhandler(404)
 def not_found(e):
     """
@@ -366,7 +367,8 @@ def not_found(e):
     return render_template("404.html"), 404
 
 
-# Code credit -> https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
+# Code credit ->
+# https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
 @app.errorhandler(500)
 def internal_error(e):
     """
