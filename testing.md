@@ -262,7 +262,17 @@ All working as expected.
 ## **Testing Performance**
 
 ### Lighthouse
+Google Lighthouse was run on different pages returning different results. Below is an extract of the reports for the 'Home' page, 'My Catalogue' page and 'Add Comic' page:
 
+ * Home
+    * ![Lighthouse Home page](static/docs/readme-images/lighthouse-home.png)
+
+* My Catalogue
+    * ![Lighthouse My Catalogue page](static/docs/readme-images/lighthouse-my-catalogue.png)
+
+* Add Comic
+    * ![Lighthouse Add Comic page](static/docs/readme-images/lighthouse-add-comic.png)
+    
 ### Performance
 
 ### Accessibility
