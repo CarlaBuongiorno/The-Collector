@@ -27,9 +27,8 @@
 
 <body>
     <div id="wrapper">
-
+        <!-- Navbar -->
         <header>
-            <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
@@ -70,8 +69,8 @@
             </nav>
         </header>
 
+        <!-- flash messages -->
         <section>
-            <!-- flash messages -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             {% for message in messages %}
@@ -83,11 +82,13 @@
             {% endwith %}
         </section>
 
+        <!-- Content -->
         <main class="container-fluid">
             {% block content %}
             {% endblock %}
         </main>
 
+        <!-- Footer -->
         <footer class="container-fluid">
             <div class="row btn-primary blue-footer align-items-center">
                 <div class="col col-sm-4 text-center text-md-start p-2">
@@ -135,12 +136,14 @@
         </footer>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
 
+    <!-- JavaScript -->
     <script>
         function copyright() {
             var date = new Date();
