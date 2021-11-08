@@ -4,7 +4,7 @@
 
 [View the live site here](https://the-collector-project.herokuapp.com/)
 
-![Final project image home page](docs/readme-images/amiresponsive.png)
+![Final project image home page](docs/screenshots/amiresponsive.png)
 
 ## **Contents**
 
@@ -16,8 +16,6 @@
 
 [Testing Performance](#testing-performance)
 * [Lighthouse](#lighthouse)
-* [Performance](#performance)
-* [Accessibility](#accessibility)
 
 [Project Barriers and Solutions](#project-barriers-and-solutions)
 * [Solved Bugs](#solved-bugs)
@@ -36,8 +34,8 @@
 * This displays differently depending on what access the user has.
 * The navigation bar is easy to understand and always there for ease of navigation on the site.
 * The logo at the top left of the page takes the user back to the home page at any given point.
-    * ![navbar large screen](docs/readme-images/navbar-logged-in-lg-screen.png)
-    * ![navbar small screen](docs/readme-images/navbar-logged-in-sm-screen.png)
+    * ![navbar large screen](docs/screenshots/navbar_logged_in_lg.png)
+    * ![navbar small screen](docs/screenshots/navbar_logged_in_sm.png)
 
 ---
 
@@ -56,8 +54,8 @@
 * A form will be presented to the user to complete, and a message is displayed to welcome the new user if everything was successful.
 * The Register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
-    * ![login-register](docs/readme-images/login-register.png)
-    * ![register](docs/readme-images/register.png)
+    * ![login-register](docs/screenshots/login_register.png)
+    * ![register](docs/screenshots/register.png)
 
 ---
 
@@ -66,34 +64,34 @@
 * There are validation messages for all the forms if a user doesn't enter the correct format of information.
 * Flash messages are presented to the user: 
     * when the user chooses a username already existing in the database.
-        * ![username already exists](docs/readme-images/username-already-exists.png)
+        * ![username already exists](docs/screenshots/username_already_exists.png)
 
     * when the user enters an incorrect username or password.
-        * ![incorrect username or password](docs/readme-images/incorrect-username-password.png)
+        * ![incorrect username or password](docs/screenshots/incorrect_username_password.png)
 
     * upon successful registration.
-        * ![registration](docs/readme-images/registration.png)
+        * ![registration](docs/screenshots/registration.png)
 
     * upon logging in.
-        * ![welcome](docs/readme-images/welcome.png)
+        * ![welcome](docs/screenshots/welcome.png)
 
     * upon logging out.
-        * ![logged out](docs/readme-images/logged-out.png)
+        * ![logged out](docs/screenshots/logged_out.png)
 
     * upon updating their profile.
-        * ![profile updated](docs/readme-images/profile-updated.png)
+        * ![profile updated](docs/screenshots/profile_updated.png)
 
     * upon deleting their account.
-        <!-- * Bug....... -->
+        * ![accounte deleted](docs/screenshots/account_deleted.png)
 
     * upon successfully adding a comic to their catalogue.
-        * ![comic added](docs/readme-images/comic-added.png)
+        * ![comic added](docs/screenshots/comic_added.png)
 
     * upon editing a comic.
-        * ![comic updated](docs/readme-images/comic-updated.png)
+        * ![comic updated](docs/screenshots/comic_updated.png)
 
     * upon deleting a comic.
-        <!-- * Bug....... -->
+        * ![comic deleted](docs/screenshots/comic_deleted.png)
 
 ---
 
@@ -103,9 +101,9 @@
 * The Log In button is visible for all users who aren't logged in.
 * The Log In button is positioned on the navbar and the footer.
 * The form is clear and easy to follow.
-    * ![Log In on Navbar Small Screen](docs/readme-images/navbar_logged_out_sm.png)
-    * ![Log In on Navbar Large Screen](docs/readme-images/navbar_logged_out_lg.png)
-    * ![Log In on Footer](docs/readme-images/full_footer.png)
+    * ![Log In on Navbar Small Screen](docs/screenshots/navbar_logged_out_sm.png)
+    * ![Log In on Navbar Large Screen](docs/screenshots/navbar_logged_out_lg.png)
+    * ![Log In on Footer](docs/screenshots/full_footer.png)
 
 ---
 
@@ -120,11 +118,11 @@
 * The navigation bar is constantly visible across the top of the site.
 * This is either the full navigation bar or, the condensed burger icon menu bar on smaller screen sizes.
 * The logo at the top left of the navigation bar, as well as on the footer, always brings the user back to the home page.
-    * ![Navbar Small Screen for the Logged Out User](docs/readme-images/navbar_logged_out_sm.png)
-    * ![Navbar Large Screen for the Logged Out User](docs/readme-images/navbar_logged_out_lg.png)
-    * ![Navbar Small Screen for the Logged In User](docs/readme-images/navbar_logged_in_sm.png)
-    * ![Navbar Large Screen for the Logged In User](docs/readme-images/navbar_logged_in_lg.png)
-    * ![Full Footer with Logo](docs/readme-images/full_footer.png)
+    * ![Navbar Small Screen for the Logged Out User](docs/screenshots/navbar_logged_out_sm.png)
+    * ![Navbar Large Screen for the Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
+    * ![Navbar Small Screen for the Logged In User](docs/screenshots/navbar_logged_in_sm.png)
+    * ![Navbar Large Screen for the Logged In User](docs/screenshots/navbar_logged_in_lg.png)
+    * ![Full Footer with Logo](docs/screenshots/full_footer.png)
 
 ---
 
@@ -133,8 +131,8 @@
 * Upon registration, or logging in, a user is immediately taken to their 'Profile' page.
 * Here, the user has the option of either updating their profile or, deleting their account all together.
 * Clicking on the 'Delete Account' button will bring up a second modal checking if the user is certain they wish to delete their account.
-    * ![Update and Delete Profile](docs/readme-images/profile.png)
-    * ![Update and Delete Profile](docs/readme-images/confirm_delete_account.png)
+    * ![Update and Delete Profile](docs/screenshots/profile.png)
+    * ![Update and Delete Profile](docs/screenshots/confirm_delete_account.png)
 
 ---
 
@@ -143,10 +141,10 @@
 * The user can add comic books through, a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
 * The 'Add Comic' form is clear and easy to follow. 
 * There are validation messages if you don't enter the correct format of information or skip required fields.
-    * ![Add Comic from Profile page](docs/readme-images/profile.png)
-    * ![Add Comic from Navbar](docs/readme-images/add_comic_nav.png)
-    * ![Add Comic from My Catalogue page](docs/readme-images/add_comic_my_catalogue.png)
-    * ![Add Comic Form](docs/readme-images/add_comic_form.png)
+    * ![Add Comic from Profile page](docs/screenshots/profile.png)
+    * ![Add Comic from Navbar](docs/screenshots/add_comic_nav.png)
+    * ![Add Comic from My Catalogue page](docs/screenshots/add_comic_my_catalogue.png)
+    * ![Add Comic Form](docs/screenshots/add_comic_form.png)
 
 ---
 
@@ -154,7 +152,8 @@
 
 * Once a comic has been successfully added, it appears on the user's 'Catalogue' page.
 * Clicking on a comic in the user's catalogue brings up a modal displaying all the information the user entered about that comic.
-    * ![Comic information modal from My Catalogue page](docs/readme-images/info_modal_edit_delete.png)
+    * ![Comic information modal from My Catalogue page](docs/screenshots/info_modal_edit_delete.png)
+    
 ---
 
 #### **Edit and delete comics.**
@@ -162,9 +161,9 @@
 * The comic books' modals have the option to edit and delete the specific comic.
 * Clicking on the 'Delete' button will bring up a second modal checking if the user is certain they wish to delete that comic.
 * Clicking on the 'Edit' button will take the user to the form they used to add the comic with all the information prefilled. There they can adjust the information about the comic and save it by clicking the 'Edit Comic' button.
-    * ![Information Modal Edit Comic Button](docs/readme-images/info_modal_edit_delete.png)
-    * ![Delete Confirmation Modal](docs/readme-images/confirm_delete_comic.png)
-    * ![Edit Comic](docs/readme-images/edit_comic.png)
+    * ![Information Modal Edit Comic Button](docs/screenshots/info_modal_edit_delete.png)
+    * ![Delete Confirmation Modal](docs/screenshots/confirm_delete_comic.png)
+    * ![Edit Comic](docs/screenshots/edit_comic.png)
 
 ---
 
@@ -174,9 +173,9 @@
 * Clicking on a comic brings up a modal displaying relevant information about that comic, including the username of that Collector.
 * On the 'Collection' page, users also have the option to search through 'The Collection'. 
 * Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
-    * ![Browse The Collection](docs/readme-images/the_collection.png)
-    * ![Comic information modal from The Collection page](docs/readme-images/info-modal.png)
-    * ![Search](docs/readme-images/search.png)
+    * ![Browse The Collection](docs/screenshots/the_collection.png)
+    * ![Comic information modal from The Collection page](docs/screenshots/info-modal.png)
+    * ![Search](docs/screenshots/search.png)
     
 ---
 
@@ -184,33 +183,22 @@
 
 * The 'Log Out' button is visible for all users who are logged in.
 * The Log Out button is positioned on the navbar and the footer.
-    * ![Logout on Navbar](docs/readme-images/logout-navbar.png)
-    * ![Logout on Footer](docs/readme-images/logout-footer.png)
+    * ![Logout on Navbar](docs/screenshots/logout_navbar.png)
+    * ![Logout on Footer](docs/screenshots/logout_footer.png)
 ---
 
 ### **Admin**
 #### **Be confident that a user can't force their way into the restricted pages.**
 
 * Admin users are set with an is_admin: 'True' in the database.
-    * ![Admin user set to "True"](docs/readme-images/admin-true.png)
----
-
-#### **Edit or delete any user.**
-
-* 
+    * ![Admin user set to "True"](docs/screenshots/admin_true.png)
 
 ---
 
 #### **Delete user's comics.**
 
 * If the user has the is_admin toggle set to true, then they will have access to edit or delete any comic book from the Collection.
-    * ![Delete Comic](docs/readme-images/delete-comic.png)
-
----
-
-#### **Give or remove admin rights.**
-
-* 
+    * ![Delete Comic](docs/screenshots/delete_comic.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
@@ -222,7 +210,7 @@
 
 Each page of the site was run through the [W3C Markup Validation Service](https://validator.w3.org/) by direct input and returned no errors. As the webpages are dynamically rendered with Jinja template, each scenario had to be validated by direct input by viewing and copying the source code for the page.
 
-The HTML validation screenshots for each page can be found in the folder _docs/html_validation_.
+The HTML validation screenshots for each page can be found in the folder: _docs/html_validation_.
 
 ### W3C CSS Validation Service:
 
@@ -296,13 +284,13 @@ All working as expected.
 Google Lighthouse was run on different pages returning different results. Below is an extract of the reports for the 'Home' page, 'My Catalogue' page and 'Add Comic' page:
 
  * Home
-    * ![Lighthouse Home page](docs/readme-images/lighthouse-home.png)
+    * ![Lighthouse Home page](docs/lighthouse/lighthouse_home.png)
 
 * My Catalogue
-    * ![Lighthouse My Catalogue page](docs/readme-images/lighthouse-my-catalogue.png)
+    * ![Lighthouse My Catalogue page](docs/lighthouse/lighthouse_my_catalogue.png)
 
 * Add Comic
-    * ![Lighthouse Add Comic page](docs/readme-images/lighthouse-add-comic.png)
+    * ![Lighthouse Add Comic page](docs/lighthouse/lighthouse_add_comic.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
