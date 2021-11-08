@@ -103,10 +103,13 @@
 * The Log In button is visible for all users who aren't logged in.
 * The Log In button is positioned on the navbar and the footer.
 * The form is clear and easy to follow.
+    * ![Log In on Navbar Small Screen](docs/readme-images/navbar_logged_out_sm.png)
+    * ![Log In on Navbar Large Screen](docs/readme-images/navbar_logged_out_lg.png)
+    * ![Log In on Footer](docs/readme-images/full_footer.png)
 
 ---
 
-#### **Be confident that their password is be stored securely.**
+#### **Be confident that their password is being stored securely.**
 
 * Werkzeug's password hashing methods have been used to store all user's passwords in a secure and safe way.
 
@@ -116,6 +119,12 @@
 
 * The navigation bar is constantly visible across the top of the site.
 * This is either the full navigation bar or, the condensed burger icon menu bar on smaller screen sizes.
+* The logo at the top left of the navigation bar, as well as on the footer, always brings the user back to the home page.
+    * ![Navbar Small Screen for the Logged Out User](docs/readme-images/navbar_logged_out_sm.png)
+    * ![Navbar Large Screen for the Logged Out User](docs/readme-images/navbar_logged_out_lg.png)
+    * ![Navbar Small Screen for the Logged In User](docs/readme-images/navbar_logged_in_sm.png)
+    * ![Navbar Large Screen for the Logged In User](docs/readme-images/navbar_logged_in_lg.png)
+    * ![Full Footer with Logo](docs/readme-images/full_footer.png)
 
 ---
 
@@ -123,6 +132,9 @@
 
 * Upon registration, or logging in, a user is immediately taken to their 'Profile' page.
 * Here, the user has the option of either updating their profile or, deleting their account all together.
+* Clicking on the 'Delete Account' button will bring up a second modal checking if the user is certain they wish to delete their account.
+    * ![Update and Delete Profile](docs/readme-images/profile.png)
+    * ![Update and Delete Profile](docs/readme-images/confirm_delete_account.png)
 
 ---
 
@@ -131,6 +143,10 @@
 * The user can add comic books through, a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
 * The 'Add Comic' form is clear and easy to follow. 
 * There are validation messages if you don't enter the correct format of information or skip required fields.
+    * ![Add Comic from Profile page](docs/readme-images/profile.png)
+    * ![Add Comic from Navbar](docs/readme-images/add_comic_nav.png)
+    * ![Add Comic from My Catalogue page](docs/readme-images/add_comic_my_catalogue.png)
+    * ![Add Comic Form](docs/readme-images/add_comic_form.png)
 
 ---
 
@@ -138,7 +154,7 @@
 
 * Once a comic has been successfully added, it appears on the user's 'Catalogue' page.
 * Clicking on a comic in the user's catalogue brings up a modal displaying all the information the user entered about that comic.
-
+    * ![Comic information modal from My Catalogue page](docs/readme-images/info_modal_edit_delete.png)
 ---
 
 #### **Edit and delete comics.**
@@ -146,6 +162,9 @@
 * The comic books' modals have the option to edit and delete the specific comic.
 * Clicking on the 'Delete' button will bring up a second modal checking if the user is certain they wish to delete that comic.
 * Clicking on the 'Edit' button will take the user to the form they used to add the comic with all the information prefilled. There they can adjust the information about the comic and save it by clicking the 'Edit Comic' button.
+    * ![Information Modal Edit Comic Button](docs/readme-images/info_modal_edit_delete.png)
+    * ![Delete Confirmation Modal](docs/readme-images/confirm_delete_comic.png)
+    * ![Edit Comic](docs/readme-images/edit_comic.png)
 
 ---
 
@@ -153,23 +172,27 @@
 
 * On the 'Collection' page, users are able to browse through all the comics that have been added by other collectors. 
 * Clicking on a comic brings up a modal displaying relevant information about that comic, including the username of that Collector.
-* On the 'Collection' page, users also have the option to search through the collection. 
+* On the 'Collection' page, users also have the option to search through 'The Collection'. 
 * Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
-
+    * ![Browse The Collection](docs/readme-images/the_collection.png)
+    * ![Comic information modal from The Collection page](docs/readme-images/info-modal.png)
+    * ![Search](docs/readme-images/search.png)
+    
 ---
 
 #### **Log out.**
 
 * The 'Log Out' button is visible for all users who are logged in.
-<!-- * The Log Out button is positioned on the navbar and the footer. -->
-
+* The Log Out button is positioned on the navbar and the footer.
+    * ![Logout on Navbar](docs/readme-images/logout-navbar.png)
+    * ![Logout on Footer](docs/readme-images/logout-footer.png)
 ---
 
 ### **Admin**
 #### **Be confident that a user can't force their way into the restricted pages.**
 
 * Admin users are set with an is_admin: 'True' in the database.
-
+    * ![Admin user set to "True"](docs/readme-images/admin-true.png)
 ---
 
 #### **Edit or delete any user.**
@@ -181,6 +204,7 @@
 #### **Delete user's comics.**
 
 * If the user has the is_admin toggle set to true, then they will have access to edit or delete any comic book from the Collection.
+    * ![Delete Comic](docs/readme-images/delete-comic.png)
 
 ---
 
@@ -214,7 +238,7 @@ All javascripts files were tested with [JSHint](https://jshint.com/) and returne
 
 ### Python 8:
 
-The python file was run through PEP8 online and returned no errors.
+The python file was run through [PEP8](http://pep8online.com/) online and returned no errors.
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
