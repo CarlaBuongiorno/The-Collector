@@ -4,8 +4,8 @@ function handleSubmit(event) {
     let isLower = /[a-z]/;
     let isUpper = /[A-Z]/;
 
-    password = document.getElementById("password").value;
-    errorMsg = document.getElementById("error-msg");
+    let password = document.getElementById("password").value;
+    let errorMsg = document.getElementById("error-msg");
 
     if (isDigit.test(password) && isLower.test(password) && isUpper.test(password)) {
         registrationForm.submit();

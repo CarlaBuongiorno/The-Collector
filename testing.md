@@ -208,14 +208,13 @@ The warning is due to that the imported style sheets are not checked in direct i
 
 The CSS validation screenshot can be found in the folder _docs/html_validation_.
 
-### ßMarkdownlint GitPod Extension
-* [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
+### JSHint:
 
-JSHint GitPod Extension
-* [JSHint Extension](https://open-vsx.org/vscode/item?itemName=dbaeumer.jshint)
+All javascripts files were tested with [JSHint](https://jshint.com/) and returned no errors. 
 
-PyLint Extension
-* [PyLint Extension](https://pypi.org/project/pylint/)
+### Python 8:
+
+The python file was run through PEP8 online and returned no errors.
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
