@@ -58,12 +58,12 @@
                                         name="show_contact_details"
                                         {% if user.show_contact_details == "on" %}checked{% endif %}>
                                     <label class="form-check-label" for="show_contact_details">
-                                        <p class="mb-0 show-details">
+                                        <span class="mb-0 show-details">
                                             <small>
                                                 Show contact details to other Collectors so that they may
                                                 contact me about my comics.
                                             </small>
-                                        </p>
+                                        </span>
                                     </label>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="#deleteAccountModalLabel"
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -214,7 +214,7 @@
                     <button type="button" class="btn text-shadow btn-success" data-bs-dismiss="modal">
                         Cancel <i class="far fa-times-circle"></i>
                     </button>
-                    <a href="{{ url_for('delete_account', username=session.user) }}" type="button"
+                    <a href="{{ url_for('delete_account', username=session.user) }}" role="button"
                         class="btn text-shadow btn-danger">
                         Delete Account <i class="far fa-check-circle"></i>
                     </a>
