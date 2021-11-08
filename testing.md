@@ -4,7 +4,7 @@
 
 [View the live site here](https://the-collector-project.herokuapp.com/)
 
-![Final project image home page](static/docs/readme-images/amiresponsive.png)
+![Final project image home page](docs/readme-images/amiresponsive.png)
 
 ## **Contents**
 
@@ -36,8 +36,8 @@
 * This displays differently depending on what access the user has.
 * The navigation bar is easy to understand and always there for ease of navigation on the site.
 * The logo at the top left of the page takes the user back to the home page at any given point.
-    * ![navbar large screen](static/docs/readme-images/navbar-logged-in-lg-screen.png)
-    * ![navbar small screen](static/docs/readme-images/navbar-logged-in-sm-screen.png)
+    * ![navbar large screen](docs/readme-images/navbar-logged-in-lg-screen.png)
+    * ![navbar small screen](docs/readme-images/navbar-logged-in-sm-screen.png)
 
 ---
 
@@ -56,8 +56,8 @@
 * A form will be presented to the user to complete, and a message is displayed to welcome the new user if everything was successful.
 * The Register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
-    * ![login-register](static/docs/readme-images/login-register.png)
-    * ![register](static/docs/readme-images/register.png)
+    * ![login-register](docs/readme-images/login-register.png)
+    * ![register](docs/readme-images/register.png)
 
 ---
 
@@ -66,31 +66,31 @@
 * There are validation messages for all the forms if a user doesn't enter the correct format of information.
 * Flash messages are presented to the user: 
     * when the user chooses a username already existing in the database.
-        * ![username already exists](static/docs/readme-images/username-already-exists.png)
+        * ![username already exists](docs/readme-images/username-already-exists.png)
 
     * when the user enters an incorrect username or password.
-        * ![incorrect username or password](static/docs/readme-images/incorrect-username-password.png)
+        * ![incorrect username or password](docs/readme-images/incorrect-username-password.png)
 
     * upon successful registration.
-        * ![registration](static/docs/readme-images/registration.png)
+        * ![registration](docs/readme-images/registration.png)
 
     * upon logging in.
-        * ![welcome](static/docs/readme-images/welcome.png)
+        * ![welcome](docs/readme-images/welcome.png)
 
     * upon logging out.
-        * ![logged out](static/docs/readme-images/logged-out.png)
+        * ![logged out](docs/readme-images/logged-out.png)
 
     * upon updating their profile.
-        * ![profile updated](static/docs/readme-images/profile-updated.png)
+        * ![profile updated](docs/readme-images/profile-updated.png)
 
     * upon deleting their account.
         <!-- * Bug....... -->
 
     * upon successfully adding a comic to their catalogue.
-        * ![comic added](static/docs/readme-images/comic-added.png)
+        * ![comic added](docs/readme-images/comic-added.png)
 
     * upon editing a comic.
-        * ![comic updated](static/docs/readme-images/comic-updated.png)
+        * ![comic updated](docs/readme-images/comic-updated.png)
 
     * upon deleting a comic.
         <!-- * Bug....... -->
@@ -194,11 +194,14 @@
 
 ## **Code Validation**
 
-W3C Markup Validator
-* [HTML Results]()
+### W3C Markup Validator:
 
-W3C CSS Validator
-* [CSS Results]()
+Each page of the site was run through the [W3C Markup Validation Service](https://validator.w3.org/) by direct input and returned no errors. As the webpages are dynamically rendered with Jinja template, each scenario had to be validated by direct input by viewing and copying the source code for the page.
+
+The HTML validation screenshots for each page can be found in the folder docs/html_validation.
+
+### W3C CSS Validator
+[CSS Results]()
 
 Markdownlint GitPod Extension
 * [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
@@ -265,17 +268,13 @@ All working as expected.
 Google Lighthouse was run on different pages returning different results. Below is an extract of the reports for the 'Home' page, 'My Catalogue' page and 'Add Comic' page:
 
  * Home
-    * ![Lighthouse Home page](static/docs/readme-images/lighthouse-home.png)
+    * ![Lighthouse Home page](docs/readme-images/lighthouse-home.png)
 
 * My Catalogue
-    * ![Lighthouse My Catalogue page](static/docs/readme-images/lighthouse-my-catalogue.png)
+    * ![Lighthouse My Catalogue page](docs/readme-images/lighthouse-my-catalogue.png)
 
 * Add Comic
-    * ![Lighthouse Add Comic page](static/docs/readme-images/lighthouse-add-comic.png)
-    
-### Performance
-
-### Accessibility
+    * ![Lighthouse Add Comic page](docs/readme-images/lighthouse-add-comic.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
