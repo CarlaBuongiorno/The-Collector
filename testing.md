@@ -253,6 +253,7 @@ The site was tested on the following physical devices:
     * Medium laptop (1366px)
     * Large Desktop screen (1920px)
 
+All working as expected.
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
@@ -261,6 +262,8 @@ The site was tested on the following physical devices:
 ## **Testing Performance**
 
 ### Lighthouse
+
+
 
 ### Performance
 
