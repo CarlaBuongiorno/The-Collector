@@ -101,6 +101,7 @@
                             <div class="form-floating mb-3">
                                 <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
                                     minlength="2" maxlength="25" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
+                                    <label for="price">Price In $</label>
                             </div>
                         </div>
                         <!-- image url -->
