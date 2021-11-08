@@ -263,8 +263,6 @@ All working as expected.
 
 ### Lighthouse
 
-
-
 ### Performance
 
 ### Accessibility

@@ -126,15 +126,13 @@ def register():
                 is_upper.search(password) is None:
             return redirect(url_for("register"))
 
-        show_contact_details = "on"
-
         register_user = {
             "fullname": request.form.get("fullname").title(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
             "avatar_no": int(request.form.get("avatar_no")),
-            "show_contact_details": show_contact_details,
+            "show_contact_details": "on",
             "is_admin": False,
             "my_catalogue": []
         }

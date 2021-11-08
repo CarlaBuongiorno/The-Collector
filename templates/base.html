@@ -96,7 +96,6 @@
                 </div>
                 <div class="col-6 col-sm-4 text-center text-shadow comic-font footer-links">
                     {% if session.user %}
-                        <a class="d-grid text-white text-decoration-none" href="">Contact</a>
                         <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout')}}">Log Out</a>
                     {% else %}
                         <a class="d-grid text-white text-decoration-none" href="{{ url_for('login')}}">Log In</a>
