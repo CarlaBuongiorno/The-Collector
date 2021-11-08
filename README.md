@@ -112,7 +112,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 * The first image (on the home page) of the site was chosen as a background for the Title. It is a 'wall' of comic books. It gives the user an idea of what the site is about - comic book collections.
 * The bursts that are seen on the home page are typical of what you might find inside comic books. 
 * The avatars chosen are of popular superheros. By adding avatars, I wanted to give the user the feeling that their profile is personalized and fun.
-* The default image when adding a comic book was chosen as everyone knows superman and it was the first superman comic book - A true collector's piece.
+* The default image when adding a comic book was chosen as __Superman Action Comics__ as everyone knows Superman and it was the first Superman comic book - A true collector's piece.
 
 ### Wireframes
 
@@ -122,40 +122,79 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ### Features
 
+* Home Page
+    * ![Home Page](docs/screenshots/home.png)
+
+---
+
 * Register
-    * ![register](docs/screenshots/register.png)
+    * ![Register Form](docs/screenshots/register.png)
+
+---
 
 * Log In
-    * ![login](docs/screenshots/login.png)
+    * ![Log In Form](docs/screenshots/login.png)
+
+---
 
 * Log Out
+    * ![Log Out On Navbar](docs/screenshots/logout_navbar.png)
+    * ![Log Out On Footer](docs/screenshots/logout_footer.png)
+
+---
 
 * Add a comic book to user's catalogue
-    * ![Add a comic book](docs/screenshots/add-comic2.png)
-    * ![Add a comic book](docs/screenshots/add-comic.png)
+    * ![Add A Comic Book From Profile Page](docs/screenshots/buttons.png)
+    * ![Add A Comic Book From Navbar](docs/screenshots/add_comic_nav.png)
+    * ![Add A Comic Book From My Catalogue](docs/screenshots/add_comic_my_catalogue.png)
+
+---
 
 * Edit a comic book from the user's own catalogue
 * Edit a comic from 'The Collection' for admin users only
-    * ![Edit a comic book](docs/screenshots/edit-comic.png)
+    * ![Edit A Comic Book From My Catalogue](docs/screenshots/info_modal_edit_delete.png)
+    * ![Edit A Comic Book From The Collection For Admin Only](docs/screenshots/edit_delete_for_admin.png)
+    * ![Edit A Comic Book](docs/screenshots/edit_comic.png)
 
-* Delete a comic book from the user's own catalogue.
+---
+
+* Delete a comic book from the user's own catalogue
 * Delete a comic from 'The Collection' for admin users only
-    * ![Delete a comic book](docs/screenshots/delete-comic.png)
+    * ![Delete A Comic Book From My Catalogue](docs/screenshots/info_modal_edit_delete.png)
+    * ![Delete A Comic Book From The Collection For Admin Only](docs/screenshots/edit_delete_for_admin.png)
+
+---
 
 * Confirm comic deletion modal
-    * ![Confirm comic deletion](docs/screenshots/confirm-delete-comic.png)
+    * ![Confirm Comic Deletion](docs/screenshots/confirm_delete_comic.png)
+
+---
 
 * Update and Delete a profile/account
-    * ![Update and Delete a profile/account](docs/screenshots/profile.png)
+    * ![Update And Delete A Profile/Account](docs/screenshots/profile.png)
+    
+---
 
 * Confirm account deletion modal
-    * ![Confirm account deletion](docs/screenshots/confirm-delete-account.png)
+    * ![Confirm account deletion](docs/screenshots/confirm_delete_account.png)
 
-* Edit admin rights and edit or delete a user for admin users only.
-![]()
+---
 
-* Auto-updating copyright year.
+* Auto-updating copyright year
     * ![Copyright](docs/screenshots/copyright.png)
+
+---
+
+* Social links that open in a new tab
+    * ![Social Links](docs/screenshots/full_footer.png)
+
+---
+
+* 404 Page Not Found
+* 500 Internal Server Error
+    * ![404 Page Not Found](docs/screenshots/page_not_found.png)
+
+---
 
 ### Future Features
 

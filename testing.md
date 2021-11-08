@@ -33,9 +33,12 @@
 * The navigation bar is easily visible on every page of the site.
 * This displays differently depending on what access the user has.
 * The navigation bar is easy to understand and always there for ease of navigation on the site.
-* The logo at the top left of the page takes the user back to the home page at any given point.
-    * ![navbar large screen](docs/screenshots/navbar_logged_in_lg.png)
-    * ![navbar small screen](docs/screenshots/navbar_logged_in_sm.png)
+* The logo at the top left of the page, as well as in the footer, takes the user back to the home page at any given point.
+    * ![Navbar Large Screen Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
+    * ![Navbar Small Screen Logged Out User](docs/screenshots/navbar_logged_out_sm.png)
+    * ![Navbar Large Screen Logged In User](docs/screenshots/navbar_logged_in_lg.png)
+    * ![Navbar Small Screen Logged In User](docs/screenshots/navbar_logged_in_sm.png)
+    * ![Logo In Footer](docs/screenshots/full_footer.png)
 
 ---
 
@@ -44,18 +47,20 @@
 * All buttons are clearly labelled.
 * All links and buttons have descriptive text.
 * Each page and each step taken by a user, leads a user through the site to the appropriate pages.
+    * ![Buttons](docs/screenshots/buttons.png)
 
 ---
 
 #### **Register for an account.**
 
 * The Register button is visible for all users who aren't logged in.
-* A user is able to register an acount by clicking the 'Register' link in the Menu or, by clicking the 'Register' button at the bottom of the landing page.
+* A user is able to register an acount by clicking the 'Register' link in the Menu or, by clicking the 'Register' button in the footer.
 * A form will be presented to the user to complete, and a message is displayed to welcome the new user if everything was successful.
 * The Register form is clear and easy to follow.
 * There are validation messages if you don't enter the correct format of information.
-    * ![login-register](docs/screenshots/login_register.png)
-    * ![register](docs/screenshots/register.png)
+    * ![Navbar Register](docs/screenshots/login_register.png)
+    * ![Footer Register](docs/screenshots/register_login.png)
+    * ![Register Form](docs/screenshots/register.png)    
 
 ---
 
@@ -64,34 +69,34 @@
 * There are validation messages for all the forms if a user doesn't enter the correct format of information.
 * Flash messages are presented to the user: 
     * when the user chooses a username already existing in the database.
-        * ![username already exists](docs/screenshots/username_already_exists.png)
+        * ![Username Already Exists](docs/screenshots/username_already_exists.png)
 
     * when the user enters an incorrect username or password.
-        * ![incorrect username or password](docs/screenshots/incorrect_username_password.png)
+        * ![Incorrect Username Or Password](docs/screenshots/incorrect_username_password.png)
 
     * upon successful registration.
-        * ![registration](docs/screenshots/registration.png)
+        * ![Registration](docs/screenshots/registration.png)
 
     * upon logging in.
-        * ![welcome](docs/screenshots/welcome.png)
+        * ![Welcome](docs/screenshots/welcome.png)
 
     * upon logging out.
-        * ![logged out](docs/screenshots/logged_out.png)
+        * ![Logged Out](docs/screenshots/logged_out.png)
 
     * upon updating their profile.
-        * ![profile updated](docs/screenshots/profile_updated.png)
+        * ![Profile Updated](docs/screenshots/profile_updated.png)
 
     * upon deleting their account.
-        * ![accounte deleted](docs/screenshots/account_deleted.png)
+        * ![Account Deleted](docs/screenshots/account_deleted.png)
 
     * upon successfully adding a comic to their catalogue.
-        * ![comic added](docs/screenshots/comic_added.png)
+        * ![Comic Added](docs/screenshots/comic_added.png)
 
     * upon editing a comic.
-        * ![comic updated](docs/screenshots/comic_updated.png)
+        * ![Comic Updated](docs/screenshots/comic_updated.png)
 
     * upon deleting a comic.
-        * ![comic deleted](docs/screenshots/comic_deleted.png)
+        * ![Comic Deleted](docs/screenshots/comic_deleted.png)
 
 ---
 
@@ -101,9 +106,10 @@
 * The Log In button is visible for all users who aren't logged in.
 * The Log In button is positioned on the navbar and the footer.
 * The form is clear and easy to follow.
-    * ![Log In on Navbar Small Screen](docs/screenshots/navbar_logged_out_sm.png)
-    * ![Log In on Navbar Large Screen](docs/screenshots/navbar_logged_out_lg.png)
-    * ![Log In on Footer](docs/screenshots/full_footer.png)
+    * ![Log In On Navbar Small Screen](docs/screenshots/navbar_logged_out_sm.png)
+    * ![Log In On Navbar Large Screen](docs/screenshots/navbar_logged_out_lg.png)
+    * ![Log In On Footer](docs/screenshots/full_footer.png)
+    * ![Log In Form](docs/screenshots/login.png)
 
 ---
 
@@ -118,11 +124,11 @@
 * The navigation bar is constantly visible across the top of the site.
 * This is either the full navigation bar or, the condensed burger icon menu bar on smaller screen sizes.
 * The logo at the top left of the navigation bar, as well as on the footer, always brings the user back to the home page.
-    * ![Navbar Small Screen for the Logged Out User](docs/screenshots/navbar_logged_out_sm.png)
-    * ![Navbar Large Screen for the Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
-    * ![Navbar Small Screen for the Logged In User](docs/screenshots/navbar_logged_in_sm.png)
-    * ![Navbar Large Screen for the Logged In User](docs/screenshots/navbar_logged_in_lg.png)
-    * ![Full Footer with Logo](docs/screenshots/full_footer.png)
+    * ![Navbar Small Screen For The Logged Out User](docs/screenshots/navbar_logged_out_sm.png)
+    * ![Navbar Large Screen For The Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
+    * ![Navbar Small Screen For The Logged In User](docs/screenshots/navbar_logged_in_sm.png)
+    * ![Navbar Large Screen For The Logged In User](docs/screenshots/navbar_logged_in_lg.png)
+    * ![Full Footer With Logo](docs/screenshots/full_footer.png)
 
 ---
 
@@ -131,8 +137,8 @@
 * Upon registration, or logging in, a user is immediately taken to their 'Profile' page.
 * Here, the user has the option of either updating their profile or, deleting their account all together.
 * Clicking on the 'Delete Account' button will bring up a second modal checking if the user is certain they wish to delete their account.
-    * ![Update and Delete Profile](docs/screenshots/profile.png)
-    * ![Update and Delete Profile](docs/screenshots/confirm_delete_account.png)
+    * ![Update And Delete Profile](docs/screenshots/profile.png)
+    * ![Update And Delete Profile](docs/screenshots/confirm_delete_account.png)
 
 ---
 
@@ -141,9 +147,9 @@
 * The user can add comic books through, a button on their profile page, a link on the navbar, as well as a button on their catalogue page.
 * The 'Add Comic' form is clear and easy to follow. 
 * There are validation messages if you don't enter the correct format of information or skip required fields.
-    * ![Add Comic from Profile page](docs/screenshots/profile.png)
-    * ![Add Comic from Navbar](docs/screenshots/add_comic_nav.png)
-    * ![Add Comic from My Catalogue page](docs/screenshots/add_comic_my_catalogue.png)
+    * ![Add Comic From Profile Page](docs/screenshots/profile.png)
+    * ![Add Comic From Navbar](docs/screenshots/add_comic_nav.png)
+    * ![Add Comic From My Catalogue Page](docs/screenshots/add_comic_my_catalogue.png)
     * ![Add Comic Form](docs/screenshots/add_comic_form.png)
 
 ---
@@ -152,7 +158,7 @@
 
 * Once a comic has been successfully added, it appears on the user's 'Catalogue' page.
 * Clicking on a comic in the user's catalogue brings up a modal displaying all the information the user entered about that comic.
-    * ![Comic information modal from My Catalogue page](docs/screenshots/info_modal_edit_delete.png)
+    * ![Comic Information Modal From My Catalogue Page](docs/screenshots/info_modal_edit_delete.png)
     
 ---
 
@@ -174,7 +180,7 @@
 * On the 'Collection' page, users also have the option to search through 'The Collection'. 
 * Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
     * ![Browse The Collection](docs/screenshots/the_collection.png)
-    * ![Comic information modal from The Collection page](docs/screenshots/info-modal.png)
+    * ![Comic Information Modal From The Collection Page](docs/screenshots/info-modal.png)
     * ![Search](docs/screenshots/search.png)
     
 ---
@@ -183,22 +189,22 @@
 
 * The 'Log Out' button is visible for all users who are logged in.
 * The Log Out button is positioned on the navbar and the footer.
-    * ![Logout on Navbar](docs/screenshots/logout_navbar.png)
-    * ![Logout on Footer](docs/screenshots/logout_footer.png)
+    * ![Logout On Navbar](docs/screenshots/logout_navbar.png)
+    * ![Logout On Footer](docs/screenshots/logout_footer.png)
 ---
 
 ### **Admin**
 #### **Be confident that a user can't force their way into the restricted pages.**
 
 * Admin users are set with an is_admin: 'True' in the database.
-    * ![Admin user set to "True"](docs/screenshots/admin_true.png)
+    * ![Admin User Set To "True"](docs/screenshots/admin_true.png)
 
 ---
 
 #### **Delete user's comics.**
 
 * If the user has the is_admin toggle set to true, then they will have access to edit or delete any comic book from the Collection.
-    * ![Delete Comic](docs/screenshots/delete_comic.png)
+    * ![Delete Comic](docs/screenshots/edit_delete_for_admin.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
@@ -284,13 +290,13 @@ All working as expected.
 Google Lighthouse was run on different pages returning different results. Below is an extract of the reports for the 'Home' page, 'My Catalogue' page and 'Add Comic' page:
 
  * Home
-    * ![Lighthouse Home page](docs/lighthouse/lighthouse_home.png)
+    * ![Lighthouse Home Page](docs/lighthouse/lighthouse_home.png)
 
 * My Catalogue
-    * ![Lighthouse My Catalogue page](docs/lighthouse/lighthouse_my_catalogue.png)
+    * ![Lighthouse My Catalogue Page](docs/lighthouse/lighthouse_my_catalogue.png)
 
 * Add Comic
-    * ![Lighthouse Add Comic page](docs/lighthouse/lighthouse_add_comic.png)
+    * ![Lighthouse Add Comic Page](docs/lighthouse/lighthouse_add_comic.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
