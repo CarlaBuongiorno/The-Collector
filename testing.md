@@ -194,16 +194,21 @@
 
 ## **Code Validation**
 
-### W3C Markup Validator:
+### W3C Markup Validation Service:
 
 Each page of the site was run through the [W3C Markup Validation Service](https://validator.w3.org/) by direct input and returned no errors. As the webpages are dynamically rendered with Jinja template, each scenario had to be validated by direct input by viewing and copying the source code for the page.
 
-The HTML validation screenshots for each page can be found in the folder docs/html_validation.
+The HTML validation screenshots for each page can be found in the folder _docs/html_validation_.
 
-### W3C CSS Validator
-[CSS Results]()
+### W3C CSS Validation Service:
 
-Markdownlint GitPod Extension
+The CSS file was tested with [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) via direct input and returned no error.
+
+The warning is due to that the imported style sheets are not checked in direct input and file upload modes by W3C validation services.
+
+The CSS validation screenshot can be found in the folder _docs/html_validation_.
+
+### ßMarkdownlint GitPod Extension
 * [markdownlint Extension](https://open-vsx.org/vscode/item?itemName=DavidAnson.vscode-markdownlint)
 
 JSHint GitPod Extension
