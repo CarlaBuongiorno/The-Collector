@@ -6,7 +6,7 @@ This website was built to fulfill the requirements of the Code Institute Milesto
 
 The site owner's goals are met by being a user herself, having a place to catalogue all her comic books, possibly sell her own comic books, and being able to find other books from other collectors to add to her collection. A future goal for the site owner is to remove the ability for users to contact each other directly, but rather creating a system where users can buy and sell their comic books _within_ the site, and in return receiving a small commission for every book that is sold.
 
-![Final project image home page](static/docs/readme-images/amiresponsive.png)
+![Final project image home page](docs/readme-images/amiresponsive.png)
 
 ## **Contents**
 
@@ -101,7 +101,7 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 * The website uses a colour theme most often used in superhero comic books for familiarity.
 
 [Colour Palette - Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02)
-![Colours used in this site](static/docs/readme-images/colors.png)
+![Colours used in this site](docs/readme-images/colors.png)
 
 ### Typography
 
@@ -118,48 +118,48 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ### Wireframes
 
-[Here are the wireframes for desktop, mobile and tablet for this project](static/docs/wireframes.pdf).
+[Here are the wireframes for desktop, mobile and tablet for this project](docs/wireframes.pdf).
 
 After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
 
-[See wireframes for the replacement section here](static/docs/wireframes_new_section.pdf).
+[See wireframes for the replacement section here](docs/wireframes_new_section.pdf).
 
 ### Features
 
 * Register
-    * ![register](static/docs/readme-images/register.png)
+    * ![register](docs/readme-images/register.png)
 
 * Log In
-    * ![login](static/docs/readme-images/login.png)
+    * ![login](docs/readme-images/login.png)
 
 * Log Out
 
 * Add a comic book to user's catalogue
-    * ![Add a comic book](static/docs/readme-images/add-comic2.png)
-    * ![Add a comic book](static/docs/readme-images/add-comic.png)
+    * ![Add a comic book](docs/readme-images/add-comic2.png)
+    * ![Add a comic book](docs/readme-images/add-comic.png)
 
 * Edit a comic book from the user's own catalogue
 * Edit a comic from 'The Collection' for admin users only
-    * ![Edit a comic book](static/docs/readme-images/edit-comic.png)
+    * ![Edit a comic book](docs/readme-images/edit-comic.png)
 
 * Delete a comic book from the user's own catalogue.
 * Delete a comic from 'The Collection' for admin users only
-    * ![Delete a comic book](static/docs/readme-images/delete-comic.png)
+    * ![Delete a comic book](docs/readme-images/delete-comic.png)
 
 * Confirm comic deletion modal
-    * ![Confirm comic deletion](static/docs/readme-images/confirm-delete-comic.png)
+    * ![Confirm comic deletion](docs/readme-images/confirm-delete-comic.png)
 
 * Update and Delete a profile/account
-    * ![Update and Delete a profile/account](static/docs/readme-images/profile.png)
+    * ![Update and Delete a profile/account](docs/readme-images/profile.png)
 
 * Confirm account deletion modal
-    * ![Confirm account deletion](static/docs/readme-images/confirm-delete-account.png)
+    * ![Confirm account deletion](docs/readme-images/confirm-delete-account.png)
 
 * Edit admin rights and edit or delete a user for admin users only.
 ![]()
 
 * Auto-updating copyright year.
-    * ![Copyright](static/docs/readme-images/copyright.png)
+    * ![Copyright](docs/readme-images/copyright.png)
 
 ### Future Features
 
