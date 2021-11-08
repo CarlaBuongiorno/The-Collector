@@ -168,6 +168,10 @@ h1.title.text-shadow {
     vertical-align: middle;
 }
 
+.about-point {
+    font-size: 20px;
+}
+
 /* Forms */
 form i.fields {
     font-size: 2.25rem;
@@ -285,6 +289,10 @@ form i.fields {
         width: 240px;
     }
 
+    .about-point {
+        font-size: 16px;
+    }
+
     .blue-footer {
         height: 90px;
     }
@@ -328,6 +336,10 @@ form i.fields {
     .bursts {
         height: 370px;
         width: 370px;
+    }
+
+    .about-point {
+        font-size: 20px;
     }
 
     .my-catalogue-button {
