@@ -1,166 +1,150 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png" alt="Avatar for {{ user.username }}">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png" alt="Avatar for {{ user.username }}">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h2 class="text-center comic-font heading">Edit Comic</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center comic-font heading">Edit Comic</h2>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('edit_comic', comic_id=comic._id) }}">
-            <div class="card-body">
-                <div class="row g-2">
-                    <!-- title -->
-                    <div class="col-md-1">
-                        <i class="fas fa-align-left col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="title" class="form-control col-md-8" id="title"
-                                value="{{ comic.title }}" placeholder="Title" minlength="2" maxlength="25" required>
-                            <label for="title">Title</label>
+        <div class="row">
+            <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('edit_comic', comic_id=comic._id) }}">
+                <div class="card-body">
+                    <div class="row g-2">
+                        <!-- title -->
+                        <div class="col-md-1">
+                            <i class="fas fa-align-left col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- publisher selection -->
-                    <div class="col-md-1">
-                        <i class="fas fa-folder-open col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <select id="publisher_name" class="form-select" name="publisher_name"
-                                aria-label="Select Publisher" required>
-                                <option value="" disabled>Choose Publisher</option>
-                                {% for publisher in publishers %}
-                                    {% if publisher.publisher_name == comic.publisher_name %}
-                                        <option value="{{ publisher.publisher_name }}" selected>{{ publisher.publisher_name }}</option>
-                                    {% else %}
-                                        <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
-                                    {% endif %}
-                                {% endfor %}
-                            </select>
-                            <label for="publisher_name">Publisher</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="title" class="form-control col-md-8" id="title"
+                                    value="{{ comic.title }}" placeholder="Title" minlength="2" maxlength="25" required>
+                                <label for="title">Title</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- year -->
-                    <div class="col-md-1">
-                        <i class="fas fa-calendar-alt col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="year" class="form-control" id="year" placeholder="Year"
-                                value="{{ comic.year }}" required>
-                            <label for="year">Year</label>
+                        <!-- publisher selection -->
+                        <div class="col-md-1">
+                            <i class="fas fa-folder-open col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- issue number -->
-                    <div class="col-md-1">
-                        <i class="fas fa-hashtag col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="issue_no" name="issue_no" class="form-control" id="floatingInput" value="{{ comic.issue_no }}"
-                                placeholder="Issue Number" minlength="1" maxlength="4" required>
-                            <label for="issue_no">Issue Number</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <select id="publisher_name" class="form-select" name="publisher_name"
+                                    aria-label="Select Publisher" required>
+                                    <option value="" disabled>Choose Publisher</option>
+                                    {% for publisher in publishers %}
+                                        {% if publisher.publisher_name == comic.publisher_name %}
+                                            <option value="{{ publisher.publisher_name }}" selected>{{ publisher.publisher_name }}</option>
+                                        {% else %}
+                                            <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <label for="publisher_name">Publisher</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- grade -->
-                    <div class="col-md-1">
-                        <i class="fas fa-award col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="grade" class="form-control" id="grade" placeholder="Grade"
-                            value="{{ comic.grade }}" minlength="1" maxlength="4" required>
-                            <label for="grade">Grade</label>
+                        <!-- year -->
+                        <div class="col-md-1">
+                            <i class="fas fa-calendar-alt col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- for sale toggle -->
-                    <div class="col-md-1">
-                        <i class="fas fa-credit-card col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-check form-switch">
-                            {% if comic.for_sale == "on" %}
-                                <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale" checked>
-                            {% else %}
-                                <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale">
-                            {% endif %}
-                            <label class="form-check-label" for="for_sale">For Sale</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="year" class="form-control" id="year" placeholder="Year"
+                                    value="{{ comic.year }}" required>
+                                <label for="year">Year</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Price -->
-                    <div class="col-md-1">
-                        <i class="fas fa-euro-sign col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
-                                minlength="2" maxlength="25" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
+                        <!-- issue number -->
+                        <div class="col-md-1">
+                            <i class="fas fa-hashtag col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- image url -->
-                    <div class="col-md-1">
-                        <i class="fas fa-image col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
-                                value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="150">
-                            <label for="image_url">Image URL</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="issue_no" name="issue_no" class="form-control" id="floatingInput" value="{{ comic.issue_no }}"
+                                    placeholder="Issue Number" minlength="1" maxlength="4" required>
+                                <label for="issue_no">Issue Number</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- notes -->
-                    <div class="col-md-1">
-                        <i class="fas fa-edit col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here"
-                                id="notes" name="notes">
-                                {{- comic.notes -}}
-                            </textarea>
-                            <label for="notes">Notes</label>
+                        <!-- grade -->
+                        <div class="col-md-1">
+                            <i class="fas fa-award col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- submit button -->
-                    <div class="col-12 text-center">
-                        <!-- cancel button -->
-                        <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger comic-font">
-                            Cancel <i class="far fa-times-circle"></i>
-                        </a>
-                        <button type="submit" class="btn btn-lg text-shadow btn-success comic-font">
-                            Edit Comic <i class="far fa-edit"></i>
-                        </button>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="grade" class="form-control" id="grade" placeholder="Grade"
+                                value="{{ comic.grade }}" minlength="1" maxlength="4" required>
+                                <label for="grade">Grade</label>
+                            </div>
+                        </div>
+                        <!-- for sale toggle -->
+                        <div class="col-md-1">
+                            <i class="fas fa-credit-card col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-check form-switch">
+                                {% if comic.for_sale == "on" %}
+                                    <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale" checked>
+                                {% else %}
+                                    <input class="form-check-input" type="checkbox" id="for_sale" name="for_sale">
+                                {% endif %}
+                                <label class="form-check-label" for="for_sale">For Sale</label>
+                            </div>
+                        </div>
+                        <!-- Price -->
+                        <div class="col-md-1">
+                            <i class="fas fa-euro-sign col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
+                                    minlength="2" maxlength="25" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
+                            </div>
+                        </div>
+                        <!-- image url -->
+                        <div class="col-md-1">
+                            <i class="fas fa-image col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
+                                    value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="150">
+                                <label for="image_url">Image URL</label>
+                            </div>
+                        </div>
+                        <!-- notes -->
+                        <div class="col-md-1">
+                            <i class="fas fa-edit col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="notes" name="notes">
+                                    {{- comic.notes -}}
+                                </textarea>
+                                <label for="notes">Notes</label>
+                            </div>
+                        </div>
+                        <!-- submit button -->
+                        <div class="col-12 text-center">
+                            <!-- cancel button -->
+                            <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger comic-font">
+                                Cancel <i class="far fa-times-circle"></i>
+                            </a>
+                            <button type="submit" class="btn btn-lg text-shadow btn-success comic-font">
+                                Edit Comic <i class="far fa-edit"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
 {% endblock %}
 
 {% block scripts %}
-<script>
-    // Credit Tim Nelson for the solution to get toggler to determine if user can enter a price or not
-    let forSale = document.getElementById("for_sale");
-    let price = document.getElementById("price");
-    forSale.addEventListener("change", function() {
-        if (this.checked) {
-            // if comic is for sale, require a price
-            price.setAttribute("required", "");
-            price.removeAttribute("disabled");
-        }
-        else {
-            // if comic is not for sale, price is optional
-            price.removeAttribute("required");
-            price.setAttribute("disabled", "");
-        }
-    });
-</script>
+    <script src="{{ url_for('static', filename='js/edit_comic.js')}}"></script>
 {% endblock %}

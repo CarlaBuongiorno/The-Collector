@@ -106,7 +106,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="delete-{{ comic._id }}" tabindex="-1" aria-labelledby="deleteComicModalLabel"
+    <div class="modal fade" id="delete-{{ comic._id }}" tabindex="-1" aria-labelledby="#deleteComicModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -133,14 +133,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>
-        // Modal
-        // credit -> https://getbootstrap.com/docs/4.0/components/modal/
-        let myModal = document.getElementById('myModal');
-        let myInput = document.getElementById('myInput');
-
-        myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus();
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/my_catalogue.js')}}"></script>
 {% endblock %}

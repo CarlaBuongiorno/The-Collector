@@ -1,56 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="text-center comic-font heading">Log In</h2>
+    <h2 class="text-center comic-font heading">Log In</h2>
 
-<div class="container">
-    <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
-            <div class="card-body">
-                <div class="row g-2">
-                    <!-- username -->
-                    <div class="col-md-1">
-                        <i class="fas fa-user-cog col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="username" class="form-control" id="floatingInput"
-                                placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="username">Username (no spaces)</label>
+    <div class="container">
+        <div class="row">
+            <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
+                <div class="card-body">
+                    <div class="row g-2">
+                        <!-- username -->
+                        <div class="col-md-1">
+                            <i class="fas fa-user-cog col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- password -->
-                    <div class="col-md-1">
-                        <i class="fas fa-user-lock col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" id="floatingPassword"
-                                placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="password">Password</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="username" class="form-control" id="floatingInput"
+                                    placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                <label for="username">Username (no spaces)</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- login -->
-                    <div class="row d-flex justify-content-center mt-4 mb-3">
-                        <div class="d-grid col-lg-4 text-center">
-                            <button class="btn btn-success text-shadow comic-font" type="submit">
-                                Log In <i class="fas fa-sign-in-alt"></i>
-                            </button>
+                        <!-- password -->
+                        <div class="col-md-1">
+                            <i class="fas fa-user-lock col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <!-- login -->
+                        <div class="row d-flex justify-content-center mt-4 mb-3">
+                            <div class="d-grid col-lg-4 text-center">
+                                <button class="btn btn-success text-shadow comic-font" type="submit">
+                                    Log In <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-12">
-        <p class="text-center">
-            New Collector? 
-            <a href="{{ url_for('register') }}" class="primary">Register</a>
-        </p>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-center">
+                New Collector? 
+                <a href="{{ url_for('register') }}" class="primary">Register</a>
+            </p>
+        </div>
     </div>
-</div>
 
 {% endblock %}

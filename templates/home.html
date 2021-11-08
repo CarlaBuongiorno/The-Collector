@@ -1,71 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid" id="hero-image">
-    <div class="container-fluid img-thumbnail sunken" id="title-box">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-white text-shadow title text-center">THE COLLECTOR</h1>
+    <div class="container-fluid" id="hero-image">
+        <div class="container-fluid img-thumbnail sunken" id="title-box">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-white text-shadow title text-center">THE COLLECTOR</h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container-fluid">
-    <div class="row text-center" id="about">
-        <div id="catalogue-comics" class="col-12 col-md-4 burst-container">
-            <div class="blue-burst bursts">
-                <h5>Catalogue<br>
-                    Your<br>
-                    Collection...
-                </h5>
+    <div class="container-fluid">
+        <div class="row text-center" id="about">
+            <div id="catalogue-comics" class="col-12 col-md-4 burst-container">
+                <div class="blue-burst bursts">
+                    <h5>Catalogue<br>
+                        Your<br>
+                        Collection...
+                    </h5>
+                    <p class="info d-none">
+                        * Catalogue your comic book collection online.
+                        * Easily add comics to your database using the add comic tool.
+                        * Easily edit all your comic information.
+                    </p>
+                </div>
+            </div>
+            <div id="browse-comics" class="col-12 col-md-4 burst-container">
+                <div class="yellow-burst bursts">
+                    <h5>Browse...
+                    </h5>
+                </div>
                 <p class="info d-none">
-                    * Catalogue your comic book collection online.
-                    * Easily add comics to your database using the add comic tool.
-                    * Easily edit all your comic information.
+                    * Browse the Collections using the handy search tool.
+                    * Automatically retrieve full comic data and images.
+                </p>
+            </div>
+            <div id="buy-&-sell" class="col-12 col-md-4 burst-container">
+                <div class="blue-burst bursts">
+                    <h5>Buy<br>
+                        & Sell...
+                    </h5>
+                </div>
+                <p class="info d-none">
+                    * Access other Collector's contact details for more information about their collections.
+                    * Buy comics from other Collectors.
+                    * Sell your comics to other Collectors.
                 </p>
             </div>
         </div>
-        <div id="browse-comics" class="col-12 col-md-4 burst-container">
-            <div class="yellow-burst bursts">
-                <h5>Browse...
-                </h5>
-            </div>
-            <p class="info d-none">
-                * Browse the Collections using the handy search tool.
-                * Automatically retrieve full comic data and images.
-            </p>
-        </div>
-        <div id="buy-&-sell" class="col-12 col-md-4 burst-container">
-            <div class="blue-burst bursts">
-                <h5>Buy<br>
-                    & Sell...
-                </h5>
-            </div>
-            <p class="info d-none">
-                * Access other Collector's contact details for more information about their collections.
-                * Buy comics from other Collectors.
-                * Sell your comics to other Collectors.
-            </p>
-        </div>
     </div>
-</div>
 
 {% endblock %}
 
 {% block scripts %}
-    <script>
-
-        function displayInfo(event) {
-            console.log("Hello");
-
-            let catalogueComics = document.getElementById("catalogue-comics");
-            let browseComics = document.getElementById("browse-comics");
-            let buyAndSell = document.getElementById("buy-&-sell");
-
-            catalogueComics.addEventListener("click", displayInfo);
-        }
-
-
-    </script>
-    {% endblock %}
+    <script src="{{ url_for('static', filename='js/edit_comic.js')}}"></script>
+{% endblock %}

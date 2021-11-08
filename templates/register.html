@@ -1,220 +1,201 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="text-center comic-font heading">Register</h2>
+    <h2 class="text-center comic-font heading">Register</h2>
 
-<div class="container">
-    <div class="row">
-        <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
-            action="{{ url_for('register') }}">
-            <div class="card-body">
-                <div class="row g-2">
-                    <!-- full name -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-user-plus col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="fullname" class="form-control col-md-8" id="fullname"
-                                placeholder="Full Name" minlength="5" maxlength="25" required>
-                            <label for="fullname">Full Name</label>
+    <div class="container">
+        <div class="row">
+            <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
+                action="{{ url_for('register') }}">
+                <div class="card-body">
+                    <div class="row g-2">
+                        <!-- full name -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-user-plus col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- username -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-user-tag col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username"
-                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="username">Username (no spaces)</label>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="fullname" class="form-control col-md-8" id="fullname"
+                                    placeholder="Full Name" minlength="5" maxlength="25" required>
+                                <label for="fullname">Full Name</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- email -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-envelope col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" id="email"
-                                placeholder="name@example.com" required>
-                            <label for="email">Email address</label>
+                        <!-- username -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-user-tag col-md fields"></i>
                         </div>
-                    </div>
-                    <!-- password -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-user-lock col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" id="password"
-                                placeholder="Password" minlength="8" maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$"
-                                required>
-                            <label for="password">Password</label>
-                            <p id="error-msg" class="d-none mb-0">
-                                <small>
-                                    Please enter a valid password.
-                                </small>
-                            </p>
-                            <p class="password-requirements text-muted">
-                                <!-- <small> -->
-                                    Eight or more characters with a mix of numbers and letters, including a capital
-                                    letter.
-                                <!-- </small> -->
-                            </p>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                <label for="username">Username (no spaces)</label>
+                            </div>
+                        </div>
+                        <!-- email -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-envelope col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="name@example.com" required>
+                                <label for="email">Email address</label>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-user-lock col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="password"
+                                    placeholder="Password" minlength="8" maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$"
+                                    required>
+                                <label for="password">Password</label>
+                                <p id="error-msg" class="d-none mb-0">
+                                    <small>
+                                        Please enter a valid password.
+                                    </small>
+                                </p>
+                                <p class="password-requirements text-muted">
+                                    <!-- <small> -->
+                                        Eight or more characters with a mix of numbers and letters, including a capital
+                                        letter.
+                                    <!-- </small> -->
+                                </p>
 
+                            </div>
+                        </div>
+                        <!-- confirm password -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-lock col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="password" name="confirm-password" class="form-control" id="confirm-password"
+                                    placeholder="Confirm Password" minlength="5" maxlength="15"
+                                    pattern="^[a-zA-Z0-9]{5,15}$" required>
+                                <label for="confirm-password">Confirm Password</label>
+                            </div>
+                        </div>
+                        <!-- choose avatar -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-portrait col-md fields"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="number" name="avatar_no" class="form-control" id="avatar_no"
+                                    placeholder="Avatar Number" min="1" max="9" required>
+                                <label for="avatar_no">Choose Avatar</label>
+                            </div>
+                        </div>
+                        <!-- register -->
+                        <div class="row d-flex justify-content-center mt-4 mb-3">
+                            <div class="d-grid col-lg-4 text-center">
+                                <button class="btn btn-success text-shadow comic-font" type="submit">
+                                    Register <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <!-- confirm password -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-lock col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="password" name="confirm-password" class="form-control" id="confirm-password"
-                                placeholder="Confirm Password" minlength="5" maxlength="15"
-                                pattern="^[a-zA-Z0-9]{5,15}$" required>
-                            <label for="confirm-password">Confirm Password</label>
-                        </div>
-                    </div>
-                    <!-- choose avatar -->
-                    <div class="col-md-1 align-self-center">
-                        <i class="fas fa-portrait col-md fields"></i>
-                    </div>
-                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
-                        <div class="form-floating mb-3">
-                            <input type="number" name="avatar_no" class="form-control" id="avatar_no"
-                                placeholder="Avatar Number" min="1" max="9" required>
-                            <label for="avatar_no">Choose Avatar</label>
-                        </div>
-                    </div>
-                    <!-- register -->
-                    <div class="row d-flex justify-content-center mt-4 mb-3">
-                        <div class="d-grid col-lg-4 text-center">
-                            <button class="btn btn-success text-shadow comic-font" type="submit">
-                                Register <i class="fas fa-sign-in-alt"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <p class="text-center">
-            Already a Collector?
-            <a href="{{ url_for('login') }}" class="primary">Log In</a>
-        </p>
-    </div>
-</div>
-<!-- Inspiration borrowed from http://noffle-my-needs.herokuapp.com/register -->
-<!-- Avatar Carousel -->
-<div class="row">
-    <div class="col-sm-12 col-md-6 offset-md-3">
-        <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar1.png" class="d-block w-25" alt="Spiderman">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 1</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar2.png" class="d-block w-25" alt="Iron Man">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 2</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    
-                    <img src="/static/images/avatars/avatar3.png" class="d-block w-25" alt="Batman">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 3</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar4.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 4</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar5.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 5</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar6.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 6</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar7.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 7</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar8.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 8</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="/static/images/avatars/avatar9.png" class="d-block w-25" alt="">
-                    <div class="carousel-caption">
-                        <h5 class="comic-font">Avatar 9</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="icons text-muted">
-                Icons made by 
-                <a href="https://www.flaticon.com/authors/sketchandbuild" title="sketchandbuild" class="text-decoration-none text-success">sketchandbuild</a>
-                 from 
-                 <a href="https://www.flaticon.com/" title="Flaticon" class="text-decoration-none text-success">www.flaticon.com</a>
-            </div>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            </form>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-center">
+                Already a Collector?
+                <a href="{{ url_for('login') }}" class="primary">Log In</a>
+            </p>
+        </div>
+    </div>
+    <!-- Inspiration borrowed from http://noffle-my-needs.herokuapp.com/register -->
+    <!-- Avatar Carousel -->
+    <div class="row">
+        <div class="col-sm-12 col-md-6 offset-md-3">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar1.png" class="d-block w-25" alt="Spiderman">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 1</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar2.png" class="d-block w-25" alt="Iron Man">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 2</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        
+                        <img src="/static/images/avatars/avatar3.png" class="d-block w-25" alt="Batman">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 3</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar4.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 4</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar5.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 5</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar6.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 6</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar7.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 7</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar8.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 8</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- <div>Icons made by <a href="" title="sketchandbuild">sketchandbuild</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="/static/images/avatars/avatar9.png" class="d-block w-25" alt="">
+                        <div class="carousel-caption">
+                            <h5 class="comic-font">Avatar 9</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="icons text-muted">
+                    Icons made by 
+                    <a href="https://www.flaticon.com/authors/sketchandbuild" title="sketchandbuild" class="text-decoration-none text-success">sketchandbuild</a>
+                    from 
+                    <a href="https://www.flaticon.com/" title="Flaticon" class="text-decoration-none text-success">www.flaticon.com</a>
+                </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block scripts %}
-<script>
-    function handleSubmit(event) {
-        event.preventDefault();
-        let isDigit = /[0-9]/;
-        let isLower = /[a-z]/;
-        let isUpper = /[A-Z]/;
-
-        password = document.getElementById("password").value;
-        errorMsg = document.getElementById("error-msg");
-
-        if (isDigit.test(password) && isLower.test(password) && isUpper.test(password)) {
-            registrationForm.submit();
-        } else {
-            errorMsg.classList.remove("d-none");
-        }
-    }
-
-    let registrationForm = document.getElementById('registration-form');
-    registrationForm.addEventListener('submit', handleSubmit);
-</script>
+    <script src="{{ url_for('static', filename='js/register.js')}}"></script>
 {% endblock %}
