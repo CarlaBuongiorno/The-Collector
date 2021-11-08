@@ -50,11 +50,11 @@
     {% for comic in comics %}
     <!-- Credit Tim Nelson -> modal iterating through comics & displaying corresponding info
             - https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html -->
-        <div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic.title }}" aria-hidden="true">
+        <div class="modal fade" id="modal-{{ comic._id }}" tabindex="-1" aria-labelledby="{{ comic._id }}" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title comic-font" id="exampleModalLabel">{{ comic.title }}</h5>
+                        <h5 class="modal-title comic-font" id="{{ comic._id }}">{{ comic.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -62,7 +62,7 @@
                             <div class="row d-flex justify-content-evenly">
                                 {% if comic.image_url %}
                                 <div class="col-sm-12 col-md-4">
-                                    <img class="pic" src="{{ comic.image_url }}" />
+                                    <img class="pic" src="{{ comic.image_url }}" alt="Comic Book"/>
                                 </div>
                                 {% else %}
                                     <div class="col-sm-12 col-md-4">
@@ -70,20 +70,20 @@
                                     </div>
                                 {% endif %}
                                     <div class="col-sm-12 col-md-8 my-comic-info">
-                                        <p><strong>Title:</strong> {{ comic.title }}</br>
-                                            <strong>Publisher:</strong> {{ comic.publisher_name }}</br>
-                                            <strong>Year:</strong> {{ comic.year }}</br>
-                                            <strong>Issue Number:</strong> {{ comic.issue_no }}</br>
-                                            <strong>Grade:</strong> {{ comic.grade }}</br>
+                                        <p><strong>Title:</strong> {{ comic.title }}<br>
+                                            <strong>Publisher:</strong> {{ comic.publisher_name }}<br>
+                                            <strong>Year:</strong> {{ comic.year }}<br>
+                                            <strong>Issue Number:</strong> {{ comic.issue_no }}<br>
+                                            <strong>Grade:</strong> {{ comic.grade }}<br>
                                             {% if comic.for_sale == "on" %}
-                                                <strong>Price:</strong> {{ comic.price }}</br>
+                                                <strong>Price:</strong> {{ comic.price }}<br>
                                             {% endif %}
                                             {% if comic.notes %}
-                                                <strong>Notes:</strong> {{ comic.notes }}</br>
+                                                <strong>Notes:</strong> {{ comic.notes }}<br>
                                             {% endif %}
-                                                <strong>The Collector:</strong> {{ comic.the_collector }}</br>
+                                                <strong>The Collector:</strong> {{ comic.the_collector }}<br>
                                             {% if comic.show_contact_details == "on" %}
-                                                <strong>Contact:</strong> {{ comic.contact }}</br>
+                                                <strong>Contact:</strong> {{ comic.contact }}<br>
                                             {% endif %}
                                         </p>
                                     </div>
@@ -104,12 +104,12 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="delete-{{ comic._id }}" tabindex="-1" aria-labelledby="#deleteComicModalLabel"
+        <div class="modal fade" id="delete-{{ comic._id }}" tabindex="-1" aria-labelledby="deleteComic-{{ comic._id }}"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteComicModalLabel">Delete Comic</h5>
+                        <h5 class="modal-title" id="deleteComic-{{ comic._id }}">Delete Comic</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
