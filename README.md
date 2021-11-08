@@ -130,36 +130,36 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
     * ![register](static/docs/readme-images/register.png)
 
 * Log In
-![login](static/docs/readme-images/login.png)
+    * ![login](static/docs/readme-images/login.png)
 
 * Log Out
 
 * Add a comic book to user's catalogue
-![Add a comic book](static/docs/readme-images/add-comic2.png)
-![Add a comic book](static/docs/readme-images/add-comic.png)
+    * ![Add a comic book](static/docs/readme-images/add-comic2.png)
+    * ![Add a comic book](static/docs/readme-images/add-comic.png)
 
 * Edit a comic book from the user's own catalogue
 * Edit a comic from 'The Collection' for admin users only
-![Edit a comic book](static/docs/readme-images/edit-comic.png)
+    * ![Edit a comic book](static/docs/readme-images/edit-comic.png)
 
 * Delete a comic book from the user's own catalogue.
 * Delete a comic from 'The Collection' for admin users only
-![Delete a comic book](static/docs/readme-images/delete-comic.png)
+    * ![Delete a comic book](static/docs/readme-images/delete-comic.png)
 
 * Confirm comic deletion modal
-![Confirm comic deletion](static/docs/readme-images/confirm-delete-comic.png)
+    * ![Confirm comic deletion](static/docs/readme-images/confirm-delete-comic.png)
 
 * Update and Delete a profile/account
-![Update and Delete a profile/account](static/docs/readme-images/profile.png)
+    * ![Update and Delete a profile/account](static/docs/readme-images/profile.png)
 
 * Confirm account deletion modal
-![Confirm account deletion](static/docs/readme-images/confirm-delete-account.png)
+    * ![Confirm account deletion](static/docs/readme-images/confirm-delete-account.png)
 
 * Edit admin rights and edit or delete a user for admin users only.
 ![]()
 
 * Auto-updating copyright year.
-![]()
+    * ![Copyright](static/docs/readme-images/copyright.png)
 
 ### Future Features
 

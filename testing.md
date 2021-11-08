@@ -215,6 +215,33 @@ PyLint Extension
 
 ## **Responsiveness And Compatibility**
 
+The website was tested through the following devices and browsers:
+
+* Google Chrome
+* Microsoft Edge
+* Mozilla Firefox
+* Safari
+
+All working as expected.
+
+DevTools were used to test the site across a range of widths:
+
+* Mobiles: 
+    * iphone5(320px)
+    * Samsung S5 (360px)
+    * iPhone 6/7/8/X (375px)
+    * iPhone 6/7/8 Plus (414px)
+
+* Tablets:
+    * iPad (768px)
+    * iPad Pro (1024px)
+
+* Desktops:
+    * Laptop (1200px)
+    * Large Desktop screen (1920px)
+
+All working as expected.
+
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
