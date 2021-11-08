@@ -234,10 +234,6 @@ form i.fields {
     margin: 5px;
 }
 
-.defaut-pic {
-    background-image: url('../images/action-comics.webp');
-}
-
 /* My comic info modal */
 
 .my-comic-info {

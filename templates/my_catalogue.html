@@ -14,16 +14,14 @@
             <div class="col-lg-4 offset-lg-4 text-center">
                 <h2 class="comic-font heading">{{ user.username.title() }}'s Catalogue</h2>
             </div>
-                <!-- Add comic button -->
+            <!-- Add comic button -->
             <div class="col-lg-4 text-center align-self-center">
-                <a href="{{ url_for('add_comic' ) }}" class="btn btn-lg text-shadow btn-success comic-font add-comic-button">
+                <a href="{{ url_for('add_comic' ) }}" role="button" class="btn btn-lg text-shadow btn-success comic-font add-comic-button">
                     Add Comic <i class="far fa-plus-square"></i>
                 </a>
             </div>
         </div>
     </div>
-
-
 
     <!-- Container to hold list of comic books (Blue background) -->
     <div class="container-fluid my-catalogue-wall">
@@ -33,13 +31,13 @@
             <!-- Button trigger modal -->
             {% if comic.image_url %}
                 <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-                    <img class="pic" src="{{ comic.image_url }}" />
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}" aria-label="Comic information modal">
+                    <img class="pic" src="{{ comic.image_url }}" alt="Comic Book"/>
                 </button>
             {% else %}
                 <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
-                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}">
-                    <img class="pic" src="/static/images/action-comics.webp" />
+                    data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}" aria-label="Comic information modal">
+                    <img class="pic" src="/static/images/action-comics.webp" alt="Comic Book - Action Comics"/>
                 </button>
             {% endif %}
             {% endfor %}
@@ -64,10 +62,12 @@
                         <div class="row d-flex justify-content-evenly">
                         {% if comic.image_url %}
                             <div class="col-sm-12 col-md-4">
-                                <img class="pic" src="{{ comic.image_url }}" />
+                                <img class="pic" src="{{ comic.image_url }}"  alt="Comic Book"/>
                             </div>
                         {% else %}
-                            <div class="col-sm-12 col-md-4 pic"></div>
+                            <div class="col-sm-12 col-md-4">
+                                <img class="pic" src="/static/images/action-comics.webp"  alt="Comic Book - Action Comics"/>
+                            </div>
                         {% endif %}
                         <div class="col-sm-12 col-md-8 my-comic-info">
                             <p><strong>Title:</strong> {{ comic.title }}</br>
