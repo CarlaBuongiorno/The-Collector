@@ -198,6 +198,7 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ### Future Features
 
+* A Contact Page.
 * Email verification before a user can add comic books.
 * Enter user's password to delete user account.
 * A toggle to allow the user to select whether they want to set their Catalogue as public or private.
@@ -216,15 +217,18 @@ The navigation bar changes depending on user status and screen size:
 
 | Nav Link | Logged Out | Logged In (User) | Logged In (Admin) |
 |-------|-----|-----|-----|
-| Logo (Profile page if logged in, Landing Page if not) | &#9989; | &#9989; | &#9989; |
+| Logo (Profile page if logged in, Home Page if not) | &#9989; | &#9989; | &#9989; |
 | Log In | &#9989; | &#10060; | &#10060; |
 | Register | &#9989; | &#10060; | &#10060; |
 | Add Comics | &#10060; | &#9989; | &#9989; |
 | My Catalogue | &#10060; | &#9989; | &#9989; |
 | The Collection | &#10060; | &#9989; | &#9989; |
 | Profile | &#10060; | &#9989; | &#9989; |
-| Manage Users | &#10060; | &#10060; | &#9989; |
+| Manage Comics Of Other Collectors | &#10060; | &#10060; | &#9989; |
 | Log Out | &#10060; | &#9989; | &#9989; |
+    
+* ![Navbar Large Screen For The Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
+* ![Navbar Large Screen For The Logged In User](docs/screenshots/navbar_logged_in_lg.png)
 
 ### Database Design
 
@@ -464,6 +468,9 @@ All testing and project barriers and solutions has been documented here - [testi
 
 ### Acknowledgements
 
-* 
+* I would like to thank the tutors and students of Code Institute and the Code Institute Slack Community for their helpfulness and assistance when needed.
+* I would like to thank my mentor, Tim Nelson, for his constructive and extremely helpful feedback, guidance, and support.
+* I would like to thank my family, my husband for his devoted support, and my 4 year old for his patience while mom spent much of her time and attention on a computer screen.
+* Lastly, I would like to dedicate this site to my husband, who is the _actual_ Comic Book Collector. His love for Comic Books is the true inspiration for this website.
 
 [Back to Top](#the-collector)

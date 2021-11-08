@@ -128,7 +128,8 @@
     * ![Navbar Large Screen For The Logged Out User](docs/screenshots/navbar_logged_out_lg.png)
     * ![Navbar Small Screen For The Logged In User](docs/screenshots/navbar_logged_in_sm.png)
     * ![Navbar Large Screen For The Logged In User](docs/screenshots/navbar_logged_in_lg.png)
-    * ![Full Footer With Logo](docs/screenshots/full_footer.png)
+    * ![Footer With Logo For The Logged Out User](docs/screenshots/full_footer.png)
+    * ![Footer With Logo For The Logged In User](docs/screenshots/logout_footer.png)
 
 ---
 
@@ -323,5 +324,7 @@ Google Lighthouse was run on different pages returning different results. Below 
     * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their 'ID' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
 
 ### Known Bugs
+
+* There are no known errors.
 
 [Back to Top](#testing-and-project-barrier-solutions)
