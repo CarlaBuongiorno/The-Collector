@@ -103,7 +103,7 @@ header, main, footer {
 
 #hero-image {
     /* Image by InspiredImages from Pixabay */
-    background-image: url('../images/comic-wallpaper.jpg');
+    background-image: url('../images/comic_wallpaper.jpg');
     border: 3px solid rgb(15, 15, 15);
     background-color: rgb(167, 19, 19);
     background-size: contain;
@@ -150,12 +150,12 @@ h1.title.text-shadow {
 
 .blue-burst {
     /* Star Vectors by Vecteezy */
-    background-image: url('../images/blue-burst.jpg');
+    background-image: url('../images/blue_burst.jpg');
 }
 
 .yellow-burst {
     /* Cartoon Vectors by Vecteezy */
-    background-image: url('../images/yellow-burst.jpg');
+    background-image: url('../images/yellow_burst.jpg');
 }
 
 .bursts {
