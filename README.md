@@ -120,7 +120,7 @@ The wireframes for desktop, mobile and tablet for this project can be found in t
 
 After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
 
-### Features
+## Features
 
 * Home Page
     * ![Home Page](docs/screenshots/home.png)
@@ -461,7 +461,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ## **Testing And Project Barrier Solutions**
 
-All testing and project barriers and solutions has been documented here - [testing.md](https://github.com/CarlaBuongiorno/The-Collector/blob/master/testing.md)
+All testing and project barriers and solutions has been documented here - [TESTING.md](https://github.com/CarlaBuongiorno/The-Collector/blob/master/TESTING.md)
 
 [Back to Top](#the-collector)
 
