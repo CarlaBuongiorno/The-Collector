@@ -159,6 +159,14 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ---
 
+* The option to set a comic for sale. The price field then becomes a mandatory field. 
+* The price will then display within the information modals
+    * ![Set Price Toggle On](docs/screenshots/set_price_toggle_on.png)
+    * ![Set Price Toggle Off](docs/screenshots/set_price_toggle_off.png)
+    * ![Price Displayed In Information Modal](docs/screenshots/price_displayed.png)
+
+---
+
 * View all the comic books added by the user in 'My Catalogue'
 * See the information added by the user for each comic book
     * ![View My Catalogue](docs/screenshots/my_catalogue.png)
