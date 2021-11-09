@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -58,14 +65,7 @@ html, body {
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
 }
 
-/* Footer */
-/* Credit -> To keep footer at the bottom -> https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f */
-#wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
+/* Main & Footer */
 
 main {
     flex-grow: 1;

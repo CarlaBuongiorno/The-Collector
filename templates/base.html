@@ -10,10 +10,7 @@
     <meta name="keywords" content="comics, catalogue, collection, books, collector">
     <meta name="author" content="Carla Buongiorno">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon_io(1)/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon_io(1)/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon_io(1)/favicon-32x32.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='favicon_io(1)/favicon-32x32.png') }}">
+    <link rel="icon" type="image/x-icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" type="text/css">
     <!-- Bootstrap -->
@@ -26,114 +23,112 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <!-- Navbar -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav text-center">
-                            {% if session.user %}
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white"
-                                    href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        {% if session.user %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                                href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-            </nav>
-        </header>
-
-        <!-- flash messages -->
-        <div class="container-fluid">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="row flashes">
-                <h4 class="text-center btn-success comic-font text-shadow">{{ message }}</h4>
             </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
+        </nav>
+    </header>
+
+    <!-- flash messages -->
+    <aside class="container-fluid">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="text-center btn-success comic-font text-shadow">{{ message }}</h4>
         </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </aside>
 
-        <!-- Content -->
-        <main class="container-fluid">
-            {% block content %}
-            {% endblock %}
-        </main>
+    <!-- Content -->
+    <main class="container-fluid">
+        {% block content %}
+        {% endblock %}
+    </main>
 
-        <!-- Footer -->
-        <footer class="container-fluid">
-            <div class="row btn-primary blue-footer align-items-center">
-                <div class="col col-sm-4 text-center text-md-start p-2">
-                    <a class="navbar-brand text-white text-shadow ms-md-4" href="{{ url_for('home')}}">The Collector</a>
-                </div>
-                <div class="col-6 col-sm-4 text-center text-shadow comic-font footer-links">
-                    {% if session.user %}
-                        <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout')}}">Log Out</a>
-                    {% else %}
-                        <a class="d-grid text-white text-decoration-none" href="{{ url_for('login')}}">Log In</a>
-                        <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('register')}}">Register</a>
-                    {% endif %}
-                </div>
-                <div class="col-6 col-sm-4 text-shadow text-center">
-                    <div class="row">
-                        <div class="col pt-md-2">
-                            <a href="https://www.facebook.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-facebook-square text-white social-icons" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://www.twitter.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-twitter text-white social-icons" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
-                            </a>
-                        </div>
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div class="row btn-primary blue-footer align-items-center">
+            <div class="col col-sm-4 text-center text-md-start p-2">
+                <a class="navbar-brand text-white text-shadow ms-md-4" href="{{ url_for('home')}}">The Collector</a>
+            </div>
+            <div class="col-6 col-sm-4 text-center text-shadow comic-font footer-links">
+                {% if session.user %}
+                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout')}}">Log Out</a>
+                {% else %}
+                    <a class="d-grid text-white text-decoration-none" href="{{ url_for('login')}}">Log In</a>
+                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('register')}}">Register</a>
+                {% endif %}
+            </div>
+            <div class="col-6 col-sm-4 text-shadow text-center">
+                <div class="row">
+                    <div class="col pt-md-2">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-square text-white social-icons" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter text-white social-icons" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="col p-2">
-                            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-instagram text-white social-icons" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                            <a href="https://www.youtube.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-youtube text-white social-icons" aria-hidden="true"></i>
-                                <span class="sr-only">YouTube</span>
-                            </a>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col p-2">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram text-white social-icons" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube text-white social-icons" aria-hidden="true"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="row red-footer text-center text-md-start">
-                <div class="col comic-font text-white text-shadow align-self-center ms-md-4">&copy; Copyright <span id=copyright></span> The Collector</div>
-            </div>
-        </footer>
-    </div>
+        </div>
+        <div class="row red-footer text-center text-md-start">
+            <div class="col comic-font text-white text-shadow align-self-center ms-md-4">&copy; Copyright <span id=copyright></span> The Collector</div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
