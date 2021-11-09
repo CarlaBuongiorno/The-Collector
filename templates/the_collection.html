@@ -11,7 +11,7 @@
                 </form>
             </div>
             <div class="col-lg-4 offset-lg-1 text-center">
-                <img class="avatar-profile" src="/static/images/avatars/avatar{{ user.avatar_no }}.png"
+                <img class="avatar-profile" src="{{ url_for('static', filename='images/avatars/avatar'+user.avatar_no|string()+'.png') }}"
                     alt="Avatar for {{ user.username }}">
             </div>
         </div>
