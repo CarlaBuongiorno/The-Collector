@@ -143,10 +143,26 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ---
 
+* Browse the collections of other comic collectors in 'The Collection'
+* Search for comics by Title, The Collector, Issue Number, and Publisher
+* See details of the comic books
+    * ![Browse The Collection](docs/screenshots/the_collection.png)
+    * ![Search The Collection](docs/screenshots/search.png)
+    * ![See Comic Book Details](docs/screenshots/info_modal.png)
+
+---
+
 * Add a comic book to user's catalogue
     * ![Add A Comic Book From Profile Page](docs/screenshots/buttons.png)
     * ![Add A Comic Book From Navbar](docs/screenshots/add_comic_nav.png)
     * ![Add A Comic Book From My Catalogue](docs/screenshots/add_comic_my_catalogue.png)
+
+---
+
+* View all the comic books added by the user in 'My Catalogue'
+* See the information added by the user for each comic book
+    * ![View My Catalogue](docs/screenshots/my_catalogue.png)
+    * ![See Information For Each Comic Book](docs/screenshots/info_modal_edit_delete.png)
 
 ---
 
@@ -171,7 +187,15 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 ---
 
 * Update and Delete a profile/account
+* A Toggle switch to choose if a user would like other collectors to see their contact details
+* The user can see their choice of showing their details or not within the comic information modals in 'My Catalogue'
+* Other users either see your contact details or not within the information modals in 'The Collection'
     * ![Update And Delete A Profile/Account](docs/screenshots/profile.png)
+    * ![Show Contact Details Toggle](docs/screenshots/show_contact_toggle.png)
+    * ![When Toggle Is Set To On](docs/screenshots/show_contact_on.png)
+    * ![When Toggle Is Set To On](docs/screenshots/show_contact_off.png)
+    * ![Contact Details Are Visible](docs/screenshots/contact_details_shown.png)
+    * ![Contact Details Are Not Visible](docs/screenshots/no_contact_details.png)
     
 ---
 
