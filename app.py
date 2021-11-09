@@ -192,6 +192,7 @@ def profile(username):
         # grab the session user's username from the db
         user = mongo.db.user.find_one(
             {"username": session["user"].lower()})
+        # Show contact details toggle is set to 'on' by default
         show_contact_details = "on" if request.form.get(
             "show_contact_details") else "off"
         mongo.db.user.update_one(
