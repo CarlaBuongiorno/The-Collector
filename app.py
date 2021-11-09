@@ -188,10 +188,10 @@ def profile(username):
         other collectors, save in db. Find user's comics and display/don't
         display email address to other users. Render profile page.
     """
-    if request.method == "POST":
-        # grab the session user's username from the db
-        user = mongo.db.user.find_one(
+    # grab the session user's username from the db
+    user = mongo.db.user.find_one(
             {"username": session["user"].lower()})
+    if request.method == "POST":
         # Show contact details toggle is set to 'on' by default
         show_contact_details = "on" if request.form.get(
             "show_contact_details") else "off"
@@ -211,14 +211,9 @@ def profile(username):
         session["user"] = request.form.get("username").lower()
         username = user["username"]
 
-        return redirect(url_for("profile", username=username))
+        return redirect(url_for("profile", username=username, user=user))
 
-    if "user" in session:
-        user = mongo.db.user.find_one(
-            {"username": session["user"]})
-        return render_template("profile.html", user=user)
-
-    return redirect(url_for("login"))
+    return render_template("profile.html", username=user["username"], user=user)
 
 
 @app.route("/logout")
@@ -293,31 +288,35 @@ def edit_comic(comic_id):
     Render edit comic template. User can edit a comic. Get user's input and
     update in db. Redirect to My Catalogue page upon successful update.
     """
-    if request.method == "POST":
-        for_sale = "on" if request.form.get("for_sale") else "off"
-        submit = {
-            "title": request.form.get("title"),
-            "publisher_name": request.form.get("publisher_name"),
-            "year": request.form.get("year"),
-            "issue_no": request.form.get("issue_no"),
-            "grade": request.form.get("grade"),
-            "for_sale": for_sale,
-            "price": request.form.get("price"),
-            "notes": request.form.get("notes"),
-            "image_url": request.form.get("image_url")
-        }
-
-        mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
-        flash("Comic Successfully Updated")
-        return redirect(url_for("get_comics"))
-
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     user = mongo.db.user.find_one({"username": session["user"].lower()})
+    the_collector = comic_to_delete.get("the_collector")
+    if user["is_admin"] and user["username"] != the_collector:
+        if request.method == "POST":
+            for_sale = "on" if request.form.get("for_sale") else "off"
+            submit = {
+                "title": request.form.get("title"),
+                "publisher_name": request.form.get("publisher_name"),
+                "year": request.form.get("year"),
+                "issue_no": request.form.get("issue_no"),
+                "grade": request.form.get("grade"),
+                "for_sale": for_sale,
+                "price": request.form.get("price"),
+                "notes": request.form.get("notes"),
+                "image_url": request.form.get("image_url")
+            }
 
-    publishers = mongo.db.publishers.find().sort("publisher_name", 1)
-    return render_template("edit_comic.html",
-                           comic=comic, publishers=publishers, user=user)
+            mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
+            flash("Comic Successfully Updated")
+            return redirect(url_for("get_comics"))
 
+        publishers = mongo.db.publishers.find().sort("publisher_name", 1)
+        return render_template(
+            "edit_comic.html",
+            comic=comic, publishers=publishers, user=user)
+
+    flash("An error has accured. Please try again.")
+    return redirect(url_for("get_comics"))
 
 @app.route("/delete_comic/<comic_id>")
 @login_required
@@ -333,14 +332,13 @@ def delete_comic(comic_id):
             {"username": session["user"]})
     user_id = user["_id"]
 
-    mongo.db.user.update_one(
-        {"_id": user_id},
-        {"$pull": {"my_catalogue": ObjectId(comic_id)}})
-
     comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     the_collector = comic_to_delete.get("the_collector")
     if the_collector:
         if user["is_admin"] and user["username"] != the_collector:
+            mongo.db.user.update_one(
+                {"_id": user_id},
+                {"$pull": {"my_catalogue": ObjectId(comic_id)}})
             mongo.db.comics.delete_one(
                 {"_id": ObjectId(comic_id)})
             mongo.db.user.update_one(
@@ -349,10 +347,8 @@ def delete_comic(comic_id):
 
             flash("Comic Successfully Deleted")
             return redirect(url_for("get_collection"))
-
-    mongo.db.comics.delete_one({"_id": ObjectId(comic_id)})
-    flash("Comic Successfully Deleted")
-
+    
+    flash("An error has accured. Please try again.")
     return redirect(url_for("get_comics"))
 
 
