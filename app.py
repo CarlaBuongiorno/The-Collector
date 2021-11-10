@@ -24,6 +24,9 @@ mongo = PyMongo(app)
 # @login_required decorator
 # https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
 def login_required(f):
+    """
+        Page is only accessed if user is logged in
+    """
     @wraps(f)
     def decorated_function(*args, **kwargs):
         # no "user" in session
@@ -213,7 +216,9 @@ def profile(username):
 
         return redirect(url_for("profile", username=username, user=user))
 
-    return render_template("profile.html", username=user["username"], user=user)
+    return render_template(
+        "profile.html",
+        username=user["username"], user=user)
 
 
 @app.route("/logout")
@@ -227,14 +232,25 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Credit Tim Nelson for code inspration
+# https://github.com/TravelTimN/ci-milestone04-dcd/blob/main/app/users/routes.py#L233-L270
 @app.route('/delete_account/<username>')
 @login_required
 def delete_account(username):
     """
-    User can delete their account. Remove user from db.
+    User can delete their account. Removes user and
+    user's comics from database.
     """
+    user = mongo.db.user.find_one({"username": session["user"].lower()})
+    # find all comics belonging to user
+    user_comics = [comic for comic in user.get("my_catalogue")]
+    # for each user comic, remove from db and pull from comics
+    for comic in user_comics:
+        mongo.db.comics.remove({"_id": comic})
+        mongo.db.user.update_many({}, {"$pull": {"my_catalogue": comic}})
+    # remove user from session cookies and delete user from db
     mongo.db.user.remove({"username": username})
-    flash("Your Account Has Been Deleted")
+    flash("Your Account And Comics Have Been Successfully Deleted")
     session.pop("user")
     return redirect(url_for("home"))
 
@@ -290,8 +306,8 @@ def edit_comic(comic_id):
     """
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     user = mongo.db.user.find_one({"username": session["user"].lower()})
-    the_collector = comic_to_delete.get("the_collector")
-    if user["is_admin"] and user["username"] != the_collector:
+    the_collector = comic["the_collector"]
+    if user["is_admin"] or user["username"] != the_collector:
         if request.method == "POST":
             for_sale = "on" if request.form.get("for_sale") else "off"
             submit = {
@@ -312,11 +328,11 @@ def edit_comic(comic_id):
 
         publishers = mongo.db.publishers.find().sort("publisher_name", 1)
         return render_template(
-            "edit_comic.html",
-            comic=comic, publishers=publishers, user=user)
+            "edit_comic.html", comic=comic, publishers=publishers, user=user)
 
     flash("An error has accured. Please try again.")
     return redirect(url_for("get_comics"))
+
 
 @app.route("/delete_comic/<comic_id>")
 @login_required
@@ -328,26 +344,20 @@ def delete_comic(comic_id):
     If user is admin, user can delete other user's comics from the
     Collection.
     """
-    user = mongo.db.user.find_one(
-            {"username": session["user"]})
-    user_id = user["_id"]
+    user = mongo.db.user.find_one({"username": session["user"]})
+    comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
 
-    comic_to_delete = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
-    the_collector = comic_to_delete.get("the_collector")
-    if the_collector:
-        if user["is_admin"] and user["username"] != the_collector:
-            mongo.db.user.update_one(
-                {"_id": user_id},
-                {"$pull": {"my_catalogue": ObjectId(comic_id)}})
-            mongo.db.comics.delete_one(
-                {"_id": ObjectId(comic_id)})
-            mongo.db.user.update_one(
-                {"username": the_collector},
-                {"$pull": {"my_catalogue": ObjectId(comic_id)}})
+    the_collector = comic["the_collector"]
+    if user["is_admin"] or user["username"] != the_collector:
+        mongo.db.user.update_one(
+            {"_id": ObjectId(user["_id"])},
+            {"$pull": {"my_catalogue": ObjectId(comic_id)}})
+        mongo.db.comics.delete_one(
+            {"_id": ObjectId(comic_id)})
 
-            flash("Comic Successfully Deleted")
-            return redirect(url_for("get_collection"))
-    
+        flash("Comic Successfully Deleted")
+        return redirect(url_for("get_collection"))
+
     flash("An error has accured. Please try again.")
     return redirect(url_for("get_comics"))
 
