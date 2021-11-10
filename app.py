@@ -358,7 +358,7 @@ def delete_comic(comic_id):
         flash("Comic Successfully Deleted")
         return redirect(url_for("get_collection"))
 
-    flash("An error has accured. Please try again.")
+    flash("An error has occurred. Please try again.")
     return redirect(url_for("get_comics"))
 
 
