@@ -74,6 +74,7 @@ main {
 header, main, footer {
     flex-shrink: 0;
 }
+
 /* ---- End Credit ---- */
 
 .blue-footer {
@@ -97,6 +98,11 @@ header, main, footer {
     padding-left: 6px;
     padding-right: 20px;
     padding-bottom: 5px;
+}
+
+.developer {
+    margin-right: 16px;
+    font-size: 12px;
 }
 
 /* Home Page */
@@ -299,6 +305,11 @@ form i.fields {
     
     .red-footer {
         height: 40px;
+    }
+
+    .developer {
+        margin-right: 16px;
+        margin-left: 80px;
     }
 
     .page-not-found-heading {

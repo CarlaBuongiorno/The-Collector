@@ -88,14 +88,14 @@
     <footer class="container-fluid">
         <div class="row bg-primary blue-footer align-items-center">
             <div class="col col-sm-4 text-center text-md-start p-2">
-                <a class="navbar-brand text-white text-shadow ms-md-4" href="{{ url_for('home')}}">The Collector</a>
+                <a class="navbar-brand text-white text-shadow ms-md-4" href="{{ url_for('home') }}">The Collector</a>
             </div>
             <div class="col-6 col-sm-4 text-center text-shadow comic-font footer-links">
                 {% if session.user %}
-                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout')}}">Log Out</a>
+                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('logout') }}">Log Out</a>
                 {% else %}
-                    <a class="d-grid text-white text-decoration-none" href="{{ url_for('login')}}">Log In</a>
-                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('register')}}">Register</a>
+                    <a class="d-grid text-white text-decoration-none" href="{{ url_for('login') }}">Log In</a>
+                    <a class="d-grid text-white text-decoration-none p-2" href="{{ url_for('register') }}">Register</a>
                 {% endif %}
             </div>
             <div class="col-6 col-sm-4 text-shadow text-center">
@@ -126,7 +126,17 @@
             </div>
         </div>
         <div class="row red-footer text-center text-md-start">
-            <div class="col comic-font text-white text-shadow align-self-center ms-md-4">&copy; Copyright <span id=copyright></span> The Collector</div>
+            <div class="col col-sm-6 comic-font text-white text-shadow align-self-center">&copy; Copyright <span id=copyright></span> The Collector</div>
+            <div class="col col-sm-6 comic-font text-white text-shadow align-self-center"><span class="developer">Developed by: Carla Buongiorno</span>
+                <a href="https://github.com/CarlaBuongiorno/The-Collector" class="text-decoration-none" target="_blank" rel="noopener">
+                    <i class="fab fa-github text-white" aria-hidden="true"></i>
+                    <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/carlabuongiorno/" class="text-decoration-none" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin text-white" aria-hidden="true"></i>
+                    <span class="sr-only">linkedin</span>
+                </a>
+            </div>
         </div>
     </footer>
 
