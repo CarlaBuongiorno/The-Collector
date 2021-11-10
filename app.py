@@ -307,7 +307,10 @@ def edit_comic(comic_id):
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     user = mongo.db.user.find_one({"username": session["user"].lower()})
     the_collector = comic["the_collector"]
-    if user["is_admin"] or user["username"] != the_collector:
+    print(user["is_admin"])
+    print(user["username"])
+    print(the_collector)
+    if user["is_admin"] or user["username"] == the_collector:
         if request.method == "POST":
             for_sale = "on" if request.form.get("for_sale") else "off"
             submit = {
