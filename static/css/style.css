@@ -84,7 +84,7 @@ header, main, footer {
 }
 
 .red-footer {
-    height: 40px;
+    height: 60px;
     background-color: rgb(167, 19, 19);
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
 }
