@@ -21,17 +21,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# @login_required decorator
-# https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
 def login_required(f):
     """
         Page is only accessed if user is logged in
+        @login_required decorator
+        https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
     """
     @wraps(f)
     def decorated_function(*args, **kwargs):
         # no "user" in session
         if "user" not in session:
-            flash("You must log in to view this page")
+            flash("You must log in to view this page", "danger")
             return redirect(url_for("login"))
         # user is in session
         return f(*args, **kwargs)
@@ -53,10 +53,11 @@ def get_comics():
     """
         Get all user's comics from database and
         display them on 'My Catalogue' page.
+        Credit to Sean from Code Institute Tutor Support for his help
+        with this code snippet.
     """
     comics = []
-    # Credit to Sean from Code Institute Tutor Support for his help
-    # with this code snippet
+
     user = mongo.db.user.find_one({"username": session["user"]})
     comic_id_collection = user["my_catalogue"]
 
@@ -108,7 +109,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists", "danger")
             return redirect(url_for("register"))
 
         # check if passwords match
@@ -116,7 +117,7 @@ def register():
         confirm_password = request.form.get("confirm-password")
 
         if password != confirm_password:
-            flash("Your passwords don't match", 'error')
+            flash("Your passwords don't match", "danger")
             return redirect(url_for("register"))
 
         # check if password conforms to pattern
@@ -143,7 +144,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Successful!", "success")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -166,17 +167,17 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
-                    request.form.get("username")))
+                    request.form.get("username")), "success")
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", "danger")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password", "danger")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -202,15 +203,17 @@ def profile(username):
             {"username": user["username"]},
             {"$set": {"fullname": request.form.get("fullname"),
                       "email": request.form.get("email"),
-                      "username": request.form.get("username"),
+                      "username": request.form.get("username").lower(),
                       "avatar_no": int(request.form.get("avatar_no")),
                       "show_contact_details": show_contact_details}})
         # Find all comics and update show comic details on or off
         mongo.db.comics.update_many(
             {"the_collector": user["username"]},
-            {"$set": {"show_contact_details": show_contact_details}})
+            {"$set": {"show_contact_details": show_contact_details,
+                      "the_collector": request.form.get("username").lower(),
+                      "contact": request.form.get("email")}})
 
-        flash("Your Profile Has Been Updated")
+        flash("Your Profile Has Been Updated", "success")
         session["user"] = request.form.get("username").lower()
         username = user["username"]
 
@@ -227,19 +230,19 @@ def logout():
     """
     Remove user from session cookies. Render login page.
     """
-    flash("You have been logged out")
+    flash("You have been logged out", "success")
     session.pop("user")
     return redirect(url_for("login"))
 
 
-# Credit Tim Nelson for code inspration
-# https://github.com/TravelTimN/ci-milestone04-dcd/blob/main/app/users/routes.py#L233-L270
 @app.route('/delete_account/<username>')
 @login_required
 def delete_account(username):
     """
     User can delete their account. Removes user and
     user's comics from database.
+    Credit to Tim Nelson for code inspration
+    https://github.com/TravelTimN/ci-milestone04-dcd/blob/main/app/users/routes.py#L233-L270
     """
     user = mongo.db.user.find_one({"username": session["user"].lower()})
     # find all comics belonging to user
@@ -250,7 +253,7 @@ def delete_account(username):
         mongo.db.user.update_many({}, {"$pull": {"my_catalogue": comic}})
     # remove user from session cookies and delete user from db
     mongo.db.user.remove({"username": username})
-    flash("Your Account And Comics Have Been Successfully Deleted")
+    flash("Your Account And Comics Have Been Successfully Deleted", "success")
     session.pop("user")
     return redirect(url_for("home"))
 
@@ -279,7 +282,7 @@ def add_comic():
             "price": request.form.get("price"),
             "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
-            "the_collector": user["username"],
+            "the_collector": user["username"].lower(),
             "show_contact_details": user["show_contact_details"],
             "contact": user["email"]
         }
@@ -288,8 +291,7 @@ def add_comic():
         _id = catalogue.inserted_id
         mongo.db.user.update_one({"username": session["user"]},
                                  {"$push": {"my_catalogue": _id}})
-        flash("You added {}".format(
-                    request.form.get("title")))
+        flash(f'{request.form.get("title")} Has Been Added', "success")
 
         return redirect(url_for("get_comics"))
 
@@ -307,9 +309,6 @@ def edit_comic(comic_id):
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     user = mongo.db.user.find_one({"username": session["user"].lower()})
     the_collector = comic["the_collector"]
-    print(user["is_admin"])
-    print(user["username"])
-    print(the_collector)
     if user["is_admin"] or user["username"] == the_collector:
         if request.method == "POST":
             for_sale = "on" if request.form.get("for_sale") else "off"
@@ -322,18 +321,21 @@ def edit_comic(comic_id):
                 "for_sale": for_sale,
                 "price": request.form.get("price"),
                 "notes": request.form.get("notes"),
-                "image_url": request.form.get("image_url")
+                "image_url": request.form.get("image_url"),
+                "the_collector": user["username"].lower(),
+                "show_contact_details": user["show_contact_details"],
+                "contact": user["email"]
             }
 
             mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
-            flash("Comic Successfully Updated")
+            flash("Comic Successfully Updated", "success")
             return redirect(url_for("get_comics"))
 
         publishers = mongo.db.publishers.find().sort("publisher_name", 1)
         return render_template(
             "edit_comic.html", comic=comic, publishers=publishers, user=user)
 
-    flash("An error has accured. Please try again.")
+    flash("An error has accured. Please try again.", "danger")
     return redirect(url_for("get_comics"))
 
 
@@ -358,29 +360,29 @@ def delete_comic(comic_id):
         mongo.db.comics.delete_one(
             {"_id": ObjectId(comic_id)})
 
-        flash("Comic Successfully Deleted")
+        flash("Comic Successfully Deleted", "success")
         return redirect(url_for("get_collection"))
 
-    flash("An error has occurred. Please try again.")
+    flash("An error has occurred. Please try again.", "danger")
     return redirect(url_for("get_comics"))
 
 
-# Code credit ->
-# https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
 @app.errorhandler(404)
 def not_found(e):
     """
         Render 404 page if errors occur
+        Code credit to Geeks for Geeks for 404 error handling
+        https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
     """
     return render_template("404.html"), 404
 
 
-# Code credit ->
-# https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
 @app.errorhandler(500)
 def internal_error(e):
     """
         Render 500 page if errors occur
+        Code credit to Digital Ocean for handling internal server errors
+        https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
     """
     return render_template("500.html"), 500
 
