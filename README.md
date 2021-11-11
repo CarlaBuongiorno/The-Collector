@@ -230,10 +230,12 @@ After some careful consideration, I decided to change 'THE COLLECTORS' page to '
 
 ### Future Features
 
+* Add an admin page in order to delete and edit users, as well as give admin rights to other users.
 * A Contact Page.
 * Email verification before a user can add comic books.
 * Enter user's password to delete user account.
 * A toggle to allow the user to select whether they want to set their Catalogue as public or private.
+* Allowing a user to upload images from their device, possibly by means of incorporating the use of [Cloudinary](https://cloudinary.com/) for image uploads.
 * A system where The Collectors could sell comics to each other through the site so that the site owner could take a commission.
 * Pagination
 
@@ -320,7 +322,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 
 ### Workspace
 
-* [GitPod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
+* [Gitpod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
 
 ### Version Control
 
@@ -359,6 +361,7 @@ MongoDB was used to store data for this site in a database. The data has been se
 * [RandomKeygen](https://randomkeygen.com/) was used to generate a strong `SECRET_KEY`.
 * [pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
 * [dnspython](https://pypi.org/project/dnspython/) was used to provide access to DNS.
+* [Regular Expressions 101](https://regex101.com/) was used to set password parameters for the registration form.
 
 ### Testing
 
@@ -450,10 +453,15 @@ MongoDB was used to store data for this site in a database. The data has been se
 5. Open Git Bash.
 6. Change the current working directory to the new location, where you want the cloned directory to be.
 7. Type `git clone`, and then paste the URL that was copied in Step 4.
+    - `git clone https://github.com/CarlaBuongiorno/The-Collector.git`
 8. Press Enter, and your local clone will be created.
 9. You will need to create an env.py file with your own values, and create a MongoDB database with the data keys and types as shown above.
 10. You will also need to install all of the project requirements. This can be done using the command `pip3 install -r requirements.txt`.
-11. Type `python3 app.py` in your GitPod terminal to run your local site of this project.
+11. Type `python3 app.py` in your Gitpod terminal to run your local site of this project.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CarlaBuongiorno/The-Collector)
 
 [Back to Top](#the-collector)
 
@@ -476,10 +484,6 @@ All testing and project barriers and solutions has been documented here - [TESTI
 * [DEV](https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f) for keeping the footer at the bottom on all pages.
 * [GeeksforGeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) for rendering a 404 error page.
 * [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) for rendering a 500 internal server error page.
-
-### Content
-
-* 
 
 ### Media
 * The default image when adding comics was taken from [Los Angeles Times](https://www.latimes.com/books/jacketcopy/la-et-jc-first-superman-comic-book-record-price-3-point-2-million-20140825-story.html).
