@@ -66,17 +66,16 @@
     </header>
 
     <!-- flash messages -->
-    <aside class="container-fluid">
-        {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        {% for message in messages %}
-        <div class="row flashes">
-            <h4 class="text-center btn-success comic-font text-shadow">{{ message }}</h4>
-        </div>
-        {% endfor %}
+            {% for cat, message in messages %}
+                <aside class="alert alert-dismissible text-center alert-{{ cat }}">
+                    <h4 class="comic-font">{{ message }}</h4>
+                    <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </aside>
+            {% endfor %}
         {% endif %}
-        {% endwith %}
-    </aside>
+    {% endwith %}
 
     <!-- Content -->
     <main class="container-fluid">
