@@ -181,7 +181,7 @@
 * On the 'Collection' page, users also have the option to search through 'The Collection'. 
 * Users can search by 'Title', 'Publisher Name', 'Issue Number', by the words used within the collectors 'Notes', and by the actual 'Collector' him/herself.
     * ![Browse The Collection](docs/screenshots/the_collection.png)
-    * ![Comic Information Modal From The Collection Page](docs/screenshots/info-modal.png)
+    * ![Comic Information Modal From The Collection Page](docs/screenshots/info_modal.png)
     * ![Search](docs/screenshots/search.png)
     
 ---
@@ -215,9 +215,41 @@
 
 ### W3C Markup Validation Service:
 
-Each page of the site was run through the [W3C Markup Validation Service](https://validator.w3.org/) by direct input and returned no errors. As the webpages are dynamically rendered with Jinja template, each scenario had to be validated by direct input by viewing and copying the source code for the page.
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website and returned no errors. Pages which can only be accessed by being logged in, were validated by direct input by viewing and copying the source code for each page. These also returned no errors.
 
-The HTML validation screenshots for each page can be found in the folder: _docs/html_validation_.
+Results below:-
+
+* The Collector full website:
+    * ![The Collector Website](docs/html_validation/the_collector.png)
+
+* Home Page:
+    * ![Home](docs/html_validation/home.png)
+
+* Registration Page:
+    * ![Registration Page](docs/html_validation/register.png)
+
+* Log In Page:
+    * ![Log In Page](docs/html_validation/login.png)
+
+* Profile Page:
+    * ![Profile Page](docs/html_validation/profile.png)
+
+* My Catalogue Page:
+    * ![My Catalogue Page](docs/html_validation/my_catalogue.png)
+
+* The Collection Page:
+    * ![The Collection Page](docs/html_validation/the_collection.png)
+
+* Add Comic Page:
+    * ![Add Comic Page](docs/html_validation/add_comic.png)
+
+* Edit Comic Page:
+    * ![Edit Comic Page](docs/html_validation/edit_comic.png)
+
+* 404 Page:
+    * ![404 Page](docs/html_validation/404.png)
+
+---
 
 ### W3C CSS Validation Service:
 
@@ -225,22 +257,48 @@ The CSS file was tested with [W3C CSS Validation Service](http://jigsaw.w3.org/c
 
 The warning is due to that the imported style sheets are not checked in direct input and file upload modes by W3C validation services.
 
-The CSS validation screenshot can be found in the folder _docs/html_validation_.
+* CSS Validation Results:
+    * ![CSS Validation Results](docs/css_validation/css_validation.png)
+
+---
 
 ### JSHint:
 
 All javascripts files were tested with [JSHint](https://jshint.com/) and returned no errors. 
 
+* _add_comic.js_ File Results:
+    * ![add_comic.js File Results](docs/jshint/add_comic.png)
+
+* _edit_comic.js_ File Results:
+    * ![edit_comic.js File Results](docs/jshint/edit_comic.png)
+
+* _my_catalogue.js_ File Results:
+    * ![my_catalogue.js File Results](docs/jshint/my_catalogue.png)
+
+* register.js_ File Results:
+    * ![register.js File Results](docs/jshint/register.png)
+
+* _script.js_ File Results:
+    * ![script.js File Results](docs/jshint/script.png)
+
+* _the_collection.js_ File Results:
+    * ![the_collection.js File Results](docs/jshint/the_collection.png)
+
+---
+
 ### Python 8:
 
 The python file was run through [PEP8](http://pep8online.com/) online and returned no errors.
+
+* PEP8 Results:
+    * ![PEP8 Results](docs/pep8/pep8.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
 ---
 
 ## **Responsiveness And Compatibility**
-
+<!-- Screenshots -->
 The website was tested through the following browsers:
 
 * Google Chrome
@@ -251,7 +309,7 @@ The website was tested through the following browsers:
 All working as expected.
 
 DevTools were used to test the site across a range of widths:
-
+<!-- screenshots -->
 * Mobiles: 
     * iphone5(320px)
     * Samsung S5 (360px)
@@ -269,15 +327,16 @@ DevTools were used to test the site across a range of widths:
 All working as expected.
 
 The site was tested on the following physical devices:
-
+<!-- screenshots -->
 * Mobiles: 
     * small phone (320px)
     * large phone (414px)
+
 * Tablets:
     * large tablet (768px)
+
 * Desktops:
     * Medium laptop (1366px)
-    * Large Desktop screen (1920px)
 
 All working as expected.
 
@@ -308,20 +367,20 @@ Google Lighthouse was run on different pages returning different results. Below 
 ### Solved Bugs
 
 1. It was possible to register a duplicate username regardless of the code written to check if the username already exists in the database. The flash message that tells the user that the username already exists did not display, and instead the registration was successful.
-    * Fixed the 'for' of the username label to 'username' instead of 'name'.
-    * The collection I used to check 'existing_user' was 'users' with an 's' at the end, while the one I tried to insert was 'user' without the 's'. Correcting this solved the bug.
+    * Fixed the `for` of the username label to `username` instead of `name`.
+    * The collection I used to check `existing_user` was `users` with an 's' at the end, while the one I tried to insert was `user` without the 's'. Correcting this solved the bug.
 2. The Bootstrap toggle switch for the 'For Sale' field, remains 'checked' upon inspection, despite being toggled 'off'.
     * This could be Bootstrap applying javascript behind the scenes.
     * Upon more investigation, this was remedied by adding and event listener to listen for a change in the toggle switch and if the field is 'checked', then set or remove the required attribute to the 'price' field.
-3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the 'my_catalogue' field in an array.
+3. Deleting a comic would remove it from the 'comics' collection, but the ObjectId would remain in the 'user' collection where it is stored in the `my_catalogue` field in an array.
     * Originally, the comic was only being deleted from the 'comics' collection.
-    * To fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the '$pull' command, with the ID of the comic, and then remove it from the user's 'my_catalogue'.
+    * To fix this, I needed to grab the user from the session, get the user from the database using the user from the session, get the user's ID and use the `$pull` command, with the ID of the comic, and then remove it from the user's `my_catalogue`.
 4. The 'Notes' field within the 'Edit Comic' form, would render empty instead of what the user previously had filled.
-    * This was due to the 'id', 'name', and 'for' attributes not being consistent with each other. 
-5. Admin could delete another user's comic, but the user's 'my_catalogue' array of comic IDs would not be updated.
-    * The first issue was that the function was first deleting the comic, then in the 'if user is admin', trying to find the 'the_collector' from a comic id that no longer existed.
-    * Moving the delete functionality to after the 'IF' block brought me a step closer to fixing this bug.
-    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their 'ID' (which I did not have). By substituting this for what I did have ('username'), the issue was resolved.
+    * This was due to the `id`, `name`, and `for` attributes not being consistent with each other. 
+5. Admin could delete another user's comic, but the user's `my_catalogue` array of comic IDs would not be updated.
+    * The first issue was that the function was first deleting the comic, then in the `if user is admin`, trying to find the `the_collector` from a comic id that no longer existed.
+    * Moving the delete functionality to after the `if` block brought me a step closer to fixing this bug.
+    * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their 'ID' (which I did not have). By substituting this for what I did have (`username`), the issue was resolved.
 
 ### Known Bugs
 
