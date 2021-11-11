@@ -220,11 +220,18 @@ form i.fields {
 
 .my-catalogue-wall {
     background-color: rgb(60, 60, 223);
-    padding: 5px;
+    padding: 0;
 }
 
 .the-collection-wall {
     background-color: rgb(167, 19, 19);
+    padding: 0;
+}
+
+.the-collection-wall button,
+.my-catalogue-wall button {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .my-catalogue-button,
@@ -236,12 +243,12 @@ form i.fields {
 
 .pic {
     background-size: cover;
-    width: 170px;
-    height: 240px;
+    width: 123px;
+    height: 180px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 20px solid black;
-    margin: 5px;
+    border: 16px solid black;
+    margin: 0;
 }
 
 /* My comic info modal */
@@ -272,6 +279,32 @@ form i.fields {
     position: relative;
     top: 20px;
     width: auto;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 320px) {
+    .pic {
+        width: 142px;
+        height: 200px;
+        border: 18px solid black;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .pic {
+        width: 160px;
+        height: 230px;
+        border: 18px solid black;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    .pic {
+        width: 182px;
+        height: 265px;
+        border: 20px solid black;
+    }
 }
 
 /* medium screen size */
@@ -323,6 +356,20 @@ form i.fields {
 
     .my-catalogue-button {
         top: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pic {
+        width: 210px;
+        height: 305px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .pic {
+        width: 200px;
+        height: 295px;
     }
 }
 

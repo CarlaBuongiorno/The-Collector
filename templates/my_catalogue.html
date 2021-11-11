@@ -30,12 +30,12 @@
             <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
             <!-- Button trigger modal -->
             {% if comic.image_url %}
-                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                <button type="button" class="btn col-6 col-sm-4 col-md-3 col-xl-2" data-bs-toggle="modal"
                     data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}" aria-label="Comic information modal">
                     <img class="pic" src="{{ comic.image_url }}" alt="Comic Book"/>
                 </button>
             {% else %}
-                <button type="button" class="btn col-6 col-md-4 col-lg-2" data-bs-toggle="modal"
+                <button type="button" class="btn col-6 col-sm-4 col-md-3 col-xl-2" data-bs-toggle="modal"
                     data-bs-target="#modal-{{ comic._id }}" data-bs-whatever="modal-{{ comic._id }}" aria-label="Comic information modal">
                     <img class="pic" src="/static/images/action_comics.webp" alt="Comic Book - Action Comics"/>
                 </button>
