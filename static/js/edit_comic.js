@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Credit Tim Nelson for the solution to get toggler to determine if user can enter a price or not
 let forSale = document.getElementById("for_sale");
 let price = document.getElementById("price");

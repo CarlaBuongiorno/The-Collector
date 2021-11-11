@@ -1,6 +1,8 @@
+/* jshint esversion: 8 */
+
 function copyright() {
-    var date = new Date();
-    var year = date.getFullYear();
+    let date = new Date();
+    let year = date.getFullYear();
     document.getElementById("copyright").innerHTML = year;
 }
 copyright();

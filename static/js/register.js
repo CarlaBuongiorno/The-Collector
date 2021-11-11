@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 function handleSubmit(event) {
     event.preventDefault();
     let isDigit = /[0-9]/;

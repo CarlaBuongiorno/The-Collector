@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Modal
 // credit -> https://getbootstrap.com/docs/4.0/components/modal/
 let myModal = document.getElementById('myModal');
