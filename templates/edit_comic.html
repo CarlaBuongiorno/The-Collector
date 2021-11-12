@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+
     <div class="container">
         <div class="row">
+            <!-- Avatar -->
             <div class="col text-center">
                 <img class="avatar-profile" src="{{ url_for('static', filename='images/avatars/avatar'+user.avatar_no|string()+'.png') }}" 
                     alt="Avatar for {{ user.username }}">
             </div>
         </div>
+        <!-- Title -->
         <div class="row">
             <div class="col">
                 <h2 class="text-center comic-font heading">Edit Comic</h2>
             </div>
         </div>
+        <!-- Form -->
         <div class="row">
-            <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('edit_comic', comic_id=comic._id) }}">
+            <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" method="POST" action="{{ url_for('edit_comic', comic_id=comic._id) }}">
                 <div class="card-body">
                     <div class="row g-2">
                         <!-- title -->
@@ -130,13 +134,17 @@
                                 <label for="notes">Notes</label>
                             </div>
                         </div>
-                        <!-- submit button -->
-                        <div class="col-12 text-center">
-                            <!-- cancel button -->
-                            <a href="{{ url_for('get_comics') }}" class="btn btn-lg text-shadow btn-danger comic-font">
+                    </div>
+                    <div class="row d-flex mt-4 justify-content-center">
+                        <!-- cancel button -->
+                        <div class="d-grid col-md-4 mb-3">
+                            <a href="{{ url_for('get_comics') }}" class="btn text-shadow btn-danger comic-font text-white">
                                 Cancel <i class="far fa-times-circle"></i>
                             </a>
-                            <button type="submit" class="btn btn-lg text-shadow btn-success comic-font">
+                        </div>
+                        <!-- edit button -->
+                        <div class="d-grid col-md-4 mb-3">
+                            <button type="submit" class="btn text-shadow btn-success comic-font text-white">
                                 Edit Comic <i class="far fa-edit"></i>
                             </button>
                         </div>
