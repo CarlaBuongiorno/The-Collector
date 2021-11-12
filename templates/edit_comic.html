@@ -54,7 +54,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="year" class="form-control" id="year" placeholder="Year"
-                                    value="{{ comic.year }}" required>
+                                    minlength="1" maxlength="4" pattern="(19|20)[\d]{2,2}" value="{{ comic.year }}" required>
                                 <label for="year">Year</label>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="issue_no" class="form-control" id="issue_no" value="{{ comic.issue_no }}"
-                                    placeholder="Issue Number" minlength="1" maxlength="4" required>
+                                    placeholder="Issue Number" minlength="1" maxlength="4" pattern="^[0-9]{1,4}$" required>
                                 <label for="issue_no">Issue Number</label>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="grade" class="form-control" id="grade" placeholder="Grade"
-                                value="{{ comic.grade }}" minlength="1" maxlength="4" required>
+                                    value="{{ comic.grade }}" minlength="1" maxlength="4" pattern="^\d*\.?\d+$" required>
                                 <label for="grade">Grade</label>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
-                                    minlength="2" maxlength="25" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
+                                    minlength="1" maxlength="7" pattern="^\d*\.?\d+$" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
                                     <label for="price">Price In $</label>
                             </div>
                         </div>
@@ -112,7 +112,8 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
-                                    value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="150">
+                                    value="{{ comic.image_url }}" placeholder="Image" minlength="5" maxlength="150"
+                                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
                                 <label for="image_url">Image URL</label>
                             </div>
                         </div>

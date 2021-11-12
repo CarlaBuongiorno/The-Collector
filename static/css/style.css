@@ -68,6 +68,10 @@ main {
     flex-grow: 1;
 }
 
+footer {
+    margin-top: 20px;
+}
+
 .blue-footer {
     height: 100px;
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
