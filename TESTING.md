@@ -298,7 +298,7 @@ The python file was run through [PEP8](http://pep8online.com/) online and return
 ---
 
 ## **Responsiveness And Compatibility**
-<!-- Screenshots -->
+
 The website was tested through the following browsers:
 
 * Google Chrome
@@ -308,23 +308,71 @@ The website was tested through the following browsers:
 
 All working as expected.
 
+---
+
 DevTools were used to test the site across a range of widths:
-<!-- screenshots -->
-* Mobiles: 
-    * iphone5(320px)
-    * Samsung S5 (360px)
-    * iPhone 6/7/8/X (375px)
-    * iPhone 6/7/8 Plus (414px)
 
-* Tablets:
-    * iPad (768px)
-    * iPad Pro (1024px)
+### Mobiles: 
 
-* Desktops:
-    * Laptop (1200px)
-    * Large Desktop screen (1920px)
+* iphone5(320px)
+    * Log In
+        * ![iPhone5 Log In](docs/dev_tools/iphone5_login.png)
+    * The Collection
+        * ![iPhone5 The Collection](docs/dev_tools/iphone5_the_collection.png)
+
+* Moto G4 (340px)
+    * Add Comic
+        * ![MotoG4 Add Comic](docs/dev_tools/moto_g4_add_comic.png)
+    * Edit Comic Footer
+        * ![Moto G4 Edit Comic Footer](docs/dev_tools/moto_g4_edit_comic_footer.png)
+
+* iPhone 6/7/8 (375px)
+    * Register
+        * ![iPhone6/7/8 Register](docs/dev_tools/iphone678_register.png)
+    * Information Window My Catalogue
+        * ![iPhone6/7/8 Information Window My Catalogue](docs/dev_tools/iphone678_info_window_catalogue.png)
+
+* iPhone 6/7/8 Plus (414px)
+    * Register Footer
+        * ![iPhone6/7/8 Plus Register Footer](docs/dev_tools/iphone678_plus_register_footer.png)
+    * Open Menu
+        * ![iPhone6/7/8 Plus Open Menu](docs/dev_tools/iphone678_plus_open_menu.png)
+
+---
+
+### Tablets:
+
+* iPad (768px)
+    * Home
+        * ![iPad Home](docs/dev_tools/ipad_home.png)
+    * My Catalogue
+        * ![iPad My Catalogue](docs/dev_tools/ipad_my_catalogue.png)
+
+* iPad Pro (1024px)
+    * Information Window The Collection
+        * ![iPad Pro Information Window The Collection](docs/dev_tools/ipad_pro_info_window_collection.png)
+    * Profile
+        * ![iPad Pro Profile](docs/dev_tools/ipad_pro_profile.png)
+
+---
+
+### Desktops:
+
+* Laptop (1200px)
+    * The Collection
+        * ![Laptop The Collection](docs/dev_tools/laptop_the_collection.png)
+    * Admin Information Window
+        * ![Laptop Admin Information Window](docs/dev_tools/laptop_admin_info_window.png)
+
+* Large Desktop screen (1920px)
+    * Information Window The Collection
+        * ![Desktop Information Window The Collection](docs/dev_tools/desktop_info_window_catalogue.png)
+    * Profile
+        * ![Desktop Profile](docs/dev_tools/desktop_profile.png)
 
 All working as expected.
+
+---
 
 The site was tested on the following physical devices:
 <!-- screenshots -->
