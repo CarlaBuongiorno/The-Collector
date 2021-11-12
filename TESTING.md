@@ -375,16 +375,28 @@ All working as expected.
 ---
 
 The site was tested on the following physical devices:
-<!-- screenshots -->
-* Mobiles: 
-    * small phone (320px)
-    * large phone (414px)
 
-* Tablets:
-    * large tablet (768px)
+### Mobiles: 
+* Huawei P30
+    * Profile Buttons and Footer
+        * ![Huawei P30 Profile Buttons And Footer](docs/physical_devices/huawei_profile_buttons.jpg)
+    * My Catalogue
+        * ![Huawei P30 My Catalogue](docs/physical_devices/huawei_my_catalogue.jpg)
+    * Information Window From The Collection
+        * ![Huawei P30 Information Window From The Collection](docs/physical_devices/huawei_info_window_collection.jpg)
+    * 404: Page Not Found
+        * ![Huawei P30 404: Page Not Found](docs/physical_devices/huawei_404.jpg)
+* Sony
 
-* Desktops:
-    * Medium laptop (1366px)
+---
+
+### Tablets:
+* Samsung Tablet
+
+---
+
+### Desktops:
+* MacBook Pro 13inch
 
 All working as expected.
 
