@@ -61,11 +61,11 @@
                         <div class="container-fluid">
                             <div class="row d-flex justify-content-evenly">
                                 {% if comic.image_url %}
-                                <div class="col-sm-12 col-md-4">
+                                <div class="col-sm-12 col-lg-4 text-center">
                                     <img class="pic" src="{{ comic.image_url }}" alt="Comic Book"/>
                                 </div>
                                 {% else %}
-                                    <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-lg-4 text-center">
                                         <img class="pic" src="/static/images/action_comics.webp"  alt="Comic Book - Action Comics"/>
                                     </div>
                                 {% endif %}
