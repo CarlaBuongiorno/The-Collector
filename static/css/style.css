@@ -5,17 +5,14 @@
     padding: 0;
 }
 
+/* Credit Seun Murphy from Code Institute - To keep the footer at the bottom: https://code-institute-room.slack.com/archives/C0L316Z96/p1628179272187200 */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
 }
-
-html, body {
-    width: 100%;
-    height: 100%;
-}
+/* ---- */
 
 .comic-font {
     font-family: 'Bangers', cursive;
@@ -71,39 +68,43 @@ main {
     flex-grow: 1;
 }
 
-header, main, footer {
-    flex-shrink: 0;
-}
-
-/* ---- End Credit ---- */
-
 .blue-footer {
-    height: 130px;
+    height: 100px;
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
-    margin-top: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* margin-top: 30px; */
 }
 
 .red-footer {
-    height: 60px;
+    height: 50px;
     background-color: rgb(167, 19, 19);
     box-shadow: rgb(58, 4, 4) 0px 0px 20px 4px inset;
 }
 
-.footer-links {
-    padding-right: 20px;
-}
- 
-.social-icons {
-    font-size: 1.25rem;
-    padding-left: 6px;
-    padding-right: 20px;
-    padding-bottom: 5px;
+footer .navbar-brand {
+    margin-right: 0;
 }
 
+.copyright-text,
 .developer {
-    margin-right: 16px;
     font-size: 12px;
 }
+
+.copyright-text {
+    padding-right: 0;
+}
+
+.copyright-icon1,
+.copyright-icon2 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.copyright-icon1 {
+    margin-left: 12px;
+}
+
 
 /* Home Page */
 
@@ -284,6 +285,12 @@ form i.fields {
 /* Media Queries */
 
 @media screen and (min-width: 320px) {
+    .copyright-text,
+    .developer {
+        font-size: 14px;
+        padding-right: 0;
+    }
+
     .pic {
         width: 142px;
         height: 200px;
@@ -292,6 +299,18 @@ form i.fields {
 }
 
 @media screen and (min-width: 375px) {
+.copyright-icon1 {
+    margin-left: 6px;
+}
+
+    .copyright-icon2 {
+        text-align: left !important;
+    }
+
+    .copyright-text {
+        text-align: right !important;
+    }
+
     .pic {
         width: 160px;
         height: 230px;
@@ -305,10 +324,40 @@ form i.fields {
         height: 265px;
         border: 20px solid black;
     }
+
+    .copyright-text {
+        text-align: center !important;
+    }
+
+    .copyright-icon1 {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .copyright-text {
+        text-align: left !important;
+    }
 }
 
 /* medium screen size */
 @media screen and (min-width: 768px) {
+    .blue-footer {
+        height: 80px;
+    }
+
+    footer .navbar-brand{
+        padding-left: 24px;
+    }
+
+    .copyright-text {
+        padding-left: 36px;
+    }
+
+    .developer {
+        text-align: right;
+    }
+
     h1.title.text-shadow {
         font-size: 5rem;
         letter-spacing: 9px;
@@ -330,19 +379,6 @@ form i.fields {
 
     .about-point {
         font-size: 16px;
-    }
-
-    .blue-footer {
-        height: 90px;
-    }
-    
-    .red-footer {
-        height: 40px;
-    }
-
-    .developer {
-        margin-right: 16px;
-        margin-left: 80px;
     }
 
     .page-not-found-heading {
