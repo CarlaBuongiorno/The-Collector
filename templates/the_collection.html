@@ -3,18 +3,19 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-3">
-                <form action="{{ url_for('search') }}" method="POST">
-                    <input class="form-control mb-2" name="query" id="query" type="search" placeholder="Search Comics" aria-label="Search Comics">
-                    <button class="btn btn-success text-shadow comic-font" type="submit"><i class="fas fa-search"></i> Search Comics</button>
-                    <a href="{{ url_for('get_collection') }}" class="btn btn-danger text-shadow comic-font">Reset</a>
-                </form>
-            </div>
-            <div class="col-lg-4 offset-lg-1 text-center">
+            <!-- Search -->
+            <form class="col col-md-5 col-lg-4 text-center text-md-start" action="{{ url_for('search') }}" method="POST">
+                <input class="form-control mb-2" name="query" id="query" type="search" placeholder="Search Comics" aria-label="Search Comics">
+                <button class="btn btn-success text-shadow comic-font" type="submit"><i class="fas fa-search"></i> Search Comics</button>
+                <a href="{{ url_for('get_collection') }}" class="btn btn-danger text-shadow comic-font">Reset</a>
+            </form>
+            <!-- Avatar -->
+            <div class="col-lg-4 text-center">
                 <img class="avatar-profile" src="{{ url_for('static', filename='images/avatars/avatar'+user.avatar_no|string()+'.png') }}"
                     alt="Avatar for {{ user.username }}">
             </div>
         </div>
+        <!-- Title -->
         <div class="row">
             <div class="col">
                 <h2 class="text-center comic-font heading">The Collection</h2>
