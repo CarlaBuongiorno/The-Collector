@@ -406,13 +406,6 @@ form i.fields {
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .pic {
-        width: 200px;
-        height: 295px;
-    }
-}
-
 /* iPad Pro screen size */
 @media screen and (min-width: 1024px) {
     #title-box {
@@ -445,3 +438,16 @@ form i.fields {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .pic {
+        width: 194px;
+        height: 293px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .pic {
+        width: 210px;
+        height: 310px;
+    }
+}
