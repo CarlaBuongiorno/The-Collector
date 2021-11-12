@@ -81,7 +81,7 @@
                                             {% if comic.notes %}
                                                 <strong>Notes:</strong> {{ comic.notes }}<br>
                                             {% endif %}
-                                                <strong>The Collector:</strong> {{ comic.the_collector }}<br>
+                                                <strong>The Collector:</strong> {{ comic.the_collector.title() }}<br>
                                             {% if comic.show_contact_details == "on" %}
                                                 <strong>Contact:</strong> {{ comic.contact }}<br>
                                             {% endif %}
