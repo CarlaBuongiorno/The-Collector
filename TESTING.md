@@ -301,10 +301,49 @@ The python file was run through [PEP8](http://pep8online.com/) online and return
 
 The website was tested through the following browsers:
 
-* Google Chrome
-* Microsoft Edge
-* Mozilla Firefox
-* Safari
+### Google Chrome
+
+* Comic Added
+    * ![Google Chrome Comic Added](docs/physical_devices/chrome_comic_added.png)
+
+* Comic Updated Successfuly
+    * ![Google Chrome Comic Updated Successfuly](docs/physical_devices/chrome_comic_updated.png)
+
+* Home
+    * ![Google Chrome Home](docs/physical_devices/chrome_home.png)
+
+* Registration Successful
+    * ![Google Chrome Registration Successful](docs/physical_devices/chrome_registration_successful.png)
+
+### Microsoft Edge
+
+* My Catalogue
+    * ![Microsoft Edge My Catalogue](docs/physical_devices/microsoft_edge_catalogue.png)
+
+* Comic Deleted Successfully
+    * ![Microsoft Edge Comic Deleted Successfully](docs/physical_devices/microsoft_edge_comic_deleted.png)
+
+* Log In Successful - Profile
+    * ![Microsoft Edge Log In Successful - Profile](docs/physical_devices/microsoft_edge_login.png)
+
+### Mozilla Firefox
+
+* Admin Delete And Edit Options On The Collection Page
+    * ![Mozilla Firefox Admin Delete And Edit Options](docs/physical_devices/firefox_admin_edit_delete.png)
+
+* Trying To Brute Force Into Site - Not Possible
+    * ![Mozilla Firefox Trying To Brute Force Into Site - Not Possible](docs/physical_devices/firefox_login.png)
+
+### Safari
+
+* Account Deleted Successfully - Home
+    * ![Safari Account Deleted Successfully - Home](docs/physical_devices/safari_account_deleted_home.png)
+
+* Comic Updated Successfully
+    * ![Safari Comic Updated Successfully](docs/physical_devices/safari_comic_updated.png) 
+
+* Log In Successful - Profile
+    * ![Safari Log In Successful - Profile](docs/physical_devices/safari_successful_login.png) 
 
 All working as expected.
 
