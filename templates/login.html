@@ -3,7 +3,7 @@
 
     <h2 class="text-center comic-font heading">Log In</h2>
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <form class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
                 <div class="card-body">
@@ -42,15 +42,15 @@
                 </div>
             </form>
         </div>
-    </div>
+    </section>
 
-    <div class="row">
+    <section class="row">
         <div class="col-12">
             <p class="text-center">
                 New Collector? 
                 <a href="{{ url_for('register') }}" class="primary">Register</a>
             </p>
         </div>
-    </div>
+    </section>
 
 {% endblock %}

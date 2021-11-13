@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <!-- Avatar -->
             <div class="col text-center">
@@ -21,10 +21,10 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Container to hold list of comic books (Blue background) -->
-    <div class="container-fluid my-catalogue-wall">
+    <section class="container-fluid my-catalogue-wall">
         <div class="row d-flex justify-content-evenly no-gutter">
             {% for comic in comics %}
             <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
@@ -42,7 +42,7 @@
             {% endif %}
             {% endfor %}
         </div>
-    </div>
+    </section>
 
 
     <!-- Modal -->

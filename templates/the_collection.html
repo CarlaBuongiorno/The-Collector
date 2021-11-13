@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row align-items-center">
             <!-- Search -->
             <form class="col col-md-5 col-lg-4 text-center text-md-start" action="{{ url_for('search') }}" method="POST">
@@ -21,10 +21,10 @@
                 <h2 class="text-center comic-font heading">The Collection</h2>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Container to hold list of comic books (Red background) -->
     {% if comics|length > 0 %}
-    <div class="container-fluid the-collection-wall">
+    <section class="container-fluid the-collection-wall">
         <div class="row d-flex justify-content-evenly no-gutter">
             {% for comic in comics %}
             <!-- Credit -> Bootstrap - https://getbootstrap.com/docs/4.0/components/modal/ -->
@@ -42,7 +42,7 @@
             {% endif %}
             {% endfor %}
         </div>
-    </div>
+    </section>
     {% else %}
     <h2 class="text-center comic-font heading no-results text-shadow">No Results Found</h2>
     {% endif %}

@@ -3,7 +3,7 @@
 
     <h2 class="text-center comic-font heading">Register</h2>
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
                 action="{{ url_for('register') }}">
@@ -99,18 +99,18 @@
                 </div>
             </form>
         </div>
-    </div>
-    <div class="row">
+    </section>
+    <section class="row">
         <div class="col-12">
             <p class="text-center">
                 Already a Collector?
                 <a href="{{ url_for('login') }}" class="primary">Log In</a>
             </p>
         </div>
-    </div>
+    </section>
     <!-- Inspiration borrowed from http://noffle-my-needs.herokuapp.com/register -->
     <!-- Avatar Carousel -->
-    <div class="row">
+    <section class="row">
         <div class="col-sm-12 col-md-6 offset-md-3">
             <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -191,7 +191,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block scripts %}
