@@ -440,7 +440,8 @@ The site was tested on the following physical devices:
 
 ---
 
-### Desktops:
+### Laptops:
+
 * MacBook Pro 13inch
     * Add Comic
         * ![MacBook Pro Add Comic](docs/physical_devices/macbook_pro_add_comic.png)
@@ -453,6 +454,13 @@ The site was tested on the following physical devices:
 
     * My Catalogue
         * ![MacBook Pro Home](docs/physical_devices/macbook_pro_home.png)
+
+* Acer Laptop Windows 10 (1080px)
+    * Home - Account Successfully Deleted
+        * ![Acer Home](docs/physical_devices/chrome_home.png)   
+
+    * Comic Added Successfully
+        * ![Acer My Catalogue](docs/physical_devices/chrome_comic_added.png)    
 
 All working as expected.
 
