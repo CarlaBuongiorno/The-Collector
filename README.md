@@ -479,7 +479,9 @@ All testing and project barriers and solutions has been documented here - [TESTI
 
 ### Code
 
-* [Code Institute](https://codeinstitute.net/) was the main source of information used to create this project, specifically the Task Manager Mini Project Walkthrough.
+* [Code Institute](https://codeinstitute.net/) was the main source of information used to create this project, specifically the Task Manager Mini Project Walkthrough by Tim Nelson.
+* [Tim Nelson](https://github.com/TravelTimN/ci-milestone04-dcd/blob/main/app/users/routes.py#L233-L270) inspiration for deleting a user's comics when their account is deleted.
+* [Tim Nelson](https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html) for making sure the modal pops-up a unique ID for each one inside of a for-loop.
 * [Bootstrap](https://getbootstrap.com/): Throughout the site, to create a beautiful responsive site.
 * [Seun Murphy from Code Institute](https://code-institute-room.slack.com/archives/C0L316Z96/p1628179272187200) for keeping the footer at the bottom on all pages.
 * [GeeksforGeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) for rendering a 404 error page.
