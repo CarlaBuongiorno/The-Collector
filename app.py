@@ -121,6 +121,7 @@ def register():
             return redirect(url_for("register"))
 
         # check if password conforms to pattern
+        # Credit - W3Schools: https://www.w3schools.com/python/python_regex.asp
         is_digit = re.compile(r"[0-9]")
         is_lower = re.compile(r"[a-z]")
         is_upper = re.compile(r"[A-Z]")

@@ -36,7 +36,7 @@
                                     aria-label="Select Publisher" required>
                                     <option value="" disabled selected>Choose Publisher</option>
                                     {% for publisher in publishers %}
-                                    <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
+                                        <option value="{{ publisher.publisher_name }}">{{ publisher.publisher_name }}</option>
                                     {% endfor %}
                                 </select>
                                 <label for="publisher_name">Publisher</label>

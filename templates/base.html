@@ -35,29 +35,29 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav text-center">
                         {% if session.user %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white"
-                                href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
                         {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
+                            </li>
                         {% endif %}
                     </ul>
                 </div>

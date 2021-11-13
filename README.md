@@ -486,8 +486,12 @@ All testing and project barriers and solutions has been documented here - [TESTI
 * [Seun Murphy from Code Institute](https://code-institute-room.slack.com/archives/C0L316Z96/p1628179272187200) for keeping the footer at the bottom on all pages.
 * [GeeksforGeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) for rendering a 404 error page.
 * [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) for rendering a 500 internal server error page.
+* [W3Schools](https://www.w3schools.com/python/python_regex.asp) for using Regular Expressions.
+* [Stack Overflow](https://stackoverflow.com/questions/4736/learning-regular-expressions) also for using Regular Expressions.
+* [Noffle My Needs](http://noffle-my-needs.herokuapp.com/register) inspiration for using a carousel to display the Avatar choices.
 
 ### Media
+
 * The default image when adding comics was taken from [Los Angeles Times](https://www.latimes.com/books/jacketcopy/la-et-jc-first-superman-comic-book-record-price-3-point-2-million-20140825-story.html).
 * The home page wall of comic books background image was taken from [InspiredImages](https://pixabay.com/photos/marvel-comics-cartoon-entertainment-1641554/?download) on Pixabay.
 * The blue comic burst was taken from [Star Vectors by Vecteezy](https://www.vecteezy.com/vector-art/2128471-pop-art-comic-book-background-with-bubble-speech).
