@@ -364,7 +364,7 @@ DevTools were used to test the site across a range of widths:
     * Admin Information Window
         * ![Laptop Admin Information Window](docs/dev_tools/laptop_admin_info_window.png)
 
-* Large Desktop screen (1920px)
+* Desktop screen (1400px)
     * Information Window The Collection
         * ![Desktop Information Window The Collection](docs/dev_tools/desktop_info_window_catalogue.png)
     * Profile
@@ -377,26 +377,43 @@ All working as expected.
 The site was tested on the following physical devices:
 
 ### Mobiles: 
+
 * Huawei P30
     * Profile Buttons and Footer
         * ![Huawei P30 Profile Buttons And Footer](docs/physical_devices/huawei_profile_buttons.jpg)
+
     * My Catalogue
         * ![Huawei P30 My Catalogue](docs/physical_devices/huawei_my_catalogue.jpg)
+
     * Information Window From The Collection
         * ![Huawei P30 Information Window From The Collection](docs/physical_devices/huawei_info_window_collection.jpg)
+
     * 404: Page Not Found
         * ![Huawei P30 404: Page Not Found](docs/physical_devices/huawei_404.jpg)
+
 * Sony
 
 ---
 
 ### Tablets:
+
 * Samsung Tablet
 
 ---
 
 ### Desktops:
 * MacBook Pro 13inch
+    * Add Comic
+        * ![MacBook Pro Add Comic](docs/physical_devices/macbook_pro_add_comic.png)
+
+    * My Catalogue
+        * ![MacBook Pro My Catalogue](docs/physical_devices/macbook_pro_catalogue.png)
+
+    * My Catalogue
+        * ![MacBook Pro Delete Account](docs/physical_devices/macbook_pro_delete_account.png)
+
+    * My Catalogue
+        * ![MacBook Pro Home](docs/physical_devices/macbook_pro_home.png)
 
 All working as expected.
 
