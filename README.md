@@ -116,9 +116,11 @@ In addition to the First Time and Returning Visitor Goals, as an administrator o
 
 ### Wireframes
 
-The wireframes for desktop, mobile and tablet for this project can be found in the folder: _docs/wireframes.pdf_
+The wireframes for desktop, mobile and tablet for this project can be found [here](https://github.com/CarlaBuongiorno/The-Collector/blob/master/docs/wireframes/wireframes.pdf).
 
-After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector.
+After some careful consideration, I decided to change 'THE COLLECTORS' page to 'THE COLLECTION' page. I think that from a UX point of view, a user would prefer to browse and search through other comic books then to browse other collectors. So a complete list of all the comics that the collectors have added to their catalogues would display. Here, a user can browse and search for specific comics. Each comic will include the username of the specific Collector, and the user will then be able to view the catalogue of that Collector. 
+
+The updated version can be found [here](https://github.com/CarlaBuongiorno/The-Collector/blob/master/docs/wireframes/wireframes_new_section.pdf). Although the page still ended up looking different to the wireframe, the idea was successfully implemented through the use of the search form on 'The Collection' page. The user can use the search form to search for comics by 'Title', 'The Publisher', 'The Collector', and by any of the words used in the collector's 'Notes'.
 
 ## Features
 
