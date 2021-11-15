@@ -273,6 +273,8 @@ def add_comic():
     # User can add a comic
     if request.method == "POST":
         for_sale = "on" if request.form.get("for_sale") else "off"
+        price = 0 if request.form.get("price") is None else request.form.get(
+            "price")
         comic = {
             "title": request.form.get("title"),
             "publisher_name": request.form.get("publisher_name"),
@@ -280,7 +282,7 @@ def add_comic():
             "issue_no": request.form.get("issue_no"),
             "grade": request.form.get("grade"),
             "for_sale": for_sale,
-            "price": request.form.get("price"),
+            "price": price,
             "notes": request.form.get("notes"),
             "image_url": request.form.get("image_url"),
             "the_collector": user["username"].lower(),
@@ -313,6 +315,8 @@ def edit_comic(comic_id):
     if user["is_admin"] or user["username"] == the_collector:
         if request.method == "POST":
             for_sale = "on" if request.form.get("for_sale") else "off"
+            price = 0 if request.form.get(
+                "price") is None else request.form.get("price")
             submit = {
                 "title": request.form.get("title"),
                 "publisher_name": request.form.get("publisher_name"),
@@ -320,7 +324,7 @@ def edit_comic(comic_id):
                 "issue_no": request.form.get("issue_no"),
                 "grade": request.form.get("grade"),
                 "for_sale": for_sale,
-                "price": request.form.get("price"),
+                "price": price,
                 "notes": request.form.get("notes"),
                 "image_url": request.form.get("image_url"),
                 "the_collector": user["username"].lower(),

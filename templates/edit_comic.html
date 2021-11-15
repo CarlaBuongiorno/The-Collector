@@ -104,8 +104,8 @@
                         </div>
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
-                                <input type="text" name="price" class="form-control col-md-8" id="price" value="{{ comic.price }}" placeholder="Price" 
-                                    minlength="1" maxlength="7" pattern="^\d*\.?\d+$" {% if comic.price != "" %}required{% else %}disabled{% endif %}>
+                                <input type="text" name="price" class="form-control col-md-8" id="price" value="{% if comic.price != 0 %}{{ comic.price }}{% endif %}" placeholder="Price" 
+                                    minlength="1" maxlength="7" pattern="^\d*\.?\d+$" {% if comic.price != 0 %}required{% else %}disabled{% endif %}>
                                     <label for="price">Price In $</label>
                             </div>
                         </div>
