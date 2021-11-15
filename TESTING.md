@@ -505,6 +505,8 @@ Google Lighthouse was run on different pages returning different results. Below 
     * The first issue was that the function was first deleting the comic, then in the `if user is admin`, trying to find the `the_collector` from a comic id that no longer existed.
     * Moving the delete functionality to after the `if` block brought me a step closer to fixing this bug.
     * The second issue was that I was trying to find the user's collection, in order to update their catalogue, by their 'ID' (which I did not have). By substituting this for what I did have (`username`), the issue was resolved.
+6. The Bootstrap information modals for the comics kept throwing an 'Uncaught TypeError: Cannot read properties of null (reading 'addEventListener').
+    * The solution was to check that `myModal` is not `null` before adding an event listener. This was found on [Stack Overflow](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null).
 
 ### Known Bugs
 

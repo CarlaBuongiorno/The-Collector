@@ -491,6 +491,7 @@ All testing and project barriers and solutions has been documented here - [TESTI
 * [W3Schools](https://www.w3schools.com/python/python_regex.asp) for using Regular Expressions.
 * [Stack Overflow](https://stackoverflow.com/questions/4736/learning-regular-expressions) also for using Regular Expressions.
 * [Noffle My Needs](http://noffle-my-needs.herokuapp.com/register) inspiration for using a carousel to display the Avatar choices.
+* [Stack Overflow](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null) for checking the modal is not null before adding the event listeners in 'My Catalogue' and 'The Collection' pages.
 
 ### Media
 
