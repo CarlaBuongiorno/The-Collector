@@ -434,20 +434,27 @@ The site was tested on the following physical devices:
     * Successful Registration
         * ![Sony Successfuly Registration](docs/physical_devices/sony_registration_successful.png)
 
-* Comic Deleted
-    * ![Sony Comic Deleted](docs/physical_devices/sony_comic_deleted.png)
+    * Comic Deleted
+        * ![Sony Comic Deleted](docs/physical_devices/sony_comic_deleted.png)
 
-* Defensive Programming
-        * ![Sony Defensive Programming](docs/physical_devices/sony_defensive_programming.png)
+    * Defensive Programming
+            * ![Sony Defensive Programming](docs/physical_devices/sony_defensive_programming.png)
 
-* Account And Comics Deleted Successfully
-        * ![Sony Account And Comics Deleted Successfully](docs/physical_devices/sony_account_deleted.png)
+    * Account And Comics Deleted Successfully
+            * ![Sony Account And Comics Deleted Successfully](docs/physical_devices/sony_account_deleted.png)
 
----
+* iPhone X
+    * Log In
+        * ![iPhone X Log In](docs/physical_devices/iphone_x_login.png)
 
-### Tablets:
+    * Add Comic Form
+        * ![iPhone X Add Comic Form](docs/physical_devices/iphone_x_add_comic.png)
 
-* Samsung Tablet
+    * Search No Match - No Results Found
+        * ![iPhone X Search No Match - No Results Found](docs/physical_devices/iphone_x_search.png)
+
+    * Log Out Successful
+        * ![iPhone X Log Out Successful](docs/physical_devices/iphone_x_logout.png)
 
 ---
 
