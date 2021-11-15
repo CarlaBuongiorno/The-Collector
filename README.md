@@ -492,6 +492,8 @@ All testing and project barriers and solutions has been documented here - [TESTI
 * [Stack Overflow](https://stackoverflow.com/questions/4736/learning-regular-expressions) also for using Regular Expressions.
 * [Noffle My Needs](http://noffle-my-needs.herokuapp.com/register) inspiration for using a carousel to display the Avatar choices.
 * [Stack Overflow](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null) for checking the modal is not null before adding the event listeners in 'My Catalogue' and 'The Collection' pages.
+* [hover.css](https://ianlunn.co.uk/articles/hover-css-tutorial-introduction) for making the comic button on the comic walls float on hover.
+* [hover.css](https://github.com/IanLunn/Hover#a-copy-and-paste-an-effect) for making the navbar and footer links grow on hover.
 
 ### Media
 

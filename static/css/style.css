@@ -40,6 +40,25 @@ body {
     margin-top: 30px;
 }
 
+/* Credit: hover.css -> for making buttons and links grow on hover https://github.com/IanLunn/Hover#a-copy-and-paste-an-effect */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+/* ---- */
+
 /* Navbar */
 .navbar {
     background-color: rgb(167, 19, 19);
@@ -108,7 +127,6 @@ footer .navbar-brand {
 .copyright-icon1 {
     margin-left: 12px;
 }
-
 
 /* Home Page */
 
@@ -217,7 +235,7 @@ form i.fields {
     font-size: 10px;
 }
 
-/* My Catalogue */
+/* My Catalogue & The Collection */
 
 .no-gutter {
     --bs-gutter-x: 0;
@@ -238,6 +256,24 @@ form i.fields {
     padding-left: 0;
     padding-right: 0;
 }
+
+/* Credit: hover.css -> for making comic buttons foat on hover https://ianlunn.co.uk/articles/hover-css-tutorial-introduction */
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+  }
+
+.hvr-float:hover {
+    transform: translateY(-8px);
+}
+/* ----- */
 
 .my-catalogue-button,
 .add-comic-button {

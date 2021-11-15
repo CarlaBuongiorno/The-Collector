@@ -27,7 +27,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark text text-shadow sunken">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('home')}}">The Collector</a>
+                <a class="navbar-brand hvr-grow" href="{{ url_for('home')}}">The Collector</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,24 +36,24 @@
                     <ul class="navbar-nav text-center">
                         {% if session.user %}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('get_comics') }}">My Catalogue</a>
+                                <a class="nav-link text-white hvr-grow" href="{{ url_for('get_comics') }}">My Catalogue</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('get_collection') }}">The Collection</a>
+                                <a class="nav-link text-white hvr-grow" href="{{ url_for('get_collection') }}">The Collection</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('add_comic') }}">Add Comic</a>
+                                <a class="nav-link text-white hvr-grow" href="{{ url_for('add_comic') }}">Add Comic</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white"
+                                <a class="nav-link text-white hvr-grow"
                                     href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('logout') }}">Log Out</a>
+                                <a class="nav-link text-white hvr-grow" href="{{ url_for('logout') }}">Log Out</a>
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ url_for('login') }}">Log In</a>
+                                <a class="nav-link text-white hvr-grow" href="{{ url_for('login') }}">Log In</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ url_for('register')}}">Register</a>
@@ -87,30 +87,30 @@
     <footer class="container-fluid">
         <div class="row bg-primary blue-footer align-items-center text-center text-md-start">
             <div class="col-12 col-md-3">
-                <a class="navbar-brand text-white text-shadow" href="{{ url_for('home') }}">The Collector</a>
+                <a class="navbar-brand text-white text-shadow hvr-grow" href="{{ url_for('home') }}">The Collector</a>
             </div>
             <div class="col-12 col-md-3 offset-md-1 text-shadow">
                 <div class="row">
                     <div class="col-1 offset-4 offset-md-5">
-                        <a href="https://www.facebook.com/" class="text-decoration-none" target="_blank" rel="noopener">
+                        <a href="https://www.facebook.com/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-facebook-square text-white social-icons" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
                     </div>
                     <div class="col-1">
-                        <a href="https://www.twitter.com/" class="text-decoration-none" target="_blank" rel="noopener">
+                        <a href="https://www.twitter.com/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-twitter text-white social-icons" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
                     </div>
                     <div class="col-1">
-                        <a href="https://www.instagram.com/" class="text-decoration-none" target="_blank" rel="noopener">
+                        <a href="https://www.instagram.com/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-instagram text-white social-icons" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
                     </div>
                     <div class="col-1">
-                        <a href="https://www.youtube.com/" class="text-decoration-none" target="_blank" rel="noopener">
+                        <a href="https://www.youtube.com/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-youtube text-white social-icons" aria-hidden="true"></i>
                             <span class="sr-only">YouTube</span>
                         </a>
@@ -119,11 +119,11 @@
             </div>
             <div class="col-4 col-md-5 col-lg-4 text-md-center text-lg-end text-shadow comic-font footer-links d-none d-md-inline-block">
                 {% if session.user %}
-                    <a class="text-white text-decoration-none" href="{{ url_for('logout') }}">Log Out</a>
+                    <a class="text-white text-decoration-none hvr-grow" href="{{ url_for('logout') }}">Log Out</a>
                 {% else %}
-                    <a class="text-white text-decoration-none" href="{{ url_for('login') }}">Log In</a>
+                    <a class="text-white text-decoration-none hvr-grow" href="{{ url_for('login') }}">Log In</a>
                     <span class="text-white "> / </span>
-                    <a class="text-white text-decoration-none" href="{{ url_for('register') }}">Register</a>
+                    <a class="text-white text-decoration-none hvr-grow" href="{{ url_for('register') }}">Register</a>
                 {% endif %}
             </div>
         </div>
@@ -135,13 +135,13 @@
                 <span class="developer">Developed by: Carla Buongiorno</span>
             </div>
             <div class="col-1 offset-1 offset-lg-0 align-self-center copyright-icon1 text-center">
-                <a href="https://github.com/CarlaBuongiorno/The-Collector" class="text-decoration-none" target="_blank" rel="noopener">
+                <a href="https://github.com/CarlaBuongiorno/The-Collector" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                     <i class="fab fa-github text-white" aria-hidden="true"></i>
                     <span class="sr-only">GitHub</span>
                 </a>
             </div>
             <div class="col-1 align-self-center copyright-icon2 text-center text-xl-start">
-                <a href="https://www.linkedin.com/in/carlabuongiorno/" class="text-decoration-none" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/in/carlabuongiorno/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin text-white" aria-hidden="true"></i>
                     <span class="sr-only">linkedin</span>
                 </a>
