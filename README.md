@@ -443,7 +443,8 @@ MongoDB was used to store data for this site in a database. The data has been se
 2. On GitHub, go to [CarlaBuongiorno/The-Collector](https://github.com/CarlaBuongiorno/The-Collector).
 3. In the top right, click "Fork".
 4. You will need to create an env.py file with your own values, and create a MongoDB database with the data keys and types as shown above.
-5. You will also need to install all of the project requirements. This can be done using the command `pip3 install -r requirements.txt`.
+5. You will also need to install all of the project requirements. This can be done using the command:
+    * `pip3 install -r requirements.txt`
 6. Type `python3 app.py` in your GitPod terminal to run your local site of this project.
 
 ### Making a Local Clone
@@ -455,10 +456,11 @@ MongoDB was used to store data for this site in a database. The data has been se
 5. Open Git Bash.
 6. Change the current working directory to the new location, where you want the cloned directory to be.
 7. Type `git clone`, and then paste the URL that was copied in Step 4.
-    - `git clone https://github.com/CarlaBuongiorno/The-Collector.git`
+    * `git clone https://github.com/CarlaBuongiorno/The-Collector.git`
 8. Press Enter, and your local clone will be created.
 9. You will need to create an env.py file with your own values, and create a MongoDB database with the data keys and types as shown above.
-10. You will also need to install all of the project requirements. This can be done using the command `pip3 install -r requirements.txt`.
+10. You will also need to install all of the project requirements. This can be done using the command:
+    * `pip3 install -r requirements.txt`.
 11. Type `python3 app.py` in your Gitpod terminal to run your local site of this project.
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
