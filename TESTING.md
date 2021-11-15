@@ -430,7 +430,18 @@ The site was tested on the following physical devices:
     * 404: Page Not Found
         * ![Huawei P30 404: Page Not Found](docs/physical_devices/huawei_404.jpg)
 
-* Sony
+* Sony Xperia 1 II
+    * Successful Registration
+        * ![Sony Successfuly Registration](docs/physical_devices/sony_registration_successful.png)
+
+* Comic Deleted
+    * ![Sony Comic Deleted](docs/physical_devices/sony_comic_deleted.png)
+
+* Defensive Programming
+        * ![Sony Defensive Programming](docs/physical_devices/sony_defensive_programming.png)
+
+* Account And Comics Deleted Successfully
+        * ![Sony Account And Comics Deleted Successfully](docs/physical_devices/sony_account_deleted.png)
 
 ---
 
