@@ -438,10 +438,10 @@ The site was tested on the following physical devices:
         * ![Sony Comic Deleted](docs/physical_devices/sony_comic_deleted.png)
 
     * Defensive Programming
-            * ![Sony Defensive Programming](docs/physical_devices/sony_defensive_programming.png)
+        * ![Sony Defensive Programming](docs/physical_devices/sony_defensive_programming.png)
 
     * Account And Comics Deleted Successfully
-            * ![Sony Account And Comics Deleted Successfully](docs/physical_devices/sony_account_deleted.png)
+        * ![Sony Account And Comics Deleted Successfully](docs/physical_devices/sony_account_deleted.png)
 
 * iPhone X
     * Log In
