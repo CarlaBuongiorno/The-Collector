@@ -207,7 +207,8 @@ def profile(username):
                       "username": request.form.get("username").lower(),
                       "avatar_no": int(request.form.get("avatar_no")),
                       "show_contact_details": show_contact_details}})
-        # Find all comics and update show comic details on or off
+        # Find all comics and update show comic details on or off,
+        # the collector, contact
         mongo.db.comics.update_many(
             {"the_collector": user["username"]},
             {"$set": {"show_contact_details": show_contact_details,
@@ -327,9 +328,9 @@ def edit_comic(comic_id):
                 "price": price,
                 "notes": request.form.get("notes"),
                 "image_url": request.form.get("image_url"),
-                "the_collector": user["username"].lower(),
-                "show_contact_details": user["show_contact_details"],
-                "contact": user["email"]
+                "the_collector": comic["the_collector"].lower(),
+                "show_contact_details": comic["show_contact_details"],
+                "contact": comic["contact"]
             }
 
             mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
