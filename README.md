@@ -1,6 +1,6 @@
 # **The Collector**
 
-[View the live site here](https://the-collector-project.herokuapp.com/)
+[View the live site here](https://the-collector-i4ci.onrender.com/)
 
 This website was built to fulfill the requirements of the Code Institute Milestone 3 Project. It has the goal of maintaining a database attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. This is a full-stack site that allows users to catalogue and manage their comic book collections. There is an option for users to mark their comic books for sale. Other comic book collectors, whom are also members of the site, benefit from having access to this shared data due to the fact that they may search for comics and get in touch with each other in order to buy or sell their books.
 
